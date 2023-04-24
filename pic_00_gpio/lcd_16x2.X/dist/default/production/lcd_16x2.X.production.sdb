@@ -3,6 +3,50 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
+"36 D:\Escritorio\PIC18F4550-C-MPLAB\pic_00_gpio\lcd_16x2.X\main.c
+[e E3510 . `uc
+ROW_1 0
+ROW_2 1
+]
+[e E3514 . `uc
+COL_1 0
+COL_2 1
+COL_3 2
+COL_4 3
+COL_5 4
+COL_6 5
+COL_7 6
+COL_8 7
+COL_9 8
+COL_10 9
+COL_11 10
+COL_12 11
+COL_13 12
+COL_14 13
+COL_15 14
+]
+"62 D:\Escritorio\PIC18F4550-C-MPLAB\pic_00_gpio\lcd_16x2.X\FM_LCD16X2_Easy.c
+[e E3192 . `uc
+ROW_1 0
+ROW_2 1
+]
+[e E3196 . `uc
+COL_1 0
+COL_2 1
+COL_3 2
+COL_4 3
+COL_5 4
+COL_6 5
+COL_7 6
+COL_8 7
+COL_9 8
+COL_10 9
+COL_11 10
+COL_12 11
+COL_13 12
+COL_14 13
+COL_15 14
+]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
@@ -36,8 +80,10 @@
 "45
 [v _FM_Lcd_Send_Character FM_Lcd_Send_Character `(v  1 e 1 0 ]
 "52
-[v _FM_Lcd_Easy_Send_String FM_Lcd_Easy_Send_String `(v  1 e 1 0 ]
+[v _FM_Lcd_Send_String FM_Lcd_Send_String `(v  1 e 1 0 ]
 "62
+[v _FM_Lcd_Set_Cursor FM_Lcd_Set_Cursor `(v  1 e 1 0 ]
+"84
 [v _FM_Lcd_Easy_Init FM_Lcd_Easy_Init `(v  1 e 1 0 ]
 "32 D:\Escritorio\PIC18F4550-C-MPLAB\pic_00_gpio\lcd_16x2.X\main.c
 [v _main main `(i  1 e 2 0 ]
@@ -57,13 +103,26 @@
 {
 "55
 } 0
-"52 D:\Escritorio\PIC18F4550-C-MPLAB\pic_00_gpio\lcd_16x2.X\FM_LCD16X2_Easy.c
-[v _FM_Lcd_Easy_Send_String FM_Lcd_Easy_Send_String `(v  1 e 1 0 ]
+"62 D:\Escritorio\PIC18F4550-C-MPLAB\pic_00_gpio\lcd_16x2.X\FM_LCD16X2_Easy.c
+[v _FM_Lcd_Set_Cursor FM_Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v FM_Lcd_Set_Cursor@filas filas `E3192  1 a 1 wreg ]
+"64
+[v FM_Lcd_Set_Cursor@base_pos base_pos `uc  1 a 1 7 ]
+"62
+[v FM_Lcd_Set_Cursor@filas filas `E3192  1 a 1 wreg ]
+[v FM_Lcd_Set_Cursor@columna columna `E3196  1 p 1 5 ]
+"64
+[v FM_Lcd_Set_Cursor@filas filas `E3192  1 a 1 6 ]
+"82
+} 0
+"52
+[v _FM_Lcd_Send_String FM_Lcd_Send_String `(v  1 e 1 0 ]
 {
 "54
-[v FM_Lcd_Easy_Send_String@index index `uc  1 a 1 9 ]
+[v FM_Lcd_Send_String@index index `uc  1 a 1 9 ]
 "52
-[v FM_Lcd_Easy_Send_String@cadena cadena `*.32uc  1 p 2 5 ]
+[v FM_Lcd_Send_String@cadena cadena `*.32uc  1 p 2 5 ]
 "60
 } 0
 "45
@@ -75,10 +134,10 @@
 [v FM_Lcd_Send_Character@character_to_send character_to_send `uc  1 a 1 4 ]
 "49
 } 0
-"62
+"84
 [v _FM_Lcd_Easy_Init FM_Lcd_Easy_Init `(v  1 e 1 0 ]
 {
-"72
+"94
 } 0
 "39
 [v _FM_Lcd_Send_Command FM_Lcd_Send_Command `(v  1 e 1 0 ]

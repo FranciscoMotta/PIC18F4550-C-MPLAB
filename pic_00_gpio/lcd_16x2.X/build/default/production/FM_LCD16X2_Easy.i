@@ -5715,13 +5715,41 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
 # 11 "./FM_LCD16X2_Easy.h" 2
-# 72 "./FM_LCD16X2_Easy.h"
+# 71 "./FM_LCD16X2_Easy.h"
+typedef enum
+{
+    ROW_1 = 0,
+    ROW_2
+}_row_lcd_t;
+
+typedef enum
+{
+    COL_1 = 0,
+    COL_2,
+    COL_3,
+    COL_4,
+    COL_5,
+    COL_6,
+    COL_7,
+    COL_8,
+    COL_9,
+    COL_10,
+    COL_11,
+    COL_12,
+    COL_13,
+    COL_14,
+    COL_15
+}_column_lcd_t;
+
+
+
 void FM_Lcd_Easy_Gpio_Init (void);
 void FM_Lcd_Send_Nibble (char byte_to_send);
 void FM_Lcd_Send_Command (char command_to_send);
 void FM_Lcd_Send_Character (char character_to_send);
 void FM_Lcd_Easy_Init (void);
-void FM_Lcd_Easy_Send_String (char *cadena);
+void FM_Lcd_Send_String (char *cadena);
+void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna);
 # 1 "FM_LCD16X2_Easy.c" 2
 
 
@@ -5774,7 +5802,7 @@ void FM_Lcd_Send_Character (char character_to_send)
 }
 
 
-void FM_Lcd_Easy_Send_String (char *cadena)
+void FM_Lcd_Send_String (char *cadena)
 {
     uint8_t index = 0;
     while(cadena[index] != '\0')
@@ -5782,6 +5810,28 @@ void FM_Lcd_Easy_Send_String (char *cadena)
         FM_Lcd_Send_Character(cadena[index]);
         index++;
     }
+}
+
+void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna)
+{
+    char base_pos = 0x00;
+    if(filas == ROW_1)
+    {
+        base_pos = 0x80;
+    }
+    else if (filas == ROW_2)
+    {
+        base_pos = 0xC0;
+    }
+    else
+    {
+        __nop();
+    }
+
+
+    base_pos += columna;
+    FM_Lcd_Send_Command(base_pos);
+    base_pos = 0;
 }
 
 void FM_Lcd_Easy_Init (void)

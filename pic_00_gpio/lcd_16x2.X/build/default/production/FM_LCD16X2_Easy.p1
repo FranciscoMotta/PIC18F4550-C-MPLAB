@@ -9,6 +9,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
 [p i __delay ]
+"62 FM_LCD16X2_Easy.c
+[; ;FM_LCD16X2_Easy.c: 62: void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna)
+[c E3192 0 1 .. ]
+[n E3192 . ROW_1 ROW_2  ]
+[c E3196 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
+[n E3196 . COL_1 COL_2 COL_3 COL_4 COL_5 COL_6 COL_7 COL_8 COL_9 COL_10 COL_11 COL_12 COL_13 COL_14 COL_15  ]
+"8 D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "55 D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 55: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -641,14 +650,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 370 ]
 }
 "52
-[; ;FM_LCD16X2_Easy.c: 52: void FM_Lcd_Easy_Send_String (char *cadena)
-[v _FM_Lcd_Easy_Send_String `(v ~T0 @X0 1 ef1`*uc ]
+[; ;FM_LCD16X2_Easy.c: 52: void FM_Lcd_Send_String (char *cadena)
+[v _FM_Lcd_Send_String `(v ~T0 @X0 1 ef1`*uc ]
 "53
 [; ;FM_LCD16X2_Easy.c: 53: {
 {
-[e :U _FM_Lcd_Easy_Send_String ]
+[e :U _FM_Lcd_Send_String ]
 "52
-[; ;FM_LCD16X2_Easy.c: 52: void FM_Lcd_Easy_Send_String (char *cadena)
+[; ;FM_LCD16X2_Easy.c: 52: void FM_Lcd_Send_String (char *cadena)
 [v _cadena `*uc ~T0 @X0 1 r1 ]
 "53
 [; ;FM_LCD16X2_Easy.c: 53: {
@@ -683,35 +692,107 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 371 ]
 }
 "62
-[; ;FM_LCD16X2_Easy.c: 62: void FM_Lcd_Easy_Init (void)
-[v _FM_Lcd_Easy_Init `(v ~T0 @X0 1 ef ]
+[; ;FM_LCD16X2_Easy.c: 62: void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna)
+[v _FM_Lcd_Set_Cursor `(v ~T0 @X0 1 ef2`E3192`E3196 ]
 "63
 [; ;FM_LCD16X2_Easy.c: 63: {
 {
-[e :U _FM_Lcd_Easy_Init ]
+[e :U _FM_Lcd_Set_Cursor ]
+"62
+[; ;FM_LCD16X2_Easy.c: 62: void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna)
+[v _filas `E3192 ~T0 @X0 1 r1 ]
+[v _columna `E3196 ~T0 @X0 1 r2 ]
+"63
+[; ;FM_LCD16X2_Easy.c: 63: {
 [f ]
 "64
-[; ;FM_LCD16X2_Easy.c: 64:     FM_Lcd_Easy_Gpio_Init();
-[e ( _FM_Lcd_Easy_Gpio_Init ..  ]
+[; ;FM_LCD16X2_Easy.c: 64:     char base_pos = 0x00;
+[v _base_pos `uc ~T0 @X0 1 a ]
+[e = _base_pos -> -> 0 `i `uc ]
+"65
+[; ;FM_LCD16X2_Easy.c: 65:     if(filas == ROW_1)
+[e $ ! == -> _filas `ui -> . `E3192 0 `ui 376  ]
 "66
-[; ;FM_LCD16X2_Easy.c: 66:     FM_Lcd_Send_Command(0x01);
-[e ( _FM_Lcd_Send_Command (1 -> -> 1 `i `uc ]
+[; ;FM_LCD16X2_Easy.c: 66:     {
+{
 "67
-[; ;FM_LCD16X2_Easy.c: 67:     FM_Lcd_Send_Command(0x02);
-[e ( _FM_Lcd_Send_Command (1 -> -> 2 `i `uc ]
+[; ;FM_LCD16X2_Easy.c: 67:         base_pos = 0x80;
+[e = _base_pos -> -> 128 `i `uc ]
 "68
-[; ;FM_LCD16X2_Easy.c: 68:     FM_Lcd_Send_Command(0x06);
-[e ( _FM_Lcd_Send_Command (1 -> -> 6 `i `uc ]
+[; ;FM_LCD16X2_Easy.c: 68:     }
+}
+[e $U 377  ]
 "69
-[; ;FM_LCD16X2_Easy.c: 69:     FM_Lcd_Send_Command(0x0C);
-[e ( _FM_Lcd_Send_Command (1 -> -> 12 `i `uc ]
+[; ;FM_LCD16X2_Easy.c: 69:     else if (filas == ROW_2)
+[e :U 376 ]
+[e $ ! == -> _filas `ui -> . `E3192 1 `ui 378  ]
 "70
-[; ;FM_LCD16X2_Easy.c: 70:     FM_Lcd_Send_Command(0x10);
-[e ( _FM_Lcd_Send_Command (1 -> -> 16 `i `uc ]
+[; ;FM_LCD16X2_Easy.c: 70:     {
+{
 "71
-[; ;FM_LCD16X2_Easy.c: 71:     FM_Lcd_Send_Command(0x2C);
-[e ( _FM_Lcd_Send_Command (1 -> -> 44 `i `uc ]
+[; ;FM_LCD16X2_Easy.c: 71:         base_pos = 0xC0;
+[e = _base_pos -> -> 192 `i `uc ]
 "72
-[; ;FM_LCD16X2_Easy.c: 72: }
+[; ;FM_LCD16X2_Easy.c: 72:     }
+}
+[e $U 379  ]
+"73
+[; ;FM_LCD16X2_Easy.c: 73:     else
+[e :U 378 ]
+"74
+[; ;FM_LCD16X2_Easy.c: 74:     {
+{
+"75
+[; ;FM_LCD16X2_Easy.c: 75:         __nop();
+[e ( ___nop ..  ]
+"76
+[; ;FM_LCD16X2_Easy.c: 76:     }
+}
+[e :U 379 ]
+[e :U 377 ]
+"79
+[; ;FM_LCD16X2_Easy.c: 79:     base_pos += columna;
+[e =+ _base_pos -> _columna `uc ]
+"80
+[; ;FM_LCD16X2_Easy.c: 80:     FM_Lcd_Send_Command(base_pos);
+[e ( _FM_Lcd_Send_Command (1 _base_pos ]
+"81
+[; ;FM_LCD16X2_Easy.c: 81:     base_pos = 0;
+[e = _base_pos -> -> 0 `i `uc ]
+"82
+[; ;FM_LCD16X2_Easy.c: 82: }
 [e :UE 375 ]
+}
+"84
+[; ;FM_LCD16X2_Easy.c: 84: void FM_Lcd_Easy_Init (void)
+[v _FM_Lcd_Easy_Init `(v ~T0 @X0 1 ef ]
+"85
+[; ;FM_LCD16X2_Easy.c: 85: {
+{
+[e :U _FM_Lcd_Easy_Init ]
+[f ]
+"86
+[; ;FM_LCD16X2_Easy.c: 86:     FM_Lcd_Easy_Gpio_Init();
+[e ( _FM_Lcd_Easy_Gpio_Init ..  ]
+"88
+[; ;FM_LCD16X2_Easy.c: 88:     FM_Lcd_Send_Command(0x01);
+[e ( _FM_Lcd_Send_Command (1 -> -> 1 `i `uc ]
+"89
+[; ;FM_LCD16X2_Easy.c: 89:     FM_Lcd_Send_Command(0x02);
+[e ( _FM_Lcd_Send_Command (1 -> -> 2 `i `uc ]
+"90
+[; ;FM_LCD16X2_Easy.c: 90:     FM_Lcd_Send_Command(0x06);
+[e ( _FM_Lcd_Send_Command (1 -> -> 6 `i `uc ]
+"91
+[; ;FM_LCD16X2_Easy.c: 91:     FM_Lcd_Send_Command(0x0C);
+[e ( _FM_Lcd_Send_Command (1 -> -> 12 `i `uc ]
+"92
+[; ;FM_LCD16X2_Easy.c: 92:     FM_Lcd_Send_Command(0x10);
+[e ( _FM_Lcd_Send_Command (1 -> -> 16 `i `uc ]
+"93
+[; ;FM_LCD16X2_Easy.c: 93:     FM_Lcd_Send_Command(0x2C);
+[e ( _FM_Lcd_Send_Command (1 -> -> 44 `i `uc ]
+"94
+[; ;FM_LCD16X2_Easy.c: 94: }
+[e :UE 380 ]
 }

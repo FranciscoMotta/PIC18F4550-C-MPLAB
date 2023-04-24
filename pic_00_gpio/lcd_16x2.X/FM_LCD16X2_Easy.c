@@ -49,7 +49,7 @@ void FM_Lcd_Send_Character (char character_to_send)
 }
 
 
-void FM_Lcd_Easy_Send_String (char *cadena)
+void FM_Lcd_Send_String (char *cadena)
 {
     uint8_t index = 0;
     while(cadena[index] != '\0')
@@ -57,6 +57,28 @@ void FM_Lcd_Easy_Send_String (char *cadena)
         FM_Lcd_Send_Character(cadena[index]);
         index++;
     }
+}
+
+void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna)
+{
+    char base_pos = 0x00;
+    if(filas == ROW_1)
+    {
+        base_pos = 0x80;
+    }
+    else if (filas == ROW_2)
+    {
+        base_pos = 0xC0;
+    }
+    else
+    {
+        __nop();
+    }
+    
+    /* Seteamos la columna */
+    base_pos += columna;
+    FM_Lcd_Send_Command(base_pos);
+    base_pos = 0;
 }
 
 void FM_Lcd_Easy_Init (void)

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\lcd_16x2.X.production.sym \
   --cmf=dist/default/production\lcd_16x2.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\jmott\AppData\Local\Temp\xcAse2k.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\jmott\AppData\Local\Temp\xcAshkk.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/lcd_16x2.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=060h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\jmott\AppData\Local\Temp\xcAse2k.o \
+  C:\Users\jmott\AppData\Local\Temp\xcAshkk.o \
   dist/default/production\lcd_16x2.X.production.o 
 
 Object code version is 3.11
@@ -32,7 +32,7 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\jmott\AppData\Local\Temp\xcAse2k.o
+C:\Users\jmott\AppData\Local\Temp\xcAshkk.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  0        0        4        0       0
@@ -40,31 +40,33 @@ dist/default/production\lcd_16x2.X.production.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 smallconst                          800      800        8      400       0
-                text7                               958      958        8      404       0
-                text6                               808      808       74      404       0
-                text5                               94C      94C        C      404       0
-                text4                               908      908       2A      404       0
-                text3                               940      940        C      404       0
-                text2                               87C      87C       50      404       0
-                text1                               960      960        6      404       0
-                text0                               8CC      8CC       3C      404       0
+                text8                               9A0      9A0        8      404       0
+                text7                               808      808       74      404       0
+                text6                               994      994        C      404       0
+                text5                               950      950       2A      404       0
+                text4                               988      988        C      404       0
+                text3                               87C      87C       50      404       0
+                text2                               8CC      8CC       44      404       0
+                text1                               9A8      9A8        6      404       0
+                text0                               910      910       40      404       0
                 cstackCOMRAM                          1        1        C        1       1
-                cinit                               932      932        E      404       0
+                cinit                               97A      97A        E      404       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text7                               958      958        8         0
-                text6                               808      808       74         0
-                text5                               94C      94C        C         0
-                text4                               908      908       2A         0
-                text3                               940      940        C         0
-                text2                               87C      87C       50         0
-                text1                               960      960        6         0
-                text0                               8CC      8CC       3C         0
-                cinit                               932      932        E         0
+                text8                               9A0      9A0        8         0
+                text7                               808      808       74         0
+                text6                               994      994        C         0
+                text5                               950      950       2A         0
+                text4                               988      988        C         0
+                text3                               87C      87C       50         0
+                text2                               8CC      8CC       44         0
+                text1                               9A8      9A8        6         0
+                text0                               910      910       40         0
+                cinit                               97A      97A        E         0
 
         CLASS   CONST          
 
@@ -117,7 +119,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00000C  00000D         1       1  COMRAM  
                 smallconst                     000800  000008  000808       400       0  SMALLCON
-                text6                          000808  00015E  000966       404       0  CODE    
+                text7                          000808  0001A6  0009AE       404       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -133,33 +135,37 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BIGRAM           00000D-0007FF              7F3
         CODE             000004-0007FF              7FC
-                         000966-007FFF             769A
+                         0009AE-007FFF             7652
         COMRAM           00000D-00005F               53
         CONST            000004-0007FF              7FC
-                         000966-007FFF             769A
+                         0009AE-007FFF             7652
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000966-007FFF             769A
+        MEDIUMCONST      0009AE-007FFF             7652
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000966-007FFF              100
+        SMALLCONST       0009AE-007FFF              100
         STACK            000060-0007FF              7A0
 
                                   Symbol Table
 
-FM_Lcd_Easy_Send_String@cadena          cstackCOMRAM 000006
-FM_Lcd_Easy_Send_String@index           cstackCOMRAM 00000A
 FM_Lcd_Send_Character@character_to_send cstackCOMRAM 000005
 FM_Lcd_Send_Command@command_to_send     cstackCOMRAM 000005
 FM_Lcd_Send_Nibble@byte_to_send         cstackCOMRAM 000002
 FM_Lcd_Send_Nibble@lower_bits           cstackCOMRAM 000004
 FM_Lcd_Send_Nibble@upper_bits           cstackCOMRAM 000003
-_FM_Lcd_Easy_Gpio_Init                  text7        000958
-_FM_Lcd_Easy_Init                       text4        000908
-_FM_Lcd_Easy_Send_String                text2        00087C
-_FM_Lcd_Send_Character                  text3        000940
-_FM_Lcd_Send_Command                    text5        00094C
-_FM_Lcd_Send_Nibble                     text6        000808
-_Init_Led_System                        text1        000960
+FM_Lcd_Send_String@cadena               cstackCOMRAM 000006
+FM_Lcd_Send_String@index                cstackCOMRAM 00000A
+FM_Lcd_Set_Cursor@base_pos              cstackCOMRAM 000008
+FM_Lcd_Set_Cursor@columna               cstackCOMRAM 000006
+FM_Lcd_Set_Cursor@filas                 cstackCOMRAM 000007
+_FM_Lcd_Easy_Gpio_Init                  text8        0009A0
+_FM_Lcd_Easy_Init                       text5        000950
+_FM_Lcd_Send_Character                  text4        000988
+_FM_Lcd_Send_Command                    text6        000994
+_FM_Lcd_Send_Nibble                     text7        000808
+_FM_Lcd_Send_String                     text3        00087C
+_FM_Lcd_Set_Cursor                      text2        0008CC
+_Init_Led_System                        text1        0009A8
 _LATD                                   (abs)        000F8C
 _TRISD                                  (abs)        000F95
 __HRAM                                  (abs)        000000
@@ -213,7 +219,7 @@ __Hreset_vec                            reset_vec    000000
 __Hrparam                               rparam       000000
 __Hsfr                                  sfr          000000
 __Hsmallconst                           smallconst   000808
-__Hspace_0                              (abs)        000966
+__Hspace_0                              (abs)        0009AE
 __Hspace_1                              (abs)        00000D
 __Hspace_2                              (abs)        000000
 __Hspace_4                              (abs)        60000E
@@ -229,6 +235,7 @@ __Htext4                                text4        000000
 __Htext5                                text5        000000
 __Htext6                                text6        000000
 __Htext7                                text7        000000
+__Htext8                                text8        000000
 __LRAM                                  (abs)        000001
 __Labs1                                 abs1         000000
 __Lbank0                                bank0        000000
@@ -296,7 +303,8 @@ __Ltext4                                text4        000000
 __Ltext5                                text5        000000
 __Ltext6                                text6        000000
 __Ltext7                                text7        000000
-__S0                                    (abs)        000966
+__Ltext8                                text8        000000
+__S0                                    (abs)        0009AE
 __S1                                    (abs)        00000D
 __S2                                    (abs)        000000
 __S4                                    (abs)        000000
@@ -308,40 +316,43 @@ ___rparam_used                          (abs)        000001
 ___sp                                   stack        000000
 __accesstop                             (abs)        000060
 __activetblptr                          (abs)        000001
-__end_of_FM_Lcd_Easy_Gpio_Init          text7        000960
-__end_of_FM_Lcd_Easy_Init               text4        000932
-__end_of_FM_Lcd_Easy_Send_String        text2        0008CC
-__end_of_FM_Lcd_Send_Character          text3        00094C
-__end_of_FM_Lcd_Send_Command            text5        000958
-__end_of_FM_Lcd_Send_Nibble             text6        00087C
-__end_of_Init_Led_System                text1        000966
-__end_of__initialization                cinit        000932
-__end_of_main                           text0        000908
-__initialization                        cinit        000932
+__end_of_FM_Lcd_Easy_Gpio_Init          text8        0009A8
+__end_of_FM_Lcd_Easy_Init               text5        00097A
+__end_of_FM_Lcd_Send_Character          text4        000994
+__end_of_FM_Lcd_Send_Command            text6        0009A0
+__end_of_FM_Lcd_Send_Nibble             text7        00087C
+__end_of_FM_Lcd_Send_String             text3        0008CC
+__end_of_FM_Lcd_Set_Cursor              text2        000910
+__end_of_Init_Led_System                text1        0009AE
+__end_of__initialization                cinit        00097A
+__end_of_main                           text0        000950
+__initialization                        cinit        00097A
 __mediumconst                           mediumconst  000000
-__pcinit                                cinit        000932
+__pcinit                                cinit        00097A
 __pcstackCOMRAM                         cstackCOMRAM 000001
 __psmallconst                           smallconst   000800
-__ptext0                                text0        0008CC
-__ptext1                                text1        000960
-__ptext2                                text2        00087C
-__ptext3                                text3        000940
-__ptext4                                text4        000908
-__ptext5                                text5        00094C
-__ptext6                                text6        000808
-__ptext7                                text7        000958
+__ptext0                                text0        000910
+__ptext1                                text1        0009A8
+__ptext2                                text2        0008CC
+__ptext3                                text3        00087C
+__ptext4                                text4        000988
+__ptext5                                text5        000950
+__ptext6                                text6        000994
+__ptext7                                text7        000808
+__ptext8                                text8        0009A0
 __ramtop                                ramtop       000800
 __size_of_FM_Lcd_Easy_Gpio_Init         (abs)        000000
 __size_of_FM_Lcd_Easy_Init              (abs)        000000
-__size_of_FM_Lcd_Easy_Send_String       (abs)        000000
 __size_of_FM_Lcd_Send_Character         (abs)        000000
 __size_of_FM_Lcd_Send_Command           (abs)        000000
 __size_of_FM_Lcd_Send_Nibble            (abs)        000000
+__size_of_FM_Lcd_Send_String            (abs)        000000
+__size_of_FM_Lcd_Set_Cursor             (abs)        000000
 __size_of_Init_Led_System               (abs)        000000
 __size_of_main                          (abs)        000000
 __smallconst                            smallconst   000800
-_main                                   text0        0008CC
-end_of_initialization                   cinit        000932
+_main                                   text0        000910
+end_of_initialization                   cinit        00097A
 intlevel0                               text         000000
 intlevel1                               text         000000
 intlevel2                               text         000000
@@ -351,30 +362,31 @@ isa$xinst                               (abs)        000000
 stackhi                                 (abs)        0007FF
 stacklo                                 (abs)        000060
 start                                   init         000000
-start_initialization                    cinit        000932
+start_initialization                    cinit        00097A
 
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 FM_LCD16X2_Easy.c
-		_FM_Lcd_Easy_Init		CODE           	0908	0000	42
+		_FM_Lcd_Easy_Init		CODE           	0950	0000	42
 		_FM_Lcd_Send_Nibble		CODE           	0808	0000	116
-		_FM_Lcd_Easy_Gpio_Init		CODE           	0958	0000	8
-		_FM_Lcd_Easy_Send_String		CODE           	087C	0000	80
-		_FM_Lcd_Send_Character		CODE           	0940	0000	12
-		_FM_Lcd_Send_Command		CODE           	094C	0000	12
+		_FM_Lcd_Set_Cursor		CODE           	08CC	0000	68
+		_FM_Lcd_Easy_Gpio_Init		CODE           	09A0	0000	8
+		_FM_Lcd_Send_String		CODE           	087C	0000	80
+		_FM_Lcd_Send_Character		CODE           	0988	0000	12
+		_FM_Lcd_Send_Command		CODE           	0994	0000	12
 
-FM_LCD16X2_Easy.c estimated size: 270
+FM_LCD16X2_Easy.c estimated size: 338
 
 shared
-		__initialization		CODE           	0932	0000	1
+		__initialization		CODE           	097A	0000	1
 
 shared estimated size: 1
 
 main.c
-		_Init_Led_System		CODE           	0960	0000	6
-		_main          		CODE           	08CC	0000	60
+		_Init_Led_System		CODE           	09A8	0000	6
+		_main          		CODE           	0910	0000	64
 
-main.c estimated size: 66
+main.c estimated size: 70
 

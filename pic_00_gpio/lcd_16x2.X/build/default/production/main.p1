@@ -3,15 +3,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27 main.c
 [; ;main.c: 27: void Init_Led_System (void);
 [v _Init_Led_System `(v ~T0 @X0 0 ef ]
-"76 ./FM_LCD16X2_Easy.h
-[; ;./FM_LCD16X2_Easy.h: 76: void FM_Lcd_Easy_Init (void);
+"102 ./FM_LCD16X2_Easy.h
+[; ;./FM_LCD16X2_Easy.h: 102: void FM_Lcd_Easy_Init (void);
 [v _FM_Lcd_Easy_Init `(v ~T0 @X0 0 ef ]
-"74
-[; ;./FM_LCD16X2_Easy.h: 74: void FM_Lcd_Send_Command (char command_to_send);
-[v _FM_Lcd_Send_Command `(v ~T0 @X0 0 ef1`uc ]
-"77
-[; ;./FM_LCD16X2_Easy.h: 77: void FM_Lcd_Easy_Send_String (char *cadena);
-[v _FM_Lcd_Easy_Send_String `(v ~T0 @X0 0 ef1`*uc ]
+"36 main.c
+[; ;main.c: 36:     FM_Lcd_Set_Cursor(ROW_2, COL_1);
+[c E3510 0 1 .. ]
+[n E3510 . ROW_1 ROW_2  ]
+[c E3514 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
+[n E3514 . COL_1 COL_2 COL_3 COL_4 COL_5 COL_6 COL_7 COL_8 COL_9 COL_10 COL_11 COL_12 COL_13 COL_14 COL_15  ]
+"104 ./FM_LCD16X2_Easy.h
+[; ;./FM_LCD16X2_Easy.h: 104: void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna);
+[v _FM_Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`E3510`E3514 ]
+"103
+[; ;./FM_LCD16X2_Easy.h: 103: void FM_Lcd_Send_String (char *cadena);
+[v _FM_Lcd_Send_String `(v ~T0 @X0 0 ef1`*uc ]
 "3264 D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3264: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
@@ -624,11 +630,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 35:     FM_Lcd_Easy_Init();
 [e ( _FM_Lcd_Easy_Init ..  ]
 "36
-[; ;main.c: 36:     FM_Lcd_Send_Command(0x80);
-[e ( _FM_Lcd_Send_Command (1 -> -> 128 `i `uc ]
+[; ;main.c: 36:     FM_Lcd_Set_Cursor(ROW_2, COL_1);
+[e ( _FM_Lcd_Set_Cursor (2 , . `E3510 1 . `E3514 0 ]
 "37
-[; ;main.c: 37:     FM_Lcd_Easy_Send_String("HOLA");
-[e ( _FM_Lcd_Easy_Send_String (1 :s 1C ]
+[; ;main.c: 37:     FM_Lcd_Send_String("HOLA");
+[e ( _FM_Lcd_Send_String (1 :s 1C ]
 "38
 [; ;main.c: 38:     while(1)
 [e :U 371 ]

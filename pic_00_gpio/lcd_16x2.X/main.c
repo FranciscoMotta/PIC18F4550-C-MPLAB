@@ -33,8 +33,8 @@ int main(void)
 {
     Init_Led_System(); // Iniciamos el led
     FM_Lcd_Easy_Init(); // Iniciamos el LCD
-    FM_Lcd_Send_Command(0x80);
-    FM_Lcd_Easy_Send_String("HOLA");
+    FM_Lcd_Set_Cursor(ROW_2, COL_1);
+    FM_Lcd_Send_String("HOLA");
     while(1)
     {
         Led_System_Lat ^= Led_System_Mask;
