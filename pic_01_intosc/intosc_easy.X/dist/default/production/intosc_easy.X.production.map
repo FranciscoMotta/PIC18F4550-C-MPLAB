@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.41\pic\dat\20230208172133_en.msgs \
   -cn -h+dist/default/production\intosc_easy.X.production.sym \
   --cmf=dist/default/production\intosc_easy.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\ADMINI~1\AppData\Local\Temp\xcAs2pvk.\driver_tmp_3.o \
+  -oC:\Users\ADMINI~1\AppData\Local\Temp\xcAs2deg.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/intosc_easy.X.production.map \
-  --md=C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2pvk.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2deg.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-07FFh -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2pvk.\driver_tmp_9.o \
+  C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2deg.\driver_tmp_9.o \
   dist/default/production\intosc_easy.X.production.o 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2pvk.\driver_tmp_9.o
+C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2deg.\driver_tmp_9.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  0        0        4        0       0

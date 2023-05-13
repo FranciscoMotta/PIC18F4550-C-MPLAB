@@ -5,7 +5,7 @@
  * Created on 12 de mayo de 2023, 07:58 PM
  */
 
-#define _XTAL_FREQ 8000000ul
+#define _XTAL_FREQ 4000000ul
 
 /* Librerías */
 
@@ -44,8 +44,8 @@ void Internal_Oscillator_Init (void)
 {
     /* Limpiamos el registro OSCCON */
     OSCCON = 0x00;
-    /* Frecuencia de 8 Mhz */
-    OSCCON |= (0b111 << _OSCCON_IRCF0_POSITION); // OSCCON = 0B01110000
+    /* Frecuencia de 4 Mhz */
+    OSCCON |= (0b110 << _OSCCON_IRCF0_POSITION); // OSCCON = 0B01110000
     /* Internal Oscillator */
     OSCCON |= (0b10 << _OSCCON_SCS0_POSITION); // OSCCON = 0B01110010
 }

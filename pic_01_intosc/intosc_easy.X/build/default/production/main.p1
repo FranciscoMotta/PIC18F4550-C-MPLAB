@@ -630,8 +630,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 35:         LATD ^= (1 << 0x0);
 [e =^ _LATD -> << -> 1 `i -> 0 `i `Vuc ]
 "36
-[; ;main.c: 36:         _delay((unsigned long)((200)*(8000000ul/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;main.c: 36:         _delay((unsigned long)((200)*(4000000ul/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "37
 [; ;main.c: 37:     }
 }
@@ -658,8 +658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 46:     OSCCON = 0x00;
 [e = _OSCCON -> -> 0 `i `uc ]
 "48
-[; ;main.c: 48:     OSCCON |= (0b111 << 0x4);
-[e =| _OSCCON -> << -> 7 `i -> 4 `i `Vuc ]
+[; ;main.c: 48:     OSCCON |= (0b110 << 0x4);
+[e =| _OSCCON -> << -> 6 `i -> 4 `i `Vuc ]
 "50
 [; ;main.c: 50:     OSCCON |= (0b10 << 0x0);
 [e =| _OSCCON -> << -> 2 `i -> 0 `i `Vuc ]

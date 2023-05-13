@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Fri May 12 21:51:11 2023
+                                                                                               Fri May 12 21:55:07 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F4550
@@ -140,12 +140,12 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    126   007FDC  0E01               	movlw	1
    127   007FDE  1A8C               	xorwf	140,f,c	;volatile
    128   007FE0                     
-   129                           ;main.c: 36:         _delay((unsigned long)((200)*(8000000ul/4000.0)));
-   130   007FE0  0E03               	movlw	3
+   129                           ;main.c: 36:         _delay((unsigned long)((200)*(4000000ul/4000.0)));
+   130   007FE0  0E02               	movlw	2
    131   007FE2  6E02               	movwf	(??_main+1)^0,c
-   132   007FE4  0E08               	movlw	8
+   132   007FE4  0E04               	movlw	4
    133   007FE6  6E01               	movwf	??_main^0,c
-   134   007FE8  0E77               	movlw	119
+   134   007FE8  0EBA               	movlw	186
    135   007FEA                     u17:
    136   007FEA  2EE8               	decfsz	wreg,f,c
    137   007FEC  D7FE               	bra	u17
@@ -153,7 +153,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    139   007FF0  D7FC               	bra	u17
    140   007FF2  2E02               	decfsz	(??_main+1)^0,f,c
    141   007FF4  D7FA               	bra	u17
-   142   007FF6  F000               	nop	
+   142   007FF6  D000               	nop2	
    143   007FF8  EFEE  F03F         	goto	l709
    144   007FFC  EF00  F000         	goto	start
    145   008000                     __end_of_main:
@@ -198,8 +198,8 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    184   007FC8  0E00               	movlw	0
    185   007FCA  6ED3               	movwf	211,c	;volatile
    186   007FCC                     
-   187                           ;main.c: 48:     OSCCON |= (0b111 << 0x4);
-   188   007FCC  0E70               	movlw	112
+   187                           ;main.c: 48:     OSCCON |= (0b110 << 0x4);
+   188   007FCC  0E60               	movlw	96
    189   007FCE  12D3               	iorwf	211,f,c	;volatile
    190   007FD0                     
    191                           ;main.c: 50:     OSCCON |= (0b10 << 0x0);
@@ -548,7 +548,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Fri May 12 21:51:11 2023
+Symbol Table                                                                                   Fri May 12 21:55:07 2023
 
                               l21 7FD2                                u17 7FEA                               l701 7FD0  
                              l711 7FE0                               l703 7FD4                               l705 7FD8  

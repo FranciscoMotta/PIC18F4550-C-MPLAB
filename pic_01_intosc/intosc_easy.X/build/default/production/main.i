@@ -5951,7 +5951,7 @@ int main()
     while(1)
     {
         LATD ^= (1 << 0x0);
-        _delay((unsigned long)((200)*(8000000ul/4000.0)));
+        _delay((unsigned long)((200)*(4000000ul/4000.0)));
     }
     return (0);
 }
@@ -5963,7 +5963,7 @@ void Internal_Oscillator_Init (void)
 
     OSCCON = 0x00;
 
-    OSCCON |= (0b111 << 0x4);
+    OSCCON |= (0b110 << 0x4);
 
     OSCCON |= (0b10 << 0x0);
 }
