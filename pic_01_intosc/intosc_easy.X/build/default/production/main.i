@@ -5951,7 +5951,7 @@ int main()
     while(1)
     {
         LATD ^= (1 << 0x0);
-        _delay((unsigned long)((500)*(8000000ul/4000.0)));
+        _delay((unsigned long)((200)*(8000000ul/4000.0)));
     }
     return (0);
 }

@@ -33,7 +33,7 @@ int main()
     while(true)
     {
         LATD ^= (1 << _LATD_LATD0_POSITION);
-        __delay_ms(500);
+        __delay_ms(200);
     }
     return (EXIT_SUCCESS);
 }
@@ -44,7 +44,7 @@ void Internal_Oscillator_Init (void)
 {
     /* Limpiamos el registro OSCCON */
     OSCCON = 0x00;
-    /* Frecuencia de 8 bits */
+    /* Frecuencia de 8 Mhz */
     OSCCON |= (0b111 << _OSCCON_IRCF0_POSITION); // OSCCON = 0B01110000
     /* Internal Oscillator */
     OSCCON |= (0b10 << _OSCCON_SCS0_POSITION); // OSCCON = 0B01110010

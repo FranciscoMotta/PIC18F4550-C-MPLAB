@@ -5,7 +5,7 @@ __S5 0 0 ABS 0
 __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
 _LATD F8C 0 ABS 0
-_main 7FD6 0 CODE 0
+_main 7FD4 0 CODE 0
 ___sp 0 0 STACK 2
 start 0 0 CODE 0
 _TRISD F95 0 ABS 0
@@ -82,7 +82,7 @@ __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 ___heap_lo 0 0 ABS 0
-end_of_initialization 7FC4 0 CODE 0
+end_of_initialization 7FC2 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 __Hifardata 0 0 CODE 0
@@ -109,12 +109,12 @@ __Htext0 0 0 ABS 0
 __Ltext0 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
-__ptext0 7FD6 0 CODE 0
-__ptext1 7FCA 0 CODE 0
+__ptext0 7FD4 0 CODE 0
+__ptext1 7FC8 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-__end_of__initialization 7FC4 0 CODE 0
-__end_of_Internal_Oscillator_Init 7FD6 0 CODE 0
+__end_of__initialization 7FC2 0 CODE 0
+__end_of_Internal_Oscillator_Init 7FD4 0 CODE 0
 ___rparam_used 1 0 ABS 0
 __H__absolute__ 0 0 ABS 0
 __L__absolute__ 0 0 ABS 0
@@ -143,7 +143,7 @@ __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
-__pcinit 7FC4 0 CODE 0
+__pcinit 7FC2 0 CODE 0
 __ramtop 800 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
 __Hconst 0 0 CONST 0
@@ -162,35 +162,35 @@ intlevel0 0 0 CODE 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
-start_initialization 7FC4 0 CODE 0
-__initialization 7FC4 0 CODE 0
+start_initialization 7FC2 0 CODE 0
+__initialization 7FC2 0 CODE 0
 __activetblptr 0 0 ABS 0
-_Internal_Oscillator_Init 7FCA 0 CODE 0
+_Internal_Oscillator_Init 7FC8 0 CODE 0
 %segments
 reset_vec 0 3 CODE 0 0
 cstackCOMRAM 1 2 COMRAM 1 1
-text0 7FD6 7FFF CODE 7FD6 0
-text1 7FCA 7FD5 CODE 7FCA 0
-cinit 7FC4 7FC9 CODE 7FC4 0
+text0 7FD4 7FFF CODE 7FD4 0
+text1 7FC8 7FD3 CODE 7FC8 0
+cinit 7FC2 7FC7 CODE 7FC2 0
 %locals
 dist/default/production\intosc_easy.X.production.o
-C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2o10.\driver_tmp_1.s
-505 7FC4 0 CODE 0
-507 7FC4 0 CODE 0
-510 7FC4 0 CODE 0
-516 7FC4 0 CODE 0
-518 7FC4 0 CODE 0
-519 7FC6 0 CODE 0
+C:\Users\ADMINI~1\AppData\Local\Temp\xcAs2pvk.\driver_tmp_1.s
+505 7FC2 0 CODE 0
+507 7FC2 0 CODE 0
+510 7FC2 0 CODE 0
+516 7FC2 0 CODE 0
+518 7FC2 0 CODE 0
+519 7FC4 0 CODE 0
 main.c
-28 7FD6 0 CODE 0
-30 7FD6 0 CODE 0
-31 7FDA 0 CODE 0
-32 7FDC 0 CODE 0
-35 7FDE 0 CODE 0
-36 7FE2 0 CODE 0
+28 7FD4 0 CODE 0
+30 7FD4 0 CODE 0
+31 7FD8 0 CODE 0
+32 7FDA 0 CODE 0
+35 7FDC 0 CODE 0
+36 7FE0 0 CODE 0
 main.c
-43 7FCA 0 CODE 0
-46 7FCA 0 CODE 0
-48 7FCE 0 CODE 0
-50 7FD2 0 CODE 0
-51 7FD4 0 CODE 0
+43 7FC8 0 CODE 0
+46 7FC8 0 CODE 0
+48 7FCC 0 CODE 0
+50 7FD0 0 CODE 0
+51 7FD2 0 CODE 0
