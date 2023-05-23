@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 14 "main.c"
+# 10 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5714,7 +5714,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 14 "main.c" 2
+# 10 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
@@ -5862,11 +5862,11 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 15 "main.c" 2
+# 11 "main.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 17 "main.c" 2
+# 13 "main.c" 2
 
 # 1 "./system_config.h" 1
 # 16 "./system_config.h"
@@ -5930,58 +5930,47 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config EBTRB = OFF
-# 18 "main.c" 2
+# 14 "main.c" 2
 
 
 
 
-
-void __attribute__((picinterrupt(("")))) INT0_IRS (void)
+void __attribute__((picinterrupt(("")))) INT1_IRQ (void)
 {
-    if(INTCONbits.INT0IF && INTCONbits.INT0IF)
+    if(INTCON3bits.INT1IE && INTCON3bits.INT1IF)
     {
 
         LATDbits.LATD1 = !LATDbits.LATD1;
 
-        INTCONbits.INT0IF = 0;
+        INTCON3bits.INT1IF = 0;
     }
 }
 
 
 
-
-
-void Internal_Oscillator_Init (void);
-void Interrupt_External_Init (void);
-
-
-
+void Init_Internal_Oscillator (void);
+void Init_Gpio_System (void);
+void Init_External_Interrupt2 (void);
 
 int main(void)
 {
 
-    Internal_Oscillator_Init();
+    Init_Internal_Oscillator();
 
-    Interrupt_External_Init();
+    Init_Gpio_System();
 
-    TRISDbits.RD0 = 0;
-
-    TRISDbits.RD1 = 0;
+    Init_External_Interrupt2();
     while(1)
     {
-        LATDbits.LATD0 = 1;
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
-        LATDbits.LATD0 = 0;
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
+        LATDbits.LATD0 = !LATDbits.LATD0;
+        _delay((unsigned long)((100)*(8000000UL/4000.0)));
     }
     return (0);
 }
 
 
 
-
-
-void Interrupt_External_Init (void)
+void Init_External_Interrupt2 (void)
 {
 
     INTCON = 0x00;
@@ -5992,20 +5981,25 @@ void Interrupt_External_Init (void)
 
     RCONbits.IPEN = 0;
     INTCONbits.GIE = 1;
-    INTCONbits.INT0IE = 1;
-    INTCONbits.INT0IF = 0;
-    INTCON2bits.INTEDG0 = 1;
-
-
-    TRISBbits.RB0 = 1;
+    INTCON2bits.INTEDG1 = 1;
+    INTCON3bits.INT1IE = 1;
+    INTCON3bits.INT1IF = 0;
 }
 
-void Internal_Oscillator_Init (void)
+void Init_Gpio_System (void)
+{
+
+    TRISDbits.RD0 = 0;
+    TRISDbits.RD1 = 0;
+
+    TRISBbits.RB1 = 1;
+}
+void Init_Internal_Oscillator (void)
 {
 
     OSCCON = 0x00;
 
 
     OSCCONbits.IRCF = 0b111;
-    OSCCONbits.SCS = 0b10;
+    OSCCONbits.SCS = 0b11;
 }

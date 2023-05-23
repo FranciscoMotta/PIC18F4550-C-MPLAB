@@ -1,25 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T36 __interrupt ]
-"8589 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8589:     struct {
-[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S360 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"8599
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8599:     struct {
-[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S361 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"8609
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8609:     struct {
-[s S362 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . . GIEL GIEH ]
-"8588
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8588: typedef union {
-[u S359 `S360 1 `S361 1 `S362 1 ]
-[n S359 . . . . ]
-"8615
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8615: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS359 ~T0 @X0 0 e@4082 ]
+"8420 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8420:     struct {
+[s S353 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S353 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
+"8430
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8430:     struct {
+[s S354 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S354 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
+"8419
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8419: typedef union {
+[u S352 `S353 1 `S354 1 ]
+[n S352 . . . ]
+"8441
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8441: extern volatile INTCON3bits_t INTCON3bits __attribute__((address(0xFF0)));
+[v _INTCON3bits `VS352 ~T0 @X0 0 e@4080 ]
 "3270
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3270:     struct {
 [s S136 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -36,27 +32,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3291: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
 [v _LATDbits `VS135 ~T0 @X0 0 e@3980 ]
 [p mainexit ]
-"38 main.c
-[; ;main.c: 38: void Internal_Oscillator_Init (void);
-[v _Internal_Oscillator_Init `(v ~T0 @X0 0 ef ]
-"39
-[; ;main.c: 39: void Interrupt_External_Init (void);
-[v _Interrupt_External_Init `(v ~T0 @X0 0 ef ]
-"4013 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4013:     struct {
-[s S160 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S160 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"4023
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4023:     struct {
-[s S161 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S161 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"4012
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4012: typedef union {
-[u S159 `S160 1 `S161 1 ]
-[n S159 . . . ]
-"4034
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4034: extern volatile TRISDbits_t TRISDbits __attribute__((address(0xF95)));
-[v _TRISDbits `VS159 ~T0 @X0 0 e@3989 ]
+"31 main.c
+[; ;main.c: 31: void Init_Internal_Oscillator (void);
+[v _Init_Internal_Oscillator `(v ~T0 @X0 0 ef ]
+"32
+[; ;main.c: 32: void Init_Gpio_System (void);
+[v _Init_Gpio_System `(v ~T0 @X0 0 ef ]
+"33
+[; ;main.c: 33: void Init_External_Interrupt2 (void);
+[v _Init_External_Interrupt2 `(v ~T0 @X0 0 ef ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
@@ -112,6 +96,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7589
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7589: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
 [v _RCONbits `VS321 ~T0 @X0 0 e@4048 ]
+"8589
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8589:     struct {
+[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S360 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"8599
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8599:     struct {
+[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S361 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"8609
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8609:     struct {
+[s S362 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S362 . . GIEL GIEH ]
+"8588
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8588: typedef union {
+[u S359 `S360 1 `S361 1 `S362 1 ]
+[n S359 . . . . ]
+"8615
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8615: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS359 ~T0 @X0 0 e@4082 ]
 "8512
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8512:     struct {
 [s S356 :7 `uc 1 :1 `uc 1 ]
@@ -131,6 +134,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8533
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8533: extern volatile INTCON2bits_t INTCON2bits __attribute__((address(0xFF1)));
 [v _INTCON2bits `VS355 ~T0 @X0 0 e@4081 ]
+"4013
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4013:     struct {
+[s S160 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S160 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"4023
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4023:     struct {
+[s S161 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S161 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"4012
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4012: typedef union {
+[u S159 `S160 1 `S161 1 ]
+[n S159 . . . ]
+"4034
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4034: extern volatile TRISDbits_t TRISDbits __attribute__((address(0xF95)));
+[v _TRISDbits `VS159 ~T0 @X0 0 e@3989 ]
 "3637
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3637:     struct {
 [s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -750,148 +768,157 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3  =  OFF       ]
 "75
 [p x EBTRB  =  OFF       ]
-[v $root$_INT0_IRS `(v ~T0 @X0 0 e ]
-"23 main.c
-[; ;main.c: 23: void __attribute__((picinterrupt(("")))) INT0_IRS (void)
-[v _INT0_IRS `(v ~T36 @X0 1 ef ]
-"24
-[; ;main.c: 24: {
+[v $root$_INT1_IRQ `(v ~T0 @X0 0 e ]
+"18 main.c
+[; ;main.c: 18: void __attribute__((picinterrupt(("")))) INT1_IRQ (void)
+[v _INT1_IRQ `(v ~T36 @X0 1 ef ]
+"19
+[; ;main.c: 19: {
 {
-[e :U _INT0_IRS ]
+[e :U _INT1_IRQ ]
 [f ]
-"25
-[; ;main.c: 25:     if(INTCONbits.INT0IF && INTCONbits.INT0IF)
-[e $ ! && != -> . . _INTCONbits 0 1 `i -> 0 `i != -> . . _INTCONbits 0 1 `i -> 0 `i 370  ]
-"26
-[; ;main.c: 26:     {
+"20
+[; ;main.c: 20:     if(INTCON3bits.INT1IE && INTCON3bits.INT1IF)
+[e $ ! && != -> . . _INTCON3bits 0 3 `i -> 0 `i != -> . . _INTCON3bits 0 0 `i -> 0 `i 370  ]
+"21
+[; ;main.c: 21:     {
 {
-"28
-[; ;main.c: 28:         LATDbits.LATD1 = !LATDbits.LATD1;
+"23
+[; ;main.c: 23:         LATDbits.LATD1 = !LATDbits.LATD1;
 [e = . . _LATDbits 0 1 -> -> ! != -> . . _LATDbits 0 1 `i -> 0 `i `i `uc ]
-"30
-[; ;main.c: 30:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"31
-[; ;main.c: 31:     }
+"25
+[; ;main.c: 25:         INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"26
+[; ;main.c: 26:     }
 }
 [e :U 370 ]
-"32
-[; ;main.c: 32: }
+"27
+[; ;main.c: 27: }
 [e :UE 369 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"44
-[; ;main.c: 44: int main(void)
+"35
+[; ;main.c: 35: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"45
-[; ;main.c: 45: {
+"36
+[; ;main.c: 36: {
 {
 [e :U _main ]
 [f ]
-"47
-[; ;main.c: 47:     Internal_Oscillator_Init();
-[e ( _Internal_Oscillator_Init ..  ]
-"49
-[; ;main.c: 49:     Interrupt_External_Init();
-[e ( _Interrupt_External_Init ..  ]
-"51
-[; ;main.c: 51:     TRISDbits.RD0 = 0;
-[e = . . _TRISDbits 1 0 -> -> 0 `i `uc ]
-"53
-[; ;main.c: 53:     TRISDbits.RD1 = 0;
-[e = . . _TRISDbits 1 1 -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:     while(1)
+"38
+[; ;main.c: 38:     Init_Internal_Oscillator();
+[e ( _Init_Internal_Oscillator ..  ]
+"40
+[; ;main.c: 40:     Init_Gpio_System();
+[e ( _Init_Gpio_System ..  ]
+"42
+[; ;main.c: 42:     Init_External_Interrupt2();
+[e ( _Init_External_Interrupt2 ..  ]
+"43
+[; ;main.c: 43:     while(1)
 [e :U 373 ]
-"55
-[; ;main.c: 55:     {
+"44
+[; ;main.c: 44:     {
 {
-"56
-[; ;main.c: 56:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"57
-[; ;main.c: 57:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"58
-[; ;main.c: 58:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"59
-[; ;main.c: 59:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"60
-[; ;main.c: 60:     }
+"45
+[; ;main.c: 45:         LATDbits.LATD0 = !LATDbits.LATD0;
+[e = . . _LATDbits 0 0 -> -> ! != -> . . _LATDbits 0 0 `i -> 0 `i `i `uc ]
+"46
+[; ;main.c: 46:         _delay((unsigned long)((100)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"47
+[; ;main.c: 47:     }
 }
 [e :U 372 ]
 [e $U 373  ]
 [e :U 374 ]
-"61
-[; ;main.c: 61:     return (0);
+"48
+[; ;main.c: 48:     return (0);
 [e ) -> 0 `i ]
 [e $UE 371  ]
-"62
-[; ;main.c: 62: }
+"49
+[; ;main.c: 49: }
 [e :UE 371 ]
 }
-"68
-[; ;main.c: 68: void Interrupt_External_Init (void)
-[v _Interrupt_External_Init `(v ~T0 @X0 1 ef ]
-"69
-[; ;main.c: 69: {
+"53
+[; ;main.c: 53: void Init_External_Interrupt2 (void)
+[v _Init_External_Interrupt2 `(v ~T0 @X0 1 ef ]
+"54
+[; ;main.c: 54: {
 {
-[e :U _Interrupt_External_Init ]
+[e :U _Init_External_Interrupt2 ]
 [f ]
-"71
-[; ;main.c: 71:     INTCON = 0x00;
+"56
+[; ;main.c: 56:     INTCON = 0x00;
 [e = _INTCON -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:     INTCON2 = 0x00;
+"57
+[; ;main.c: 57:     INTCON2 = 0x00;
 [e = _INTCON2 -> -> 0 `i `uc ]
-"73
-[; ;main.c: 73:     INTCON3 = 0x00;
+"58
+[; ;main.c: 58:     INTCON3 = 0x00;
 [e = _INTCON3 -> -> 0 `i `uc ]
-"74
-[; ;main.c: 74:     RCON = 0x00;
+"59
+[; ;main.c: 59:     RCON = 0x00;
 [e = _RCON -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:     RCONbits.IPEN = 0;
+"62
+[; ;main.c: 62:     RCONbits.IPEN = 0;
 [e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     INTCONbits.GIE = 1;
+"63
+[; ;main.c: 63:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"79
-[; ;main.c: 79:     INTCONbits.INT0IE = 1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"80
-[; ;main.c: 80:     INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"81
-[; ;main.c: 81:     INTCON2bits.INTEDG0 = 1;
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-"84
-[; ;main.c: 84:     TRISBbits.RB0 = 1;
-[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
-"85
-[; ;main.c: 85: }
+"64
+[; ;main.c: 64:     INTCON2bits.INTEDG1 = 1;
+[e = . . _INTCON2bits 1 5 -> -> 1 `i `uc ]
+"65
+[; ;main.c: 65:     INTCON3bits.INT1IE = 1;
+[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
+"66
+[; ;main.c: 66:     INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"67
+[; ;main.c: 67: }
 [e :UE 375 ]
 }
-"87
-[; ;main.c: 87: void Internal_Oscillator_Init (void)
-[v _Internal_Oscillator_Init `(v ~T0 @X0 1 ef ]
-"88
-[; ;main.c: 88: {
+"69
+[; ;main.c: 69: void Init_Gpio_System (void)
+[v _Init_Gpio_System `(v ~T0 @X0 1 ef ]
+"70
+[; ;main.c: 70: {
 {
-[e :U _Internal_Oscillator_Init ]
+[e :U _Init_Gpio_System ]
 [f ]
-"90
-[; ;main.c: 90:     OSCCON = 0x00;
-[e = _OSCCON -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93:     OSCCONbits.IRCF = 0b111;
-[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-"94
-[; ;main.c: 94:     OSCCONbits.SCS = 0b10;
-[e = . . _OSCCONbits 0 0 -> -> 2 `i `uc ]
-"95
-[; ;main.c: 95: }
+"72
+[; ;main.c: 72:     TRISDbits.RD0 = 0;
+[e = . . _TRISDbits 1 0 -> -> 0 `i `uc ]
+"73
+[; ;main.c: 73:     TRISDbits.RD1 = 0;
+[e = . . _TRISDbits 1 1 -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:     TRISBbits.RB1 = 1;
+[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
+"76
+[; ;main.c: 76: }
 [e :UE 376 ]
+}
+"77
+[; ;main.c: 77: void Init_Internal_Oscillator (void)
+[v _Init_Internal_Oscillator `(v ~T0 @X0 1 ef ]
+"78
+[; ;main.c: 78: {
+{
+[e :U _Init_Internal_Oscillator ]
+[f ]
+"80
+[; ;main.c: 80:     OSCCON = 0x00;
+[e = _OSCCON -> -> 0 `i `uc ]
+"83
+[; ;main.c: 83:     OSCCONbits.IRCF = 0b111;
+[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
+"84
+[; ;main.c: 84:     OSCCONbits.SCS = 0b11;
+[e = . . _OSCCONbits 0 0 -> -> 3 `i `uc ]
+"85
+[; ;main.c: 85: }
+[e :UE 377 ]
 }
