@@ -7,7 +7,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./FM_LCD16X2_Easy.h: 102: void FM_Lcd_Easy_Init (void);
 [v _FM_Lcd_Easy_Init `(v ~T0 @X0 0 ef ]
 "36 main.c
-[; ;main.c: 36:     FM_Lcd_Set_Cursor(ROW_2, COL_1);
+[; ;main.c: 36:     FM_Lcd_Set_Cursor(ROW_2, COL_5);
 [c E3510 0 1 .. ]
 [n E3510 . ROW_1 ROW_2  ]
 [c E3514 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 .. ]
@@ -630,8 +630,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 35:     FM_Lcd_Easy_Init();
 [e ( _FM_Lcd_Easy_Init ..  ]
 "36
-[; ;main.c: 36:     FM_Lcd_Set_Cursor(ROW_2, COL_1);
-[e ( _FM_Lcd_Set_Cursor (2 , . `E3510 1 . `E3514 0 ]
+[; ;main.c: 36:     FM_Lcd_Set_Cursor(ROW_2, COL_5);
+[e ( _FM_Lcd_Set_Cursor (2 , . `E3510 1 . `E3514 4 ]
 "37
 [; ;main.c: 37:     FM_Lcd_Send_String("HOLA");
 [e ( _FM_Lcd_Send_String (1 :s 1C ]
