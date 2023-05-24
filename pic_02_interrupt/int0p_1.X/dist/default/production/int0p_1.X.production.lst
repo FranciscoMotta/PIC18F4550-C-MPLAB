@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
-                                                                                               Wed May 24 16:28:00 2023
+                                                                                               Wed May 24 16:50:49 2023
 
 Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
      1                           	processor	18F4550
@@ -116,7 +116,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    102 ;;
    103 ;; *************** function _main *****************
    104 ;; Defined at:
-   105 ;;		line 57 in file "main.c"
+   105 ;;		line 61 in file "main.c"
    106 ;; Parameters:    Size  Location     Type
    107 ;;		None
    108 ;; Auto vars:     Size  Location     Type
@@ -151,17 +151,17 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    137   00005A                     _main:
    138                           	callstack 28
    139   00005A                     
-   140                           ;main.c: 60:     Init_Internal_Oscillator();
+   140                           ;main.c: 64:     Init_Internal_Oscillator();
    141   00005A  EC81  F000         	call	_Init_Internal_Oscillator	;wreg free
    142   00005E                     
-   143                           ;main.c: 62:     Init_Gpio_System();
+   143                           ;main.c: 66:     Init_Gpio_System();
    144   00005E  EC89  F000         	call	_Init_Gpio_System	;wreg free
    145   000062                     
-   146                           ;main.c: 64:     Init_External_Interrupt();
+   146                           ;main.c: 68:     Init_External_Interrupt();
    147   000062  EC6E  F000         	call	_Init_External_Interrupt	;wreg free
    148   000066                     l793:
    149                           
-   150                           ;main.c: 66:     {;main.c: 67:         LATDbits.LATD2 = !LATDbits.LATD2;
+   150                           ;main.c: 70:     {;main.c: 71:         LATDbits.LATD2 = !LATDbits.LATD2;
    151   000066  A48C               	btfss	140,2,c	;volatile
    152   000068  EF38  F000         	goto	u71
    153   00006C  EF3C  F000         	goto	u70
@@ -180,7 +180,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    166   000084  1802               	xorwf	??_main^0,w,c
    167   000086  6E8C               	movwf	140,c	;volatile
    168   000088                     
-   169                           ;main.c: 68:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
+   169                           ;main.c: 72:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
    170   000088  0E03               	movlw	3
    171   00008A  6E03               	movwf	(??_main+1)^0,c
    172   00008C  0E8A               	movlw	138
@@ -200,7 +200,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    186                           
    187 ;; *************** function _Init_Internal_Oscillator *****************
    188 ;; Defined at:
-   189 ;;		line 113 in file "main.c"
+   189 ;;		line 117 in file "main.c"
    190 ;; Parameters:    Size  Location     Type
    191 ;;		None
    192 ;; Auto vars:     Size  Location     Type
@@ -234,18 +234,18 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    220   000102                     _Init_Internal_Oscillator:
    221                           	callstack 28
    222   000102                     
-   223                           ;main.c: 116:     OSCCON = 0x00;
+   223                           ;main.c: 120:     OSCCON = 0x00;
    224   000102  0E00               	movlw	0
    225   000104  6ED3               	movwf	211,c	;volatile
    226   000106                     
-   227                           ;main.c: 119:     OSCCONbits.IDLEN = 1;
+   227                           ;main.c: 123:     OSCCONbits.IDLEN = 1;
    228   000106  8ED3               	bsf	211,7,c	;volatile
    229                           
-   230                           ;main.c: 120:     OSCCONbits.IRCF = 0b111;
+   230                           ;main.c: 124:     OSCCONbits.IRCF = 0b111;
    231   000108  0E70               	movlw	112
    232   00010A  12D3               	iorwf	211,f,c	;volatile
    233                           
-   234                           ;main.c: 121:     OSCCONbits.SCS = 0b11;
+   234                           ;main.c: 125:     OSCCONbits.SCS = 0b11;
    235   00010C  0E03               	movlw	3
    236   00010E  12D3               	iorwf	211,f,c	;volatile
    237   000110  0012               	return		;funcret
@@ -254,7 +254,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    240                           
    241 ;; *************** function _Init_Gpio_System *****************
    242 ;; Defined at:
-   243 ;;		line 101 in file "main.c"
+   243 ;;		line 105 in file "main.c"
    244 ;; Parameters:    Size  Location     Type
    245 ;;		None
    246 ;; Auto vars:     Size  Location     Type
@@ -288,19 +288,19 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    274   000112                     _Init_Gpio_System:
    275                           	callstack 28
    276   000112                     
-   277                           ;main.c: 104:     TRISDbits.RD0 = 0;
+   277                           ;main.c: 108:     TRISDbits.RD0 = 0;
    278   000112  9095               	bcf	149,0,c	;volatile
    279                           
-   280                           ;main.c: 105:     TRISDbits.RD1 = 0;
+   280                           ;main.c: 109:     TRISDbits.RD1 = 0;
    281   000114  9295               	bcf	149,1,c	;volatile
    282                           
-   283                           ;main.c: 106:     TRISDbits.RD2 = 0;
+   283                           ;main.c: 110:     TRISDbits.RD2 = 0;
    284   000116  9495               	bcf	149,2,c	;volatile
    285                           
-   286                           ;main.c: 109:     TRISBbits.RB0 = 1;
+   286                           ;main.c: 113:     TRISBbits.RB0 = 1;
    287   000118  8093               	bsf	147,0,c	;volatile
    288                           
-   289                           ;main.c: 110:     TRISBbits.RB1 = 1;
+   289                           ;main.c: 114:     TRISBbits.RB1 = 1;
    290   00011A  8293               	bsf	147,1,c	;volatile
    291   00011C  0012               	return		;funcret
    292   00011E                     __end_of_Init_Gpio_System:
@@ -308,7 +308,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    294                           
    295 ;; *************** function _Init_External_Interrupt *****************
    296 ;; Defined at:
-   297 ;;		line 76 in file "main.c"
+   297 ;;		line 80 in file "main.c"
    298 ;; Parameters:    Size  Location     Type
    299 ;;		None
    300 ;; Auto vars:     Size  Location     Type
@@ -342,50 +342,50 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    328   0000DC                     _Init_External_Interrupt:
    329                           	callstack 28
    330   0000DC                     
-   331                           ;main.c: 79:     RCON = 0x00;
+   331                           ;main.c: 83:     RCON = 0x00;
    332   0000DC  0E00               	movlw	0
    333   0000DE  6ED0               	movwf	208,c	;volatile
    334                           
-   335                           ;main.c: 80:     INTCON = 0x00;
+   335                           ;main.c: 84:     INTCON = 0x00;
    336   0000E0  0E00               	movlw	0
    337   0000E2  6EF2               	movwf	242,c	;volatile
    338                           
-   339                           ;main.c: 81:     INTCON2 = 0x00;
+   339                           ;main.c: 85:     INTCON2 = 0x00;
    340   0000E4  0E00               	movlw	0
    341   0000E6  6EF1               	movwf	241,c	;volatile
    342                           
-   343                           ;main.c: 82:     INTCON3 = 0x00;
+   343                           ;main.c: 86:     INTCON3 = 0x00;
    344   0000E8  0E00               	movlw	0
    345   0000EA  6EF0               	movwf	240,c	;volatile
    346   0000EC                     
-   347                           ;main.c: 85:     RCONbits.IPEN = 1;
+   347                           ;main.c: 89:     RCONbits.IPEN = 1;
    348   0000EC  8ED0               	bsf	208,7,c	;volatile
    349   0000EE                     
-   350                           ;main.c: 86:     INTCONbits.GIEH = 1;
+   350                           ;main.c: 90:     INTCONbits.GIEH = 1;
    351   0000EE  8EF2               	bsf	242,7,c	;volatile
    352   0000F0                     
-   353                           ;main.c: 87:     INTCONbits.GIEL = 1;
+   353                           ;main.c: 91:     INTCONbits.GIEL = 1;
    354   0000F0  8CF2               	bsf	242,6,c	;volatile
    355   0000F2                     
-   356                           ;main.c: 90:     INTCONbits.INT0IE = 1;
+   356                           ;main.c: 94:     INTCONbits.INT0IE = 1;
    357   0000F2  88F2               	bsf	242,4,c	;volatile
    358   0000F4                     
-   359                           ;main.c: 91:     INTCONbits.INT0IF = 0;
+   359                           ;main.c: 95:     INTCONbits.INT0IF = 0;
    360   0000F4  92F2               	bcf	242,1,c	;volatile
    361   0000F6                     
-   362                           ;main.c: 92:     INTCON2bits.INTEDG0 = 1;
+   362                           ;main.c: 96:     INTCON2bits.INTEDG0 = 1;
    363   0000F6  8CF1               	bsf	241,6,c	;volatile
    364   0000F8                     
-   365                           ;main.c: 95:     INTCON3bits.INT1IE = 1;
+   365                           ;main.c: 99:     INTCON3bits.INT1IE = 1;
    366   0000F8  86F0               	bsf	240,3,c	;volatile
    367   0000FA                     
-   368                           ;main.c: 96:     INTCON3bits.INT1IF = 0;
+   368                           ;main.c: 100:     INTCON3bits.INT1IF = 0;
    369   0000FA  90F0               	bcf	240,0,c	;volatile
    370   0000FC                     
-   371                           ;main.c: 97:     INTCON2bits.INTEDG1 = 1;
+   371                           ;main.c: 101:     INTCON2bits.INTEDG1 = 1;
    372   0000FC  8AF1               	bsf	241,5,c	;volatile
    373   0000FE                     
-   374                           ;main.c: 98:     INTCON3bits.INT1IP = 0;
+   374                           ;main.c: 102:     INTCON3bits.INT1IP = 0;
    375   0000FE  9CF0               	bcf	240,6,c	;volatile
    376   000100  0012               	return		;funcret
    377   000102                     __end_of_Init_External_Interrupt:
@@ -393,7 +393,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    379                           
    380 ;; *************** function _INT1_ISR *****************
    381 ;; Defined at:
-   382 ;;		line 35 in file "main.c"
+   382 ;;		line 39 in file "main.c"
    383 ;; Parameters:    Size  Location     Type
    384 ;;		None
    385 ;; Auto vars:     Size  Location     Type
@@ -431,7 +431,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    417   000018  8004               	bsf	int$flags,0,c	;set compiler interrupt flag (level 1)
    418   00001A  CFE0 F001          	movff	bsr,??_INT1_ISR
    419   00001E                     
-   420                           ;main.c: 38:     if(INTCON3bits.INT1IE && INTCON3bits.INT1IF)
+   420                           ;main.c: 42:     if(INTCON3bits.INT1IE && INTCON3bits.INT1IF)
    421   00001E  A6F0               	btfss	240,3,c	;volatile
    422   000020  EF14  F000         	goto	i1u4_21
    423   000024  EF16  F000         	goto	i1u4_20
@@ -445,10 +445,10 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    431   000036  EF27  F000         	goto	i1l54
    432   00003A                     i1u5_20:
    433   00003A                     
-   434                           ;main.c: 39:     {;main.c: 41:         LATDbits.LATD0 = 0;
+   434                           ;main.c: 43:     {;main.c: 45:         LATDbits.LATD0 = 0;
    435   00003A  908C               	bcf	140,0,c	;volatile
    436                           
-   437                           ;main.c: 42:         LATDbits.LATD1 = 1;
+   437                           ;main.c: 46:         LATDbits.LATD1 = 1;
    438   00003C  828C               	bsf	140,1,c	;volatile
    439   00003E                     i1l51:
    440   00003E  B281               	btfsc	129,1,c	;volatile
@@ -458,7 +458,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    444   000048  EF1F  F000         	goto	i1l51
    445   00004C                     i1u6_20:
    446   00004C                     
-   447                           ;main.c: 46:         INTCON3bits.INT1IF = 0;
+   447                           ;main.c: 50:         INTCON3bits.INT1IF = 0;
    448   00004C  90F0               	bcf	240,0,c	;volatile
    449   00004E                     i1l54:
    450   00004E  C001  FFE0         	movff	??_INT1_ISR,bsr
@@ -469,7 +469,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    455                           
    456 ;; *************** function _INT0_ISR *****************
    457 ;; Defined at:
-   458 ;;		line 20 in file "main.c"
+   458 ;;		line 24 in file "main.c"
    459 ;; Parameters:    Size  Location     Type
    460 ;;		None
    461 ;; Auto vars:     Size  Location     Type
@@ -513,7 +513,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    499                           	callstack 28
    500   0000A6  0006               	pop		; remove dummy address from shadow register refresh
    501   0000A8                     
-   502                           ;main.c: 23:     if(INTCONbits.INT0IE && INTCONbits.INT0IF)
+   502                           ;main.c: 27:     if(INTCONbits.INT0IE && INTCONbits.INT0IF)
    503   0000A8  A8F2               	btfss	242,4,c	;volatile
    504   0000AA  EF59  F000         	goto	i2u1_41
    505   0000AE  EF5B  F000         	goto	i2u1_40
@@ -527,10 +527,10 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    513   0000C0  EF6C  F000         	goto	i2l45
    514   0000C4                     i2u2_40:
    515   0000C4                     
-   516                           ;main.c: 24:     {;main.c: 26:         LATDbits.LATD0 = 1;
+   516                           ;main.c: 28:     {;main.c: 30:         LATDbits.LATD0 = 1;
    517   0000C4  808C               	bsf	140,0,c	;volatile
    518                           
-   519                           ;main.c: 27:         LATDbits.LATD1 = 0;
+   519                           ;main.c: 31:         LATDbits.LATD1 = 0;
    520   0000C6  928C               	bcf	140,1,c	;volatile
    521   0000C8                     i2l42:
    522   0000C8  B081               	btfsc	129,0,c	;volatile
@@ -540,7 +540,7 @@ Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1
    526   0000D2  EF64  F000         	goto	i2l42
    527   0000D6                     i2u3_40:
    528   0000D6                     
-   529                           ;main.c: 31:         INTCONbits.INT0IF = 0;
+   529                           ;main.c: 35:         INTCONbits.INT0IF = 0;
    530   0000D6  92F2               	bcf	242,1,c	;volatile
    531   0000D8                     i2l45:
    532   0000D8  9204               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
@@ -999,7 +999,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
-Symbol Table                                                                                   Wed May 24 16:28:00 2023
+Symbol Table                                                                                   Wed May 24 16:50:49 2023
 
                               l71 0110                                l65 0100                                l68 011C  
                               u70 0078                                u71 0070                                u88 007A  

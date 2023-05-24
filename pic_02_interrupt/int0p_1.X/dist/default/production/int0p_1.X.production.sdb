@@ -27,17 +27,17 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"20 C:\Users\Administrador\Desktop\PIC18F4550-C-MPLAB\pic_02_interrupt\int0p_1.X\main.c
+"24 C:\Users\Administrador\Desktop\PIC18F4550-C-MPLAB\pic_02_interrupt\int0p_1.X\main.c
 [v _INT0_ISR INT0_ISR `IIH(v  1 e 1 0 ]
-"35
+"39
 [v _INT1_ISR INT1_ISR `IIL(v  1 e 1 0 ]
-"57
+"61
 [v _main main `(i  1 e 2 0 ]
-"76
+"80
 [v _Init_External_Interrupt Init_External_Interrupt `(v  1 e 1 0 ]
-"101
+"105
 [v _Init_Gpio_System Init_Gpio_System `(v  1 e 1 0 ]
-"113
+"117
 [v _Init_Internal_Oscillator Init_Internal_Oscillator `(v  1 e 1 0 ]
 [s S113 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -246,33 +246,33 @@
 ]
 [u S46 . 1 `S24 1 . 1 0 `S33 1 . 1 0 `S42 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES46  1 e 1 @4082 ]
-"57 C:\Users\Administrador\Desktop\PIC18F4550-C-MPLAB\pic_02_interrupt\int0p_1.X\main.c
+"61 C:\Users\Administrador\Desktop\PIC18F4550-C-MPLAB\pic_02_interrupt\int0p_1.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"71
+"75
 } 0
-"113
+"117
 [v _Init_Internal_Oscillator Init_Internal_Oscillator `(v  1 e 1 0 ]
 {
-"122
+"126
 } 0
-"101
+"105
 [v _Init_Gpio_System Init_Gpio_System `(v  1 e 1 0 ]
 {
-"111
+"115
 } 0
-"76
+"80
 [v _Init_External_Interrupt Init_External_Interrupt `(v  1 e 1 0 ]
 {
-"99
+"103
 } 0
-"35
+"39
 [v _INT1_ISR INT1_ISR `IIL(v  1 e 1 0 ]
 {
-"48
+"52
 } 0
-"20
+"24
 [v _INT0_ISR INT0_ISR `IIH(v  1 e 1 0 ]
 {
-"33
+"37
 } 0

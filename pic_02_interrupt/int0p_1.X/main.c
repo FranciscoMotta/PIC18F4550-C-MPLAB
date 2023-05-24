@@ -15,6 +15,10 @@
 #include <stdbool.h>
 #include "system_config.h"
 
+/* Macros */
+
+#define dms(x)      __delay_ms(x)
+
 /* Rutina de servicio a interrupciones */
 
 void __interrupt(high_priority) INT0_ISR (void)
@@ -65,7 +69,7 @@ int main(void)
     while(true)
     {
         LATDbits.LATD2 = !LATDbits.LATD2;
-        __delay_ms(250);
+        dms(250);
     }
     return (EXIT_SUCCESS);
 }
