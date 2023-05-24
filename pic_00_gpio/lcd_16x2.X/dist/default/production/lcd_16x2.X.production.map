@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\lcd_16x2.X.production.sym \
   --cmf=dist/default/production\lcd_16x2.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\jmott\AppData\Local\Temp\xcAshkk.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\jmott\AppData\Local\Temp\xcAsatc.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/lcd_16x2.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=060h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\jmott\AppData\Local\Temp\xcAshkk.o \
+  C:\Users\jmott\AppData\Local\Temp\xcAsatc.o \
   dist/default/production\lcd_16x2.X.production.o 
 
 Object code version is 3.11
@@ -32,7 +32,7 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\jmott\AppData\Local\Temp\xcAshkk.o
+C:\Users\jmott\AppData\Local\Temp\xcAsatc.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  0        0        4        0       0

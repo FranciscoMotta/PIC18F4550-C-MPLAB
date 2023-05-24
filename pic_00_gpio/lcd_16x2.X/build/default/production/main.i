@@ -5970,7 +5970,7 @@ int main(void)
 {
     Init_Led_System();
     FM_Lcd_Easy_Init();
-    FM_Lcd_Set_Cursor(ROW_2, COL_1);
+    FM_Lcd_Set_Cursor(ROW_2, COL_5);
     FM_Lcd_Send_String("HOLA");
     while(1)
     {
