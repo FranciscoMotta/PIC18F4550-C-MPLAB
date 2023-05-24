@@ -1,0 +1,5 @@
+En siguiente código trata acerca de la configuración del int0 como interrupción de alta prioridad 
+mientras que la int1 será configurada como de baja prioridad. Es decir, el pic atenderá primero al
+int0 en el caso de que int0 e int1 ocurran al mismo tiempo. Del mismo modo, si ocurre primero int1
+y mientras desarrolla la rutina de servicio a interrupción ocurre int0, el pic dejará de atender al
+int1 y pasará a atender al int0.
