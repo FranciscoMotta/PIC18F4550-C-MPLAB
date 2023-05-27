@@ -100,11 +100,11 @@ void Lcd_Shift_Text (_right_left_mov_t dir)
 
 void Lcd_Save_Character (_dir_to_save_t dir, char *caracter)
 {
-    Lcd_Send_Command(0X40 + dir);
+    Lcd_Send_Command(0X40 + dir); // <- ENTRAMOS A MODO ESCRITURA EN CGDRAM
     uint8_t index;
     for(index = 0 ; index < 8 ; index++)
     {
-        Lcd_Send_Character(caracter[index]);
+        Lcd_Send_Character(caracter[index]); // <- ESCRIBIMOS EN LA CGDRAM
     }
-    Lcd_Send_Command(0x80);
+    Lcd_Send_Command(0x80); // <- PASAMOS A MODO LECTURA DEL CGDRAM
 }
