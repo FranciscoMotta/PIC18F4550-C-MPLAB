@@ -5933,7 +5933,51 @@ char *tempnam(const char *, const char *);
 # 16 "main.c" 2
 
 # 1 "./lcd_16x2.h" 1
-# 69 "./lcd_16x2.h"
+# 61 "./lcd_16x2.h"
+typedef enum
+{
+    ROW_1 = 0x80,
+    ROW_2 = 0xC0
+}_row_t;
+
+typedef enum
+{
+    COL_1 = 0,
+    COL_2,
+    COL_3,
+    COL_4,
+    COL_5,
+    COL_6,
+    COL_7,
+    COL_8,
+    COL_9,
+    COL_10,
+    COL_11,
+    COL_12,
+    COL_13,
+    COL_14,
+    COL_15,
+    COL_16
+}_column_t;
+
+typedef enum
+{
+    SHIFT_RIGHT = 0,
+    SHIFT_LEFT
+}_right_left_mov_t;
+
+typedef enum
+{
+    dir_0 = 0,
+    dir_1 = 8,
+    dir_2 = 16,
+    dir_3 = 24,
+    dir_4 = 32,
+    dir_5 = 40,
+    dir_6 = 48,
+    dir_7 = 56
+}_dir_to_save_t;
+# 115 "./lcd_16x2.h"
 void Init_Lcd_Gpio (void);
 void Lcd_Send_Nibble (char byte);
 void Lcd_Send_Command (char command);
@@ -5942,8 +5986,16 @@ _Bool Lcd_Driver_Busy (void);
 
 
 void Init_Lcd_16x2 (void);
+void Lcd_Set_Cursor_XY (_row_t fila, _column_t columna);
+void Lcd_Send_String (char *cadena);
+void Lcd_Shift_Text (_right_left_mov_t dir);
+void Lcd_Save_Character (_dir_to_save_t dir, char *caracter);
 # 17 "main.c" 2
 
+
+
+
+char caracter[] = {0x4, 0xE, 0xE, 0x1F, 0x4, 0x4, 0xE, 0x0};
 
 
 
@@ -5958,8 +6010,14 @@ int main(void)
 
     Init_Lcd_16x2();
 
-    Lcd_Send_Command(0x82);
-    Lcd_Send_Character('A');
+    Lcd_Save_Character(dir_0, caracter);
+
+    Lcd_Set_Cursor_XY(ROW_1, COL_1);
+
+    Lcd_Send_String("HOLI");
+
+    Lcd_Set_Cursor_XY(ROW_2, COL_2);
+    Lcd_Send_Character(0);
 
     while(1)
     {

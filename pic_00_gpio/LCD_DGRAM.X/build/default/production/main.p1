@@ -1,16 +1,32 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"21 main.c
-[; ;main.c: 21: void Init_Internal_Oscillator (void);
+"25 main.c
+[; ;main.c: 25: void Init_Internal_Oscillator (void);
 [v _Init_Internal_Oscillator `(v ~T0 @X0 0 ef ]
-"76 ./lcd_16x2.h
-[; ;./lcd_16x2.h: 76: void Init_Lcd_16x2 (void);
+"122 ./lcd_16x2.h
+[; ;./lcd_16x2.h: 122: void Init_Lcd_16x2 (void);
 [v _Init_Lcd_16x2 `(v ~T0 @X0 0 ef ]
-"71
-[; ;./lcd_16x2.h: 71: void Lcd_Send_Command (char command);
-[v _Lcd_Send_Command `(v ~T0 @X0 0 ef1`uc ]
-"72
-[; ;./lcd_16x2.h: 72: void Lcd_Send_Character (char character);
+"36 main.c
+[; ;main.c: 36:     Lcd_Save_Character(dir_0, caracter);
+[c E3548 0 8 16 24 32 40 48 56 .. ]
+[n E3548 . dir_0 dir_1 dir_2 dir_3 dir_4 dir_5 dir_6 dir_7  ]
+"126 ./lcd_16x2.h
+[; ;./lcd_16x2.h: 126: void Lcd_Save_Character (_dir_to_save_t dir, char *caracter);
+[v _Lcd_Save_Character `(v ~T0 @X0 0 ef2`E3548`*uc ]
+"38 main.c
+[; ;main.c: 38:     Lcd_Set_Cursor_XY(ROW_1, COL_1);
+[c E3522 128 192 .. ]
+[n E3522 . ROW_1 ROW_2  ]
+[c E3526 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
+[n E3526 . COL_1 COL_2 COL_3 COL_4 COL_5 COL_6 COL_7 COL_8 COL_9 COL_10 COL_11 COL_12 COL_13 COL_14 COL_15 COL_16  ]
+"123 ./lcd_16x2.h
+[; ;./lcd_16x2.h: 123: void Lcd_Set_Cursor_XY (_row_t fila, _column_t columna);
+[v _Lcd_Set_Cursor_XY `(v ~T0 @X0 0 ef2`E3522`E3526 ]
+"124
+[; ;./lcd_16x2.h: 124: void Lcd_Send_String (char *cadena);
+[v _Lcd_Send_String `(v ~T0 @X0 0 ef1`*uc ]
+"118
+[; ;./lcd_16x2.h: 118: void Lcd_Send_Character (char character);
 [v _Lcd_Send_Character `(v ~T0 @X0 0 ef1`uc ]
 "7987 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7987: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
@@ -616,65 +632,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3  =  OFF       ]
 "75
 [p x EBTRB  =  OFF       ]
+"21 main.c
+[; ;main.c: 21: char caracter[] = {0x4, 0xE, 0xE, 0x1F, 0x4, 0x4, 0xE, 0x0};
+[v _caracter `uc ~T0 @X0 -> 8 `i e ]
+[i _caracter
+:U ..
+-> -> 4 `i `uc
+-> -> 14 `i `uc
+-> -> 14 `i `uc
+-> -> 31 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 14 `i `uc
+-> -> 0 `i `uc
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"25 main.c
-[; ;main.c: 25: int main(void)
+"29
+[; ;main.c: 29: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"26
-[; ;main.c: 26: {
+"30
+[; ;main.c: 30: {
 {
 [e :U _main ]
 [f ]
-"28
-[; ;main.c: 28:     Init_Internal_Oscillator();
-[e ( _Init_Internal_Oscillator ..  ]
-"30
-[; ;main.c: 30:     Init_Lcd_16x2();
-[e ( _Init_Lcd_16x2 ..  ]
 "32
-[; ;main.c: 32:     Lcd_Send_Command(0x82);
-[e ( _Lcd_Send_Command (1 -> -> 130 `i `uc ]
-"33
-[; ;main.c: 33:     Lcd_Send_Character('A');
-[e ( _Lcd_Send_Character (1 -> -> 65 `ui `uc ]
-"35
-[; ;main.c: 35:     while(1)
-[e :U 371 ]
+[; ;main.c: 32:     Init_Internal_Oscillator();
+[e ( _Init_Internal_Oscillator ..  ]
+"34
+[; ;main.c: 34:     Init_Lcd_16x2();
+[e ( _Init_Lcd_16x2 ..  ]
 "36
-[; ;main.c: 36:     {
-{
+[; ;main.c: 36:     Lcd_Save_Character(dir_0, caracter);
+[e ( _Lcd_Save_Character (2 , . `E3548 0 &U _caracter ]
 "38
-[; ;main.c: 38:     }
+[; ;main.c: 38:     Lcd_Set_Cursor_XY(ROW_1, COL_1);
+[e ( _Lcd_Set_Cursor_XY (2 , . `E3522 0 . `E3526 0 ]
+"40
+[; ;main.c: 40:     Lcd_Send_String("HOLI");
+[e ( _Lcd_Send_String (1 :s 1C ]
+"42
+[; ;main.c: 42:     Lcd_Set_Cursor_XY(ROW_2, COL_2);
+[e ( _Lcd_Set_Cursor_XY (2 , . `E3522 1 . `E3526 1 ]
+"43
+[; ;main.c: 43:     Lcd_Send_Character(0);
+[e ( _Lcd_Send_Character (1 -> -> 0 `i `uc ]
+"45
+[; ;main.c: 45:     while(1)
+[e :U 371 ]
+"46
+[; ;main.c: 46:     {
+{
+"48
+[; ;main.c: 48:     }
 }
 [e :U 370 ]
 [e $U 371  ]
 [e :U 372 ]
-"39
-[; ;main.c: 39:     return (0);
+"49
+[; ;main.c: 49:     return (0);
 [e ) -> 0 `i ]
 [e $UE 369  ]
-"40
-[; ;main.c: 40: }
+"50
+[; ;main.c: 50: }
 [e :UE 369 ]
 }
-"44
-[; ;main.c: 44: void Init_Internal_Oscillator (void)
+"54
+[; ;main.c: 54: void Init_Internal_Oscillator (void)
 [v _Init_Internal_Oscillator `(v ~T0 @X0 1 ef ]
-"45
-[; ;main.c: 45: {
+"55
+[; ;main.c: 55: {
 {
 [e :U _Init_Internal_Oscillator ]
 [f ]
-"47
-[; ;main.c: 47:     OSCCON = 0x00;
+"57
+[; ;main.c: 57:     OSCCON = 0x00;
 [e = _OSCCON -> -> 0 `i `uc ]
-"49
-[; ;main.c: 49:     OSCCONbits.IRCF = 0b111;
+"59
+[; ;main.c: 59:     OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-"50
-[; ;main.c: 50:     OSCCONbits.SCS = 0B11;
+"60
+[; ;main.c: 60:     OSCCONbits.SCS = 0B11;
 [e = . . _OSCCONbits 0 0 -> -> 3 `i `uc ]
-"51
-[; ;main.c: 51: }
+"61
+[; ;main.c: 61: }
 [e :UE 373 ]
 }
+[a 1C 72 79 76 73 0 ]

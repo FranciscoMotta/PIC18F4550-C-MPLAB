@@ -5790,7 +5790,51 @@ unsigned char __t3rd16on(void);
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
 # 81 "./system_config.h" 2
 # 12 "./lcd_16x2.h" 2
-# 69 "./lcd_16x2.h"
+# 61 "./lcd_16x2.h"
+typedef enum
+{
+    ROW_1 = 0x80,
+    ROW_2 = 0xC0
+}_row_t;
+
+typedef enum
+{
+    COL_1 = 0,
+    COL_2,
+    COL_3,
+    COL_4,
+    COL_5,
+    COL_6,
+    COL_7,
+    COL_8,
+    COL_9,
+    COL_10,
+    COL_11,
+    COL_12,
+    COL_13,
+    COL_14,
+    COL_15,
+    COL_16
+}_column_t;
+
+typedef enum
+{
+    SHIFT_RIGHT = 0,
+    SHIFT_LEFT
+}_right_left_mov_t;
+
+typedef enum
+{
+    dir_0 = 0,
+    dir_1 = 8,
+    dir_2 = 16,
+    dir_3 = 24,
+    dir_4 = 32,
+    dir_5 = 40,
+    dir_6 = 48,
+    dir_7 = 56
+}_dir_to_save_t;
+# 115 "./lcd_16x2.h"
 void Init_Lcd_Gpio (void);
 void Lcd_Send_Nibble (char byte);
 void Lcd_Send_Command (char command);
@@ -5799,6 +5843,10 @@ _Bool Lcd_Driver_Busy (void);
 
 
 void Init_Lcd_16x2 (void);
+void Lcd_Set_Cursor_XY (_row_t fila, _column_t columna);
+void Lcd_Send_String (char *cadena);
+void Lcd_Shift_Text (_right_left_mov_t dir);
+void Lcd_Save_Character (_dir_to_save_t dir, char *caracter);
 # 3 "lcd_16x2.c" 2
 
 
@@ -5806,7 +5854,7 @@ void Init_Lcd_16x2 (void);
 
 void Init_Lcd_Gpio (void)
 {
-    TRISD = 0x0F;
+    TRISD = 0x00;
     TRISCbits.RC0 = 0;
     TRISCbits.RC1 = 0;
     TRISCbits.RC2 = 0;
@@ -5860,9 +5908,51 @@ void Init_Lcd_16x2 (void)
     Init_Lcd_Gpio();
     LATCbits.LATC2 = 0;;
 
-    Lcd_Send_Nibble(0x01);
-    Lcd_Send_Nibble(0x02);
-    Lcd_Send_Nibble(0x28);
-    Lcd_Send_Nibble(0x07);
-    Lcd_Send_Nibble(0x0C);
+    Lcd_Send_Command(0x01);
+    Lcd_Send_Command(0x02);
+    Lcd_Send_Command(0x28);
+    Lcd_Send_Command(0x06);
+    Lcd_Send_Command(0x0C);
+    Lcd_Send_Command(0x02);
+}
+
+void Lcd_Set_Cursor_XY (_row_t fila, _column_t columna)
+{
+    Lcd_Send_Command(fila + columna);
+}
+
+void Lcd_Send_String (char *cadena)
+{
+    uint16_t string_index = 0;
+    while(cadena[string_index] != '\0')
+    {
+        Lcd_Send_Character(cadena[string_index]);
+        string_index++;
+    }
+}
+
+void Lcd_Shift_Text (_right_left_mov_t dir)
+{
+    volatile uint8_t shift_com = 0x10;
+    if(dir == SHIFT_RIGHT)
+    {
+        shift_com |= (1 << 2);
+    }
+    else
+    {
+        __nop();
+    }
+    shift_com ^= (1 << 3);
+    Lcd_Send_Command(shift_com);
+}
+
+void Lcd_Save_Character (_dir_to_save_t dir, char *caracter)
+{
+    Lcd_Send_Command(0X40 + dir);
+    uint8_t index;
+    for(index = 0 ; index < 8 ; index++)
+    {
+        Lcd_Send_Character(caracter[index]);
+    }
+    Lcd_Send_Command(0x80);
 }
