@@ -24,7 +24,7 @@ void __interrupt() TMR0_ISR (void)
         /* Rutina */
         LATBbits.LATB1 = !LATBbits.LATB1;
         /* Cargamos el dato de comparación */
-        TMR0L = 10;
+        TMR0L = 245;
         /* Limpiamos la bandera */
         INTCONbits.TMR0IF = 0;
     }
@@ -53,7 +53,7 @@ int main(void)
     {
         /* Hacemos parpadear un led */
         LATBbits.LATB0 = !LATBbits.LATB0;
-        __delay_ms(500);
+        __delay_ms(250);
     }
     return EXIT_SUCCESS;
 }
@@ -71,7 +71,8 @@ void Init_Gpio_System (void)
     LATBbits.LATB1 = 0;
     
     /* RA4 como entrada */
-    TRISAbits.RA4 = 1;
+    ADCON1 = 0x0F; // Pines digitales
+    TRISAbits.RA4 = 1; // Entrada
 }
 
 void Init_Timer0_As_Counter (void)
@@ -90,7 +91,7 @@ void Init_Timer0_As_Counter (void)
     /* En este caso, usamos los registros TMR0 para el valor de comparación
      * para este caso quiero que cuente 10 eventos y que llegado a ese 
      * número, se active la interrupción*/
-    TMR0L = 10;
+    TMR0L = 245;
     
     /* Encendemos el timer0 */
     T0CONbits.TMR0ON = 1;
@@ -101,8 +102,8 @@ void Init_Interrupt_Timer0 (void)
     INTCON = 0x00;
     
     /* Configuramos las interrupciones */
-    RCONbits.IPEN = 0; // Sin prioridades
     INTCONbits.GIE = 1; // Interrupciones globales activadas
+    INTCONbits.PEIE = 1; // Interrupciones globales
     INTCONbits.TMR0IE = 1; // Interrupciones del timer0
     INTCONbits.TMR0IF = 0; // Bandera del timer0 apagada
 }
