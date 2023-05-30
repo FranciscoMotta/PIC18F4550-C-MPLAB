@@ -5,7 +5,7 @@
  * Created on 29 de mayo de 2023, 08:37 PM
  */
 
-#define _XTAL_FREQ 8000000UL
+#define _XTAL_FREQ 8000000UL // Frecuencia del cristal
 
 /* Includes */
 
@@ -23,14 +23,14 @@ void __interrupt() TMR0_ISR (void)
     {
         /* Rutina */
         LATBbits.LATB1 = !LATBbits.LATB1;
-        /* Cargamos el dato de comparaci髇 */
+        /* Cargamos el dato de comparaci贸n */
         TMR0L = 245; // Debe ser el complemento para el desborde
         /* Limpiamos la bandera */
         INTCONbits.TMR0IF = 0;
     }
 }
 
-/* Declaraci髇 de funciones */
+/* Declaraci贸n de funciones */
 
 void Init_Internal_Oscillator (void);
 void Init_Interrupt_Timer0 (void);
@@ -58,7 +58,7 @@ int main(void)
     return EXIT_SUCCESS;
 }
 
-/* Definici髇 de funciones */
+/* Definici贸n de funciones */
 
 void Init_Gpio_System (void)
 {
@@ -88,9 +88,9 @@ void Init_Timer0_As_Counter (void)
     T0CONbits.PSA = 1; // Prescaler no asignado
     T0CONbits.T0PS = 0; // < NO IMPORTA!!!
     
-    /* En este caso, usamos los registros TMR0 para el valor de comparaci髇
+    /* En este caso, usamos los registros TMR0 para el valor de comparaci贸n
      * para este caso quiero que cuente 10 eventos y que llegado a ese 
-     * n鷐ero, se active la interrupci髇*/
+     * n煤mero, se active la interrupci贸n*/
     TMR0L = 245; // Debe ser el complemento para el desborde
     
     /* Encendemos el timer0 */
