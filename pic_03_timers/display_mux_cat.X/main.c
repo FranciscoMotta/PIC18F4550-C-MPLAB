@@ -19,6 +19,22 @@
 /* variables globales */
 
 uint8_t timer_counter;
+//                      H             O            L            A
+char mensaje[4] = {~0b00110111, ~0b01111110, ~0b00001110, ~0b01110111};
+
+// Valores de los números decoficados a display de 7 segmentos
+char num_disp[10] = {0b01111110, // 0
+                     0b00110000, // 1
+                     0b01101101, // 2
+                     0b01001111, // 3
+                     0b00100111, // 4
+                     0b01011011, // 5
+                     0b01011111, // 6
+                     0b01000110, // 7
+                     0b01111111, // 8
+                     0b01101111};// 9
+
+uint8_t num_decode[4];
 
 /* Rutina de servicio a interrupciones */
 
@@ -27,7 +43,11 @@ void __interrupt()  TIMER0_ISR (void)
     if(INTCONbits.TMR0IE && INTCONbits.TMR0IF)
     {
         /* Rutina */
-        timer_counter++;
+        if (timer_counter++ == 3) 
+        {
+            timer_counter = 0;
+        }
+
         /* Cargamos el dato al TMR0 */
         TMR0L = 6;
         /* Limpiamos la bandera */
@@ -42,6 +62,10 @@ void Init_Timer0_Interrupt (void);
 void Init_Gpio_System (void);
 void Init_Timer0_As_Timer (void);
 
+/* Funciones de decodificado del DISPLAY */
+
+void decodifica_0000_9999(uint16_t valor);
+
 /* Main */
 int main(void) 
 {
@@ -53,26 +77,32 @@ int main(void)
     Init_Gpio_System();
     /* Configuramos el timer0 como timer */
     Init_Timer0_As_Timer();
+    /* Bucle principal */
     while(true)
     {
         uint8_t mux_control = (timer_counter & 0x03);
-        LATD = (1 << mux_control);
-        switch(mux_control)
-        {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                break;
-        }
+        LATD = ~(1 << mux_control);
+        uint16_t valor = 4550;
+        // < ALGO ESTÁ MAL PENDIENTE DE REVISARLO
+        num_decode[0] = valor / 1000;
+        num_decode[1] = (valor % 1000) / 100;
+        num_decode[2] = ((valor % 1000) % 100) / 10;
+        num_decode[3] = ((valor % 1000) % 100) % 10;
+        LATB = ~num_disp[num_decode[mux_control]];
     }
     return (EXIT_SUCCESS);
 }
 
 /* Definición de funciones */
+
+/*
+ * Nota:
+ * 
+ *      num_decode[0] = valor / 1000;
+ *      num_decode[1] = (valor % 1000) / 100;
+ *      num_decode[2] = ((valor % 1000) % 100) / 10;
+ *      num_decode[3] = ((valor % 1000) % 100) % 10;
+ */
 
 void Init_Timer0_As_Timer (void)
 {
