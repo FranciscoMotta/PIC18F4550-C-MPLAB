@@ -37,7 +37,7 @@ uint16_t calculate_TMR0_val (uint16_t t_ms, prescaler_val_t pres, n_bits_t bits)
 
 int main (void)
 {
-	uint16_t val_cal = calculate_TMR0_val(250, prescaler_8, bits_16);
+	uint16_t val_cal = calculate_TMR0_val(1, prescaler_8, bits_8);
 	printf("El valor del TMR0 es: %i\n", val_cal);
 	uint8_t upper_8, lower_8 = 0;
 	upper_8 = (val_cal & 0xFF00) >> 8;

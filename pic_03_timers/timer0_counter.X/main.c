@@ -24,7 +24,7 @@ void __interrupt() TMR0_ISR (void)
         /* Rutina */
         LATBbits.LATB1 = !LATBbits.LATB1;
         /* Cargamos el dato de comparación */
-        TMR0L = 245;
+        TMR0L = 245; // Debe ser el complemento para el desborde
         /* Limpiamos la bandera */
         INTCONbits.TMR0IF = 0;
     }
@@ -91,7 +91,7 @@ void Init_Timer0_As_Counter (void)
     /* En este caso, usamos los registros TMR0 para el valor de comparación
      * para este caso quiero que cuente 10 eventos y que llegado a ese 
      * número, se active la interrupción*/
-    TMR0L = 245;
+    TMR0L = 245; // Debe ser el complemento para el desborde
     
     /* Encendemos el timer0 */
     T0CONbits.TMR0ON = 1;
