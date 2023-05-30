@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\timer_0.X.production.hex">
+  <executable name="dist/default/production\timer0_counter.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>
-      <used>674</used>
-      <free>32094</free>
+      <used>238</used>
+      <free>32530</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>66</used>
-      <free>1982</free>
+      <used>4</used>
+      <free>2044</free>
     </memory>
   </executable>
 </project>

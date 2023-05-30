@@ -5716,157 +5716,9 @@ unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
 # 12 "main.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 13 "main.c" 2
-
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 15 "main.c" 2
+# 14 "main.c" 2
 
 
 # 1 "./system_config.h" 1
@@ -5931,20 +5783,19 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config EBTRB = OFF
-# 17 "main.c" 2
+# 16 "main.c" 2
 
 
 
 
-void __attribute__((picinterrupt(("high_priority")))) TIMER0_ISR (void)
+void __attribute__((picinterrupt(("")))) TMR0_ISR (void)
 {
-    if(INTCONbits.TMR0IE && INTCONbits.TMR0IF)
+    if(INTCONbits.TMR0IF && INTCONbits.TMR0IE)
     {
 
-        LATBbits.LATB0 = !LATBbits.LATB0;
+        LATBbits.LATB1 = !LATBbits.LATB1;
 
-        TMR0H = 11;
-        TMR0L = 220;
+        TMR0L = 10;
 
         INTCONbits.TMR0IF = 0;
     }
@@ -5953,9 +5804,9 @@ void __attribute__((picinterrupt(("high_priority")))) TIMER0_ISR (void)
 
 
 void Init_Internal_Oscillator (void);
-void Init_Peripheral_Interrupt (void);
-void Init_Peripheral_Timer0 (void);
-void Init_Peripheral_GPIO (void);
+void Init_Interrupt_Timer0 (void);
+void Init_Timer0_As_Counter (void);
+void Init_Gpio_System (void);
 
 
 int main(void)
@@ -5963,58 +5814,70 @@ int main(void)
 
     Init_Internal_Oscillator();
 
-    Init_Peripheral_Interrupt();
+    Init_Gpio_System();
 
-    Init_Peripheral_GPIO();
+    Init_Interrupt_Timer0();
 
-    Init_Peripheral_Timer0();
+    Init_Timer0_As_Counter();
+
     while(1)
     {
-        printf("Hola!");
-        __nop();
+
+        LATBbits.LATB0 = !LATBbits.LATB0;
+        _delay((unsigned long)((500)*(8000000UL/4000.0)));
     }
-    return (0);
+    return 0;
 }
 
 
 
-void Init_Peripheral_GPIO (void)
+void Init_Gpio_System (void)
 {
 
     TRISBbits.RB0 = 0;
+    TRISBbits.RB1 = 0;
+
 
     LATBbits.LATB0 = 0;
+    LATBbits.LATB1 = 0;
+
+
+    TRISAbits.RA4 = 1;
 }
 
-void Init_Peripheral_Timer0 (void)
+void Init_Timer0_As_Counter (void)
 {
 
     T0CON = 0x00;
 
 
     T0CONbits.TMR0ON = 0;
-    T0CONbits.T08BIT = 0;
-    T0CONbits.T0CS = 0;
+    T0CONbits.T08BIT = 1;
+    T0CONbits.T0CS = 1;
     T0CONbits.T0SE = 0;
-    T0CONbits.PSA = 0;
-    T0CONbits.T0PS = 0b010;
-# 111 "main.c"
-    TMR0H = 11;
-    TMR0L = 220;
+    T0CONbits.PSA = 1;
+    T0CONbits.T0PS = 0;
+
+
+
+
+    TMR0L = 10;
 
 
     T0CONbits.TMR0ON = 1;
 }
-
-void Init_Peripheral_Interrupt (void)
+void Init_Interrupt_Timer0 (void)
 {
 
-    INTCONbits.GIE = 1;
+    INTCON = 0x00;
 
-    INTCONbits.PEIE = 1;
+
+    RCONbits.IPEN = 0;
+    INTCONbits.GIE = 1;
     INTCONbits.TMR0IE = 1;
     INTCONbits.TMR0IF = 0;
 }
+
 void Init_Internal_Oscillator (void)
 {
 
