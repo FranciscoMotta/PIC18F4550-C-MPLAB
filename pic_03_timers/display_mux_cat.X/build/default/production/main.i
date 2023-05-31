@@ -6001,15 +6001,16 @@ int main(void)
         uint8_t mux_control = (timer_counter & 0x03);
         LATD = ~(1 << mux_control);
         uint16_t valor = 4550;
-        num_decode[0] = valor / 1000;
-        num_decode[1] = (valor % 1000) / 100;
-        num_decode[2] = ((valor % 1000) % 100) / 10;
-        num_decode[3] = ((valor % 1000) % 100) % 10;
-        LATB = ~num_disp[num_decode[mux_control]];
+
+
+
+
+
+        LATB = mensaje[mux_control];
     }
     return (0);
 }
-# 106 "main.c"
+# 107 "main.c"
 void Init_Timer0_As_Timer (void)
 {
 

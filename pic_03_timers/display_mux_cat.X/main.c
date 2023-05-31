@@ -84,11 +84,11 @@ int main(void)
         LATD = ~(1 << mux_control);
         uint16_t valor = 4550;
         // < ALGO ESTÁ MAL PENDIENTE DE REVISARLO
-        num_decode[0] = valor / 1000;
-        num_decode[1] = (valor % 1000) / 100;
-        num_decode[2] = ((valor % 1000) % 100) / 10;
-        num_decode[3] = ((valor % 1000) % 100) % 10;
-        LATB = ~num_disp[num_decode[mux_control]];
+//        num_decode[0] = valor / 1000;
+//        num_decode[1] = (valor % 1000) / 100;
+//        num_decode[2] = ((valor % 1000) % 100) / 10;
+//        num_decode[3] = ((valor % 1000) % 100) % 10;
+        LATB = mensaje[mux_control];
     }
     return (EXIT_SUCCESS);
 }
