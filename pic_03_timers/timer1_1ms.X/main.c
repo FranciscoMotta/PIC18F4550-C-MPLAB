@@ -78,14 +78,14 @@ void Init_Timer1_As_Timer (void)
 void Init_Timer1_Interrupts (void)
 {
     /* Limpiamos los registros */
-    RCON = 0x00;
+    RCON   = 0x00;
     INTCON = 0x00;
-    PIR1 = 0x00;
-    PIE1 = 0x00;
+    PIR1   = 0x00;
+    PIE1   = 0x00;
     
     /* Configuramos */
-    RCONbits.IPEN = 0; // Sin prioridades
-    INTCONbits.GIE = 1; // Ints globales activadas
+    RCONbits.IPEN   = 0; // Sin prioridades
+    INTCONbits.GIE  = 1; // Ints globales activadas
     INTCONbits.PEIE = 1; // Ints perifs activadas
     
     PIE1bits.TMR1IE = 1; // Timer1 activado
@@ -98,5 +98,5 @@ void Init_Internal_Oscillator (void)
     OSCCON = 0x00;
     /* Configuramos el oscilador interno a 8mhz */
     OSCCONbits.IRCF = 0b111; // 8mhz
-    OSCCONbits.SCS = 0b11; // Intosc
+    OSCCONbits.SCS  = 0b11; // Intosc
 }
