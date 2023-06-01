@@ -5,7 +5,7 @@
  * Created on 29 de mayo de 2023, 08:37 PM
  */
 
-#define _XTAL_FREQ 8000000UL // Frecuencia del cristal
+#define _XTAL_FREQ 8000000UL // Frecuencia del cristal externo
 
 /* Includes */
 
