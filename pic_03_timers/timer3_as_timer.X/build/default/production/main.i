@@ -5938,23 +5938,83 @@ char *tempnam(const char *, const char *);
 
 void __attribute__((picinterrupt(("")))) ISR (void)
 {
+    if(PIR2bits.TMR3IF && PIE2bits.TMR3IE)
+    {
 
+        LATBbits.LATB0 = !LATBbits.LATB0;
+
+        TMR3 = 65036;
+
+        PIR2bits.TMR3IF = 0;
+    }
 }
 
 
 
 void Init_Internal_Oscillator (void);
+void Init_Timer3_Interrupts (void);
+void Init_Timer3_As_Timer (void);
 
 
 int main(void)
 {
 
+    Init_Internal_Oscillator();
+
+    Init_Timer3_Interrupts();
+
+    Init_Timer3_As_Timer();
+
+    TRISBbits.RB0 = 0;
+
+    while(1)
+    {
+        __nop();
+    }
     return (0);
 }
 
 
 
+void Init_Timer3_As_Timer (void)
+{
+
+    T3CON = 0x00;
+
+    T3CONbits.TMR3ON = 0;
+    T3CONbits.TMR3CS = 0;
+    T3CONbits.T3CKPS = 0b11;
+    T3CONbits.RD16 = 1;
+# 80 "main.c"
+    TMR3 = 65036;
+
+
+    T3CONbits.TMR3ON = 1;
+}
+
+void Init_Timer3_Interrupts (void)
+{
+
+    RCON = 0x00;
+    INTCON = 0x00;
+    PIR2 = 0x00;
+    PIE2 = 0x00;
+
+
+    RCONbits.IPEN = 0;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+
+    PIR2bits.TMR3IF = 0;
+    PIE2bits.TMR3IE = 1;
+}
+
 void Init_Internal_Oscillator (void)
 {
 
+    OSCCON = 0x00;
+
+
+    OSCCONbits.IRCF = 0b111;
+    OSCCONbits.SCS = 0b11;
 }

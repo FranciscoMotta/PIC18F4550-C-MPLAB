@@ -29,14 +29,232 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "21 C:\Users\Administrador\Desktop\PIC18F4550-C-MPLAB\pic_03_timers\timer3_as_timer.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"31
+"41
 [v _main main `(i  1 e 2 0 ]
+"61
+[v _Init_Timer3_As_Timer Init_Timer3_As_Timer `(v  1 e 1 0 ]
+"86
+[v _Init_Timer3_Interrupts Init_Timer3_Interrupts `(v  1 e 1 0 ]
+"103
+[v _Init_Internal_Oscillator Init_Internal_Oscillator `(v  1 e 1 0 ]
+[s S80 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"3101 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[s S89 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S98 . 1 `S80 1 . 1 0 `S89 1 . 1 0 ]
+[v _LATBbits LATBbits `VES98  1 e 1 @3978 ]
+[s S133 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"3658
+[s S142 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+[u S151 . 1 `S133 1 . 1 0 `S142 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES151  1 e 1 @3987 ]
+"4637
+[v _PIE2 PIE2 `VEuc  1 e 1 @4000 ]
+[s S52 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 HLVDIE 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 USBIE 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"4658
+[s S61 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIE 1 0 :1:2 
+]
+[u S64 . 1 `S52 1 . 1 0 `S61 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES64  1 e 1 @4000 ]
+"4708
+[v _PIR2 PIR2 `VEuc  1 e 1 @4001 ]
+[s S24 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 HLVDIF 1 0 :1:2 
+`uc 1 BCLIF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 USBIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"4729
+[s S33 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIF 1 0 :1:2 
+]
+[u S36 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES36  1 e 1 @4001 ]
+"5446
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
+[s S178 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T3SYNC 1 0 :1:2 
+]
+"5487
+[s S181 . 1 `uc 1 TMR3ON 1 0 :1:0 
+`uc 1 TMR3CS 1 0 :1:1 
+`uc 1 nT3SYNC 1 0 :1:2 
+`uc 1 T3CCP1 1 0 :1:3 
+`uc 1 T3CKPS 1 0 :2:4 
+`uc 1 T3CCP2 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S189 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T3SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T3CKPS0 1 0 :1:4 
+`uc 1 T3CKPS1 1 0 :1:5 
+]
+[s S195 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T3NSYNC 1 0 :1:2 
+]
+[s S198 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN3 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 RD163 1 0 :1:7 
+]
+[s S203 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 T3RD16 1 0 :1:7 
+]
+[u S206 . 1 `S178 1 . 1 0 `S181 1 . 1 0 `S189 1 . 1 0 `S195 1 . 1 0 `S198 1 . 1 0 `S203 1 . 1 0 ]
+[v _T3CONbits T3CONbits `VES206  1 e 1 @4017 ]
+"5567
+[v _TMR3 TMR3 `VEus  1 e 2 @4018 ]
+"7540
+[v _RCON RCON `VEuc  1 e 1 @4048 ]
+[s S246 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"7589
+[s S248 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S251 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S254 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S257 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S260 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S269 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_IPEN 1 0 :1:7 
+]
+[s S272 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 nIPEN 1 0 :1:7 
+]
+[u S280 . 1 `S246 1 . 1 0 `S248 1 . 1 0 `S251 1 . 1 0 `S254 1 . 1 0 `S257 1 . 1 0 `S260 1 . 1 0 `S269 1 . 1 0 `S272 1 . 1 0 ]
+[v _RCONbits RCONbits `VES280  1 e 1 @4048 ]
+"7987
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S374 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 IOFS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+`uc 1 IDLEN 1 0 :1:7 
+]
+"8010
+[s S380 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 FLTS 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S388 . 1 `S374 1 . 1 0 `S380 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES388  1 e 1 @4051 ]
+"8583
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+[s S324 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8615
+[s S333 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S342 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S346 . 1 `S324 1 . 1 0 `S333 1 . 1 0 `S342 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES346  1 e 1 @4082 ]
+"41 C:\Users\Administrador\Desktop\PIC18F4550-C-MPLAB\pic_03_timers\timer3_as_timer.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"35
+"57
+} 0
+"86
+[v _Init_Timer3_Interrupts Init_Timer3_Interrupts `(v  1 e 1 0 ]
+{
+"101
+} 0
+"61
+[v _Init_Timer3_As_Timer Init_Timer3_As_Timer `(v  1 e 1 0 ]
+{
+"84
+} 0
+"103
+[v _Init_Internal_Oscillator Init_Internal_Oscillator `(v  1 e 1 0 ]
+{
+"111
 } 0
 "21
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"24
+"32
 } 0
