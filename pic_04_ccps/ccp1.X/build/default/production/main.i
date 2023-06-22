@@ -5943,9 +5943,40 @@ void __attribute__((picinterrupt(("")))) ISR (void)
 
 
 
+void Init_Internal_Oscillator (void);
+void Init_Capture_Module (void);
+
 
 int main(void)
 {
 
+    Init_Internal_Oscillator();
+
+
     return (0);
+}
+
+
+
+void Init_Capture_Module (void)
+{
+
+    T1CON = 0x00;
+    CCP1CON = 0x00;
+
+    T1CONbits.RD16 = 1;
+    T1CONbits.T1CKPS = 0b11;
+    T1CONbits.TMR1ON = 1;
+
+
+    CCP1CONbits.CCP1M = 0b0101;
+}
+
+void Init_Internal_Oscillator (void)
+{
+
+    OSCCON = 0x00;
+
+    OSCCONbits.IRCF = 0b110;
+    OSCCONbits.SCS = 0b11;
 }
