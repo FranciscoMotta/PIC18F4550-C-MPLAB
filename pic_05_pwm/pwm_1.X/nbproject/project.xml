@@ -3,13 +3,13 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>timer0_polling</name>
-            <creation-uuid>677f6d64-4167-4298-b1ea-d032d4bcc018</creation-uuid>
+            <name>pwm_1</name>
+            <creation-uuid>d3276a8c-6744-4d32-86e0-883783266774</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../../pic_04_ccps/ccp1.X</sourceRootElem>
+                <sourceRootElem>.</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
