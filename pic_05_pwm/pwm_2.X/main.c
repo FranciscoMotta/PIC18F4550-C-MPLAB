@@ -23,7 +23,9 @@ void __interrupt() ISR (void)
     
 }
 
-/* DeclaraciÃ³n de funciones */
+/* Declaración de funciones */
+
+
 
 /* Main */
 int main(void)
@@ -32,4 +34,4 @@ int main(void)
     return (EXIT_SUCCESS);
 }
 
-/* DefiniciÃ³n de funciones */
+/* Definición de funciones */

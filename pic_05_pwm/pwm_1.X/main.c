@@ -95,7 +95,7 @@ void Init_PWM(void)
 
     // Limpiar el registro de cuenta
     TMR2 = 0;
-
+        
     /* Encendemos el TIMER2 */
     T2CONbits.TMR2ON = 1;
 }
