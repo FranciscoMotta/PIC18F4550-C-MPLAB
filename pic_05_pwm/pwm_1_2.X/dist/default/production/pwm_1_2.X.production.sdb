@@ -1,0 +1,215 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"21 D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_1_2.X\main.c
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+"34
+[v _main main `(i  1 e 2 0 ]
+"58
+[v _Init_Timer2_Module Init_Timer2_Module `(v  1 e 1 0 ]
+"91
+[v _Init_CCP1_Module Init_CCP1_Module `(v  1 e 1 0 ]
+"118
+[v _Init_CCP2_Module Init_CCP2_Module `(v  1 e 1 0 ]
+"141
+[v _Init_Internal_Oscillator Init_Internal_Oscillator `(v  1 e 1 0 ]
+"3264 D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S80 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"3291
+[s S89 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S98 . 1 `S80 1 . 1 0 `S89 1 . 1 0 ]
+[v _LATDbits LATDbits `VES98  1 e 1 @3980 ]
+[s S203 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"3876
+[s S210 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S217 . 1 `S203 1 . 1 0 `S210 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES217  1 e 1 @3988 ]
+[s S40 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"4034
+[s S49 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+[u S58 . 1 `S40 1 . 1 0 `S49 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES58  1 e 1 @3989 ]
+"6243
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @4026 ]
+[s S236 . 1 `uc 1 CCP2M 1 0 :4:0 
+`uc 1 DC2B 1 0 :2:4 
+]
+"6262
+[s S239 . 1 `uc 1 CCP2M0 1 0 :1:0 
+`uc 1 CCP2M1 1 0 :1:1 
+`uc 1 CCP2M2 1 0 :1:2 
+`uc 1 CCP2M3 1 0 :1:3 
+`uc 1 DC2B0 1 0 :1:4 
+`uc 1 DC2B1 1 0 :1:5 
+]
+[u S246 . 1 `S236 1 . 1 0 `S239 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES246  1 e 1 @4026 ]
+"6314
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @4027 ]
+"6328
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
+[s S172 . 1 `uc 1 CCP1M 1 0 :4:0 
+`uc 1 DC1B 1 0 :2:4 
+`uc 1 P1M 1 0 :2:6 
+]
+"6355
+[s S176 . 1 `uc 1 CCP1M0 1 0 :1:0 
+`uc 1 CCP1M1 1 0 :1:1 
+`uc 1 CCP1M2 1 0 :1:2 
+`uc 1 CCP1M3 1 0 :1:3 
+`uc 1 DC1B0 1 0 :1:4 
+`uc 1 DC1B1 1 0 :1:5 
+`uc 1 P1M0 1 0 :1:6 
+`uc 1 P1M1 1 0 :1:7 
+]
+[u S185 . 1 `S172 1 . 1 0 `S176 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES185  1 e 1 @4029 ]
+"6497
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
+"7201
+[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
+[s S129 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 TOUTPS 1 0 :4:3 
+]
+"7229
+[s S133 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[s S141 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 TOUTPS0 1 0 :1:3 
+`uc 1 TOUTPS1 1 0 :1:4 
+`uc 1 TOUTPS2 1 0 :1:5 
+`uc 1 TOUTPS3 1 0 :1:6 
+]
+[u S147 . 1 `S129 1 . 1 0 `S133 1 . 1 0 `S141 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES147  1 e 1 @4042 ]
+"7299
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+"7409
+[v _TMR2 TMR2 `VEuc  1 e 1 @4044 ]
+"7987
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S262 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 IOFS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+`uc 1 IDLEN 1 0 :1:7 
+]
+"8010
+[s S268 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 FLTS 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S276 . 1 `S262 1 . 1 0 `S268 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES276  1 e 1 @4051 ]
+"34 D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_1_2.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"54
+} 0
+"58
+[v _Init_Timer2_Module Init_Timer2_Module `(v  1 e 1 0 ]
+{
+"89
+} 0
+"141
+[v _Init_Internal_Oscillator Init_Internal_Oscillator `(v  1 e 1 0 ]
+{
+"148
+} 0
+"118
+[v _Init_CCP2_Module Init_CCP2_Module `(v  1 e 1 0 ]
+{
+"139
+} 0
+"91
+[v _Init_CCP1_Module Init_CCP1_Module `(v  1 e 1 0 ]
+{
+"116
+} 0
+"21
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+{
+"24
+} 0
