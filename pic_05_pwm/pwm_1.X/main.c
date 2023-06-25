@@ -14,57 +14,93 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include <proc/pic18f57q43.h>
 #include "system_config.h"
 
 /* Rutinas de servicio a interrupciones */
 
-void __interrupt() ISR (void)
+void __interrupt() ISR(void) 
 {
-    
+
 }
 
 /* Declaración de funciones */
 
-void Init_Internal_Oscillator (void);
-void Init_PWM (void);
+void Init_Internal_Oscillator(void);
+void Init_PWM(void);
 
 /* Main */
-int main(void)
+int main(void) 
 {
     /* Configurar el oscilador interno */
     Init_Internal_Oscillator();
-    
+    /* Configurar el PWM1 */
+    Init_PWM();
+    /* Led del sistema */
+    TRISDbits.RD0 = 0;
+    /* Bucle principal */
+    while (true) {
+        LATDbits.LATD0 = !LATDbits.LATD0;
+        __delay_ms(250);
+    }
     return (EXIT_SUCCESS);
 }
 
 /* Definición de funciones */
 
-void Init_PWM (void)
+void Init_PWM(void) 
 {
-    /* Configuramos el TIMER2 */
-    /* Limpiar los registros */
-    T2CON = 0x00;
-    /* Configurar el timer2 */
-    T2CONbits.TMR2ON = 0; // Timer 2 apagado
-    T2CONbits.T2CKPS = 0b11; // Prescaler 8
+    /* PIN CCP1 como salida */
+    TRISCbits.RC2 = 0;
     /* Consideramos que:
-     * Periodo = (PR2 + 1)*Tosc*(TMR2_Prescaler)
-     * Periodo = (PR2 + 1)*(1 / Fosc)*(TMR2_Prescaler)
+     * Periodo = (PR2 + 1)*Tosc*(TMR2_Prescaler)*4
+     * Periodo = (PR2 + 1)*(1 / Fosc)*(TMR2_Prescaler)*4
      * 
-     * PR2 = (Periodo / (Tosc * TMR2_Prescaler)) - 1
+     * PR2 = (Periodo / (Tosc * TMR2_Prescaler * 4)) - 1
      * 
      * Para este caso:
-     * - periodo = 2ms
+     * - periodo = 1 / freq = 1 / 500hz
+     * - periodo = 1 / 10^4 = 2ms
      * - Fosc = 8Mhz
-     * - TMR2_Prescaler = 8
-     * 2*10^-3 = (PR2 + 1)*(1 / 8*10^6)*(4)
-     * PR2 = (2*10^-3) / ((1 / 8*10^6)*(8)) - 1
+     * - TMR2_Prescaler = 16
+     * Por lo tanto:
+     * PR2 = (2ms) / (4*(1 / 8*10^6)*(16)) - 1
+     * PR2 = 249
      */
-    
+    // Cargar el dato al registro
+    PR2 = 249;
+    /* Cálculo del duty cicle 
+     * Nota: Duty Cicle = (CCPRXL : CCPXCON<5:4>) * Tosc * TMR2_Prescaler 
+     * Para este caso, queremos una duty cicle del 40%, por lo tanto:
+     * Datos: 
+     * - Tosc = 8MHZ
+     * - TMR2_Prescaler = 16
+     * - DC = 50% (1ms)
+     * Entonces:
+     * DC = 1ms
+     * (CCPRXL : CCPXCON<5:4>) = Duty Cicle / (Tosc * TMR2_Prescaler)
+     * (CCPRXL : CCPXCON<5:4>) = 1ms / ((1 / 8Mhz) * 16)
+        * (CCPRXL : CCPXCON<5:4>) = 500 (0x1F4 - 0b01 1111 0100)
+     * Por lo tanto:
+     */
+
+    CCPR1L = 0b01111101;
+    CCP1CONbits.DC1B = 0b00;
+
+    /* Configurar el módulo CCP como PWM */
+    // PWM mode
+    CCP1CONbits.CCP1M = 0b1111;
+
+    /* Configurar el timer2 */
+    T2CONbits.T2CKPS = 0b11; // Prescaler 16
+
+    // Limpiar el registro de cuenta
+    TMR2 = 0;
+
+    /* Encendemos el TIMER2 */
+    T2CONbits.TMR2ON = 1;
 }
 
-void Init_Internal_Oscillator (void)
+void Init_Internal_Oscillator(void) 
 {
     /* Limpiar los registros */
     OSCCON = 0x00;
