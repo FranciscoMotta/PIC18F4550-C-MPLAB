@@ -5986,7 +5986,7 @@ void Init_CCP1_Module (void)
     CCP1CON = 0x00;
 
 
-    CCP1CONbits.CCP1M = 0b1111;
+    CCP1CONbits.CCP1M = 0b1100;
 # 111 "main.c"
     CCPR1L = 0b00111110;
     CCP1CONbits.DC1B = 0b00;
@@ -6000,7 +6000,7 @@ void Init_CCP2_Module (void)
 
     CCP2CON = 0x00;
 
-    CCP2CONbits.CCP2M = 0b1111;
+    CCP2CONbits.CCP2M = 0b1100;
 # 134 "main.c"
     CCPR2L = 0b01100100;
     CCP2CONbits.DC2B = 0b00;

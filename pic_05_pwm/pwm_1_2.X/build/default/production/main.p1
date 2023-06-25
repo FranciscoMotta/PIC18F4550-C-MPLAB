@@ -848,8 +848,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 94:     CCP1CON = 0x00;
 [e = _CCP1CON -> -> 0 `i `uc ]
 "97
-[; ;main.c: 97:     CCP1CONbits.CCP1M = 0b1111;
-[e = . . _CCP1CONbits 0 0 -> -> 15 `i `uc ]
+[; ;main.c: 97:     CCP1CONbits.CCP1M = 0b1100;
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
 "111
 [; ;main.c: 111:     CCPR1L = 0b00111110;
 [e = _CCPR1L -> -> 62 `i `uc ]
@@ -875,8 +875,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 121:     CCP2CON = 0x00;
 [e = _CCP2CON -> -> 0 `i `uc ]
 "123
-[; ;main.c: 123:     CCP2CONbits.CCP2M = 0b1111;
-[e = . . _CCP2CONbits 0 0 -> -> 15 `i `uc ]
+[; ;main.c: 123:     CCP2CONbits.CCP2M = 0b1100;
+[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
 "134
 [; ;main.c: 134:     CCPR2L = 0b01100100;
 [e = _CCPR2L -> -> 100 `i `uc ]

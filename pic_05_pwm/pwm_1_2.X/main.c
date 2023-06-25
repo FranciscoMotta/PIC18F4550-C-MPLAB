@@ -94,7 +94,7 @@ void Init_CCP1_Module (void)
     CCP1CON = 0x00;
     
     /* Configurar el CCP1 como PWM */
-    CCP1CONbits.CCP1M = 0b1111;
+    CCP1CONbits.CCP1M = 0b1100;
     
     /* Configuraremos el DC del PWM1 a 50% 
      * Considerando lo siguiente:
@@ -120,7 +120,7 @@ void Init_CCP2_Module (void)
     /* Limpiar los registros */
     CCP2CON = 0x00;
     /* Configurar el CCP2 como PWM */
-    CCP2CONbits.CCP2M = 0b1111;
+    CCP2CONbits.CCP2M = 0b1100;
     /* Configuraremos el DC del PWM2 a 80% 
      * Considerando lo siguiente:
      * Prescaler_TMR2 = 16
