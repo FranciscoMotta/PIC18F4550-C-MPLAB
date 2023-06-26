@@ -70,7 +70,7 @@ void Init_PWM2_Config (void)
     CCP2CON = 0x00;
     TMR2    = 0x00;
     
-    /* Se desea un periodo de 1ms  = 1000hz a un duty cicle de 40%
+    /* Se desea un periodo de 1ms  = 1000hz a un duty cicle de 50%
      * Considerando lo siguiente:
      * Fosc = 8MHZ
      * Prescaler = 16

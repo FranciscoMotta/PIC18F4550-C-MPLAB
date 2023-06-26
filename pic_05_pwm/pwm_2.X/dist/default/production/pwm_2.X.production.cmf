@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+$C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -68,7 +68,7 @@ MEDIUMCONST 800-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\pwm_2.X.production.o
-8 intcode CODE >1095:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
+8 intcode CODE >1095:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
 8 intcode CODE >25:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
 9E intcode_body CODE >25:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
 A0 intcode_body CODE >28:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
@@ -98,14 +98,14 @@ A6 text3 CODE >114:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
 1A text0 CODE >51:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
 1E text0 CODE >55:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
 3C text0 CODE >56:D:\Escritorio\PIC18F4550-C-MPLAB\pic_05_pwm\pwm_2.X\main.c
-94 cinit CODE >528:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-94 cinit CODE >530:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-94 cinit CODE >533:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-94 cinit CODE >539:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-94 cinit CODE >541:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-96 cinit CODE >542:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-98 cinit CODE >543:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
-9A cinit CODE >544:C:\Users\jmott\AppData\Local\Temp\xcAsh30.s
+94 cinit CODE >528:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+94 cinit CODE >530:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+94 cinit CODE >533:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+94 cinit CODE >539:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+94 cinit CODE >541:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+96 cinit CODE >542:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+98 cinit CODE >543:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
+9A cinit CODE >544:C:\Users\jmott\AppData\Local\Temp\xcAs2sc.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -124,32 +124,32 @@ __Hspace_1 4 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\pwm_2.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\pwm_2.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\pwm_2.X.production.o
 _TMR2 FCC 0 ABS 0 - dist/default/production\pwm_2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+___sp 0 0 STACK 2 stack C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 _main 12 0 CODE 0 text0 dist/default/production\pwm_2.X.production.o
 btemp 3 0 COMRAM 1 temp dist/default/production\pwm_2.X.production.o
-start E 0 CODE 0 init C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+start E 0 CODE 0 init C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __size_of_main 0 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __Hpowerup E 0 CODE 0 powerup dist/default/production\pwm_2.X.production.o
 ttemp5 4 0 COMRAM 1 temp dist/default/production\pwm_2.X.production.o
 ttemp6 7 0 COMRAM 1 temp dist/default/production\pwm_2.X.production.o
 ttemp7 B 0 COMRAM 1 temp dist/default/production\pwm_2.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
-intlevel0 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
-intlevel1 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
-intlevel2 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
-intlevel3 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+__accesstop 60 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
+intlevel0 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
+intlevel1 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
+intlevel2 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
+intlevel3 0 0 CODE 0 text C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\pwm_2.X.production.o
 wtemp8 4 0 COMRAM 1 temp dist/default/production\pwm_2.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\pwm_2.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\pwm_2.X.production.o
 _Init_Internal_Oscillator 86 0 CODE 0 text2 dist/default/production\pwm_2.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 _CCPR2L FBB 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\pwm_2.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\pwm_2.X.production.o
@@ -163,7 +163,7 @@ _TRISCbits F94 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 _TRISDbits F95 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 _Init_Gpio_System A4 0 CODE 0 text3 dist/default/production\pwm_2.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+isa$xinst 0 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\pwm_2.X.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\pwm_2.X.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\pwm_2.X.production.o
@@ -187,7 +187,7 @@ __Htext3 0 0 ABS 0 text3 dist/default/production\pwm_2.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\pwm_2.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\pwm_2.X.production.o
 __size_of_Init_Internal_Oscillator 0 0 ABS 0 - dist/default/production\pwm_2.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\pwm_2.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\pwm_2.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\pwm_2.X.production.o
@@ -259,10 +259,10 @@ _LATDbits F8C 0 ABS 0 - dist/default/production\pwm_2.X.production.o
 __end_of_Init_PWM2_Config 86 0 CODE 0 text1 dist/default/production\pwm_2.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\pwm_2.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\pwm_2.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+isa$std 1 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __size_of_Init_PWM2_Config 0 0 ABS 0 - dist/default/production\pwm_2.X.production.o
-stackhi 7FF 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
-stacklo 60 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+stackhi 7FF 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
+stacklo 60 0 ABS 0 - C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\pwm_2.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\pwm_2.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\pwm_2.X.production.o
@@ -283,7 +283,7 @@ __ptext1 5C 0 CODE 0 text1 dist/default/production\pwm_2.X.production.o
 __ptext2 86 0 CODE 0 text2 dist/default/production\pwm_2.X.production.o
 __ptext3 A4 0 CODE 0 text3 dist/default/production\pwm_2.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\pwm_2.X.production.o
-__ramtop 800 0 RAM 0 ramtop C:\Users\jmott\AppData\Local\Temp\xcAsh30.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\jmott\AppData\Local\Temp\xcAs2sc.o
 __Lpowerup E 0 CODE 0 powerup dist/default/production\pwm_2.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\pwm_2.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\pwm_2.X.production.o
