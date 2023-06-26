@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>adc1_canall0_lcd</name>
+            <name>adc1_canal0_lcd</name>
             <creation-uuid>073f19ce-7a19-452a-bfec-e19202e99b61</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
