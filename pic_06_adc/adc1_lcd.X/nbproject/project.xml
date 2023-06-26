@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>pwm_1</name>
-            <creation-uuid>d3276a8c-6744-4d32-86e0-883783266774</creation-uuid>
+            <name>adc1_lcd</name>
+            <creation-uuid>3fe079a2-77ab-4ac4-9be9-bb9b52adf3c7</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

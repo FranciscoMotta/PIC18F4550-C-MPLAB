@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=pwm_1.X
+PROJECTNAME=adc1_lcd.X
 
 # Active Configuration
 DEFAULTCONF=default

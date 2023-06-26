@@ -1,0 +1,1527 @@
+
+
+Microchip MPLAB XC8 Assembler V2.41 build 20230208172133 
+                                                                                               Mon Jun 26 15:02:14 2023
+
+Microchip MPLAB XC8 C Compiler v2.41 (Free license) build 20230208172133 Og1 
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	pagewidth 120
+     4                           	opt	flic
+     5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    18                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    19                           	psect	intcode_body,global,reloc=2,class=CODE,delta=1
+    20                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    21                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    22                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    23                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=1,noexec
+    24                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=1,noexec
+    25   000000                     
+    26                           ; Version 2.40
+    27                           ; Generated 17/11/2021 GMT
+    28                           ; 
+    29                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    30                           ; All rights reserved.
+    31                           ; 
+    32                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    33                           ; 
+    34                           ; Redistribution and use in source and binary forms, with or without modification, are
+    35                           ; permitted provided that the following conditions are met:
+    36                           ; 
+    37                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    38                           ;        conditions and the following disclaimer.
+    39                           ; 
+    40                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    41                           ;        of conditions and the following disclaimer in the documentation and/or other
+    42                           ;        materials provided with the distribution. Publication is not required when
+    43                           ;        this file is used in an embedded application.
+    44                           ; 
+    45                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    46                           ;        software without specific prior written permission.
+    47                           ; 
+    48                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    49                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    50                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    51                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    52                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    53                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    54                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    55                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    56                           ; 
+    57                           ; 
+    58                           ; Code-generator required, PIC18F4550 Definitions
+    59                           ; 
+    60                           ; SFR Addresses
+    61   000000                     _OSCCONbits	set	4051
+    62   000000                     _ADCON2bits	set	4032
+    63   000000                     _ADCON1bits	set	4033
+    64   000000                     _ADCON0	set	4034
+    65   000000                     _LATD	set	3980
+    66   000000                     _TRISD	set	3989
+    67   000000                     _ADCON2	set	4032
+    68   000000                     _ADCON1	set	4033
+    69   000000                     _ADCON0bits	set	4034
+    70   000000                     _ADRESH	set	4036
+    71   000000                     _OSCCON	set	4051
+    72                           
+    73                           	psect	smallconst
+    74   000800                     __psmallconst:
+    75                           	callstack 0
+    76   000800  00                 	db	0
+    77   000801                     STR_1:
+    78   000801  41                 	db	65	;'A'
+    79   000802  44                 	db	68	;'D'
+    80   000803  43                 	db	67	;'C'
+    81   000804  20                 	db	32
+    82   000805  4D                 	db	77	;'M'
+    83   000806  45                 	db	69	;'E'
+    84   000807  44                 	db	68	;'D'
+    85   000808  49                 	db	73	;'I'
+    86   000809  43                 	db	67	;'C'
+    87   00080A  49                 	db	73	;'I'
+    88   00080B  4F                 	db	79	;'O'
+    89   00080C  4E                 	db	78	;'N'
+    90   00080D  3A                 	db	58	;':'
+    91   00080E  20                 	db	32
+    92   00080F  00                 	db	0
+    93   000810  00                 	db	0	; dummy byte at the end
+    94   000000                     
+    95                           ; #config settings
+    96                           
+    97                           	psect	cinit
+    98   0009BC                     __pcinit:
+    99                           	callstack 0
+   100   0009BC                     start_initialization:
+   101                           	callstack 0
+   102   0009BC                     __initialization:
+   103                           	callstack 0
+   104   0009BC                     end_of_initialization:
+   105                           	callstack 0
+   106   0009BC                     __end_of__initialization:
+   107                           	callstack 0
+   108   0009BC  900C               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   109   0009BE  920C               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   110   0009C0  0E00               	movlw	low (__Lsmallconst shr (0+16))
+   111   0009C2  6EF8               	movwf	tblptru,c
+   112   0009C4  0E08               	movlw	high __Lsmallconst
+   113   0009C6  6EF7               	movwf	tblptrh,c
+   114   0009C8  0100               	movlb	0
+   115   0009CA  EF67  F004         	goto	_main	;jump to C main() function
+   116                           
+   117                           	psect	cstackCOMRAM
+   118   000001                     __pcstackCOMRAM:
+   119                           	callstack 0
+   120   000001                     ??_FM_Lcd_Send_Nibble:
+   121   000001                     
+   122                           ; 2 bytes @ 0x0
+   123   000001                     	ds	1
+   124   000002                     FM_Lcd_Send_Nibble@byte_to_send:
+   125                           	callstack 0
+   126                           
+   127                           ; 1 bytes @ 0x1
+   128   000002                     	ds	1
+   129   000003                     FM_Lcd_Send_Nibble@upper_bits:
+   130                           	callstack 0
+   131                           
+   132                           ; 1 bytes @ 0x2
+   133   000003                     	ds	1
+   134   000004                     FM_Lcd_Send_Nibble@lower_bits:
+   135                           	callstack 0
+   136                           
+   137                           ; 1 bytes @ 0x3
+   138   000004                     	ds	1
+   139   000005                     FM_Lcd_Send_Command@command_to_send:
+   140                           	callstack 0
+   141   000005                     FM_Lcd_Send_Character@character_to_send:
+   142                           	callstack 0
+   143                           
+   144                           ; 1 bytes @ 0x4
+   145   000005                     	ds	1
+   146   000006                     FM_Lcd_Set_Cursor@columna:
+   147                           	callstack 0
+   148   000006                     FM_Lcd_Send_String@cadena:
+   149                           	callstack 0
+   150                           
+   151                           ; 2 bytes @ 0x5
+   152   000006                     	ds	1
+   153   000007                     FM_Lcd_Set_Cursor@filas:
+   154                           	callstack 0
+   155                           
+   156                           ; 1 bytes @ 0x6
+   157   000007                     	ds	1
+   158   000008                     ??_FM_Lcd_Send_String:
+   159   000008                     FM_Lcd_Set_Cursor@base_pos:
+   160                           	callstack 0
+   161                           
+   162                           ; 1 bytes @ 0x7
+   163   000008                     	ds	2
+   164   00000A                     FM_Lcd_Send_String@index:
+   165                           	callstack 0
+   166                           
+   167                           ; 1 bytes @ 0x9
+   168   00000A                     	ds	1
+   169   00000B                     ??_main:
+   170                           
+   171                           ; 1 bytes @ 0xA
+   172   00000B                     	ds	1
+   173                           
+   174 ;;
+   175 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   176 ;;
+   177 ;; *************** function _main *****************
+   178 ;; Defined at:
+   179 ;;		line 33 in file "main.c"
+   180 ;; Parameters:    Size  Location     Type
+   181 ;;		None
+   182 ;; Auto vars:     Size  Location     Type
+   183 ;;		None
+   184 ;; Return value:  Size  Location     Type
+   185 ;;                  2   77[None  ] int 
+   186 ;; Registers used:
+   187 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   188 ;; Tracked objects:
+   189 ;;		On entry : 0/0
+   190 ;;		On exit  : 0/0
+   191 ;;		Unchanged: 0/0
+   192 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   193 ;;      Params:         0       0       0       0       0       0       0       0       0
+   194 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   195 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   196 ;;      Totals:         1       0       0       0       0       0       0       0       0
+   197 ;;Total ram usage:        1 bytes
+   198 ;; Hardware stack levels required when called: 4
+   199 ;; This function calls:
+   200 ;;		_FM_Lcd_Easy_Init
+   201 ;;		_FM_Lcd_Send_String
+   202 ;;		_FM_Lcd_Set_Cursor
+   203 ;;		_Init_ADC_Module
+   204 ;;		_Init_Internal_Oscillator
+   205 ;; This function is called by:
+   206 ;;		Startup code after reset
+   207 ;; This function uses a non-reentrant model
+   208 ;;
+   209                           
+   210                           	psect	text0
+   211   0008CE                     __ptext0:
+   212                           	callstack 0
+   213   0008CE                     _main:
+   214                           	callstack 27
+   215   0008CE                     
+   216                           ;main.c: 36:     Init_Internal_Oscillator();
+   217   0008CE  ECE7  F004         	call	_Init_Internal_Oscillator	;wreg free
+   218   0008D2                     
+   219                           ;main.c: 38:     FM_Lcd_Easy_Init();
+   220   0008D2  ECC9  F004         	call	_FM_Lcd_Easy_Init	;wreg free
+   221   0008D6                     
+   222                           ;main.c: 40:     Init_ADC_Module();
+   223   0008D6  ECAF  F004         	call	_Init_ADC_Module	;wreg free
+   224                           
+   225                           ;main.c: 42:     FM_Lcd_Set_Cursor(ROW_1, COL_1);
+   226   0008DA  0E00               	movlw	0
+   227   0008DC  6E06               	movwf	FM_Lcd_Set_Cursor@columna^0,c
+   228   0008DE  0E00               	movlw	0
+   229   0008E0  EC8D  F004         	call	_FM_Lcd_Set_Cursor
+   230   0008E4                     
+   231                           ;main.c: 43:     FM_Lcd_Send_String("ADC MEDICION: ");
+   232   0008E4  0E01               	movlw	low STR_1
+   233   0008E6  6E06               	movwf	FM_Lcd_Send_String@cadena^0,c
+   234   0008E8  0E08               	movlw	high STR_1
+   235   0008EA  6E07               	movwf	(FM_Lcd_Send_String@cadena+1)^0,c
+   236   0008EC  EC3F  F004         	call	_FM_Lcd_Send_String	;wreg free
+   237   0008F0                     l876:
+   238                           
+   239                           ;main.c: 46:     {;main.c: 48:         ADCON0bits.GO_NOT_DONE = 1;
+   240   0008F0  82C2               	bsf	194,1,c	;volatile
+   241   0008F2                     l79:
+   242   0008F2  B2C2               	btfsc	194,1,c	;volatile
+   243   0008F4  EF7E  F004         	goto	u81
+   244   0008F8  EF80  F004         	goto	u80
+   245   0008FC                     u81:
+   246   0008FC  EF79  F004         	goto	l79
+   247   000900                     u80:
+   248   000900                     
+   249                           ;main.c: 52:         LATD = ADRESH;
+   250   000900  CFC4 FF8C          	movff	4036,3980	;volatile
+   251   000904                     
+   252                           ;main.c: 54:         _delay((unsigned long)((1)*(8000000UL/4000.0)));
+   253   000904  0E03               	movlw	3
+   254   000906  6E0B               	movwf	??_main^0,c
+   255   000908  0E98               	movlw	152
+   256   00090A                     u97:
+   257   00090A  2EE8               	decfsz	wreg,f,c
+   258   00090C  D7FE               	bra	u97
+   259   00090E  2E0B               	decfsz	??_main^0,f,c
+   260   000910  D7FC               	bra	u97
+   261   000912  EF78  F004         	goto	l876
+   262   000916  EF07  F000         	goto	start
+   263   00091A                     __end_of_main:
+   264                           	callstack 0
+   265                           
+   266 ;; *************** function _Init_Internal_Oscillator *****************
+   267 ;; Defined at:
+   268 ;;		line 91 in file "main.c"
+   269 ;; Parameters:    Size  Location     Type
+   270 ;;		None
+   271 ;; Auto vars:     Size  Location     Type
+   272 ;;		None
+   273 ;; Return value:  Size  Location     Type
+   274 ;;                  1    wreg      void 
+   275 ;; Registers used:
+   276 ;;		wreg, status,2
+   277 ;; Tracked objects:
+   278 ;;		On entry : 0/0
+   279 ;;		On exit  : 0/0
+   280 ;;		Unchanged: 0/0
+   281 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   282 ;;      Params:         0       0       0       0       0       0       0       0       0
+   283 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   284 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   285 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   286 ;;Total ram usage:        0 bytes
+   287 ;; Hardware stack levels used: 1
+   288 ;; Hardware stack levels required when called: 1
+   289 ;; This function calls:
+   290 ;;		Nothing
+   291 ;; This function is called by:
+   292 ;;		_main
+   293 ;; This function uses a non-reentrant model
+   294 ;;
+   295                           
+   296                           	psect	text1
+   297   0009CE                     __ptext1:
+   298                           	callstack 0
+   299   0009CE                     _Init_Internal_Oscillator:
+   300                           	callstack 29
+   301   0009CE                     
+   302                           ;main.c: 94:     OSCCON = 0x00;
+   303   0009CE  0E00               	movlw	0
+   304   0009D0  6ED3               	movwf	211,c	;volatile
+   305                           
+   306                           ;main.c: 97:     OSCCONbits.IRCF = 0b111;
+   307   0009D2  0E70               	movlw	112
+   308   0009D4  12D3               	iorwf	211,f,c	;volatile
+   309                           
+   310                           ;main.c: 98:     OSCCONbits.SCS = 0b11;
+   311   0009D6  0E03               	movlw	3
+   312   0009D8  12D3               	iorwf	211,f,c	;volatile
+   313   0009DA  0012               	return		;funcret
+   314   0009DC                     __end_of_Init_Internal_Oscillator:
+   315                           	callstack 0
+   316                           
+   317 ;; *************** function _Init_ADC_Module *****************
+   318 ;; Defined at:
+   319 ;;		line 61 in file "main.c"
+   320 ;; Parameters:    Size  Location     Type
+   321 ;;		None
+   322 ;; Auto vars:     Size  Location     Type
+   323 ;;		None
+   324 ;; Return value:  Size  Location     Type
+   325 ;;                  1    wreg      void 
+   326 ;; Registers used:
+   327 ;;		wreg, status,2
+   328 ;; Tracked objects:
+   329 ;;		On entry : 0/0
+   330 ;;		On exit  : 0/0
+   331 ;;		Unchanged: 0/0
+   332 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   333 ;;      Params:         0       0       0       0       0       0       0       0       0
+   334 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   335 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   336 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   337 ;;Total ram usage:        0 bytes
+   338 ;; Hardware stack levels used: 1
+   339 ;; Hardware stack levels required when called: 1
+   340 ;; This function calls:
+   341 ;;		Nothing
+   342 ;; This function is called by:
+   343 ;;		_main
+   344 ;; This function uses a non-reentrant model
+   345 ;;
+   346                           
+   347                           	psect	text2
+   348   00095E                     __ptext2:
+   349                           	callstack 0
+   350   00095E                     _Init_ADC_Module:
+   351                           	callstack 29
+   352   00095E                     
+   353                           ;main.c: 64:     ADCON0 = 0x00;
+   354   00095E  0E00               	movlw	0
+   355   000960  6EC2               	movwf	194,c	;volatile
+   356                           
+   357                           ;main.c: 65:     ADCON1 = 0x00;
+   358   000962  0E00               	movlw	0
+   359   000964  6EC1               	movwf	193,c	;volatile
+   360                           
+   361                           ;main.c: 66:     ADCON2 = 0x00;
+   362   000966  0E00               	movlw	0
+   363   000968  6EC0               	movwf	192,c	;volatile
+   364   00096A                     
+   365                           ;main.c: 69:     ADCON0bits.ADON = 0;
+   366   00096A  90C2               	bcf	194,0,c	;volatile
+   367                           
+   368                           ;main.c: 70:     ADCON0bits.CHS = 0b0000;
+   369   00096C  0EC3               	movlw	-61
+   370   00096E  16C2               	andwf	194,f,c	;volatile
+   371                           
+   372                           ;main.c: 72:     ADCON1bits.VCFG = 0b00;
+   373   000970  0ECF               	movlw	-49
+   374   000972  16C1               	andwf	193,f,c	;volatile
+   375                           
+   376                           ;main.c: 73:     ADCON1bits.PCFG = 0b1110;
+   377   000974  50C1               	movf	193,w,c	;volatile
+   378   000976  0BF0               	andlw	-16
+   379   000978  090E               	iorlw	14
+   380   00097A  6EC1               	movwf	193,c	;volatile
+   381   00097C                     
+   382                           ;main.c: 75:     ADCON2bits.ADFM = 0;
+   383   00097C  9EC0               	bcf	192,7,c	;volatile
+   384                           
+   385                           ;main.c: 76:     ADCON2bits.ADCS = 0b001;
+   386   00097E  50C0               	movf	192,w,c	;volatile
+   387   000980  0BF8               	andlw	-8
+   388   000982  0901               	iorlw	1
+   389   000984  6EC0               	movwf	192,c	;volatile
+   390                           
+   391                           ;main.c: 85:     ADCON2bits.ACQT = 0b110;
+   392   000986  50C0               	movf	192,w,c	;volatile
+   393   000988  0BC7               	andlw	-57
+   394   00098A  0930               	iorlw	48
+   395   00098C  6EC0               	movwf	192,c	;volatile
+   396   00098E                     
+   397                           ;main.c: 88:     ADCON0bits.ADON = 1;
+   398   00098E  80C2               	bsf	194,0,c	;volatile
+   399   000990  0012               	return		;funcret
+   400   000992                     __end_of_Init_ADC_Module:
+   401                           	callstack 0
+   402                           
+   403 ;; *************** function _FM_Lcd_Set_Cursor *****************
+   404 ;; Defined at:
+   405 ;;		line 62 in file "FM_LCD16X2_Easy.c"
+   406 ;; Parameters:    Size  Location     Type
+   407 ;;  filas           1    wreg     enum E3201
+   408 ;;  columna         1    5[COMRAM] enum E3205
+   409 ;; Auto vars:     Size  Location     Type
+   410 ;;  filas           1    6[COMRAM] enum E3201
+   411 ;;  base_pos        1    7[COMRAM] unsigned char 
+   412 ;; Return value:  Size  Location     Type
+   413 ;;                  1    wreg      void 
+   414 ;; Registers used:
+   415 ;;		wreg, status,2, status,0, cstack
+   416 ;; Tracked objects:
+   417 ;;		On entry : 0/0
+   418 ;;		On exit  : 0/0
+   419 ;;		Unchanged: 0/0
+   420 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   421 ;;      Params:         1       0       0       0       0       0       0       0       0
+   422 ;;      Locals:         2       0       0       0       0       0       0       0       0
+   423 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   424 ;;      Totals:         3       0       0       0       0       0       0       0       0
+   425 ;;Total ram usage:        3 bytes
+   426 ;; Hardware stack levels used: 1
+   427 ;; Hardware stack levels required when called: 3
+   428 ;; This function calls:
+   429 ;;		_FM_Lcd_Send_Command
+   430 ;; This function is called by:
+   431 ;;		_main
+   432 ;; This function uses a non-reentrant model
+   433 ;;
+   434                           
+   435                           	psect	text3
+   436   00091A                     __ptext3:
+   437                           	callstack 0
+   438   00091A                     _FM_Lcd_Set_Cursor:
+   439                           	callstack 27
+   440                           
+   441                           ;incstack = 0
+   442                           ;FM_Lcd_Set_Cursor@filas stored from wreg
+   443   00091A  6E07               	movwf	FM_Lcd_Set_Cursor@filas^0,c
+   444   00091C                     
+   445                           ;FM_LCD16X2_Easy.c: 62: void FM_Lcd_Set_Cursor (_row_lcd_t filas, _column_lcd_t columna)
+      +                          ;FM_LCD16X2_Easy.c: 63: {;FM_LCD16X2_Easy.c: 64:     char base_pos = 0x00;
+   446   00091C  0E00               	movlw	0
+   447   00091E  6E08               	movwf	FM_Lcd_Set_Cursor@base_pos^0,c
+   448   000920                     
+   449                           ;FM_LCD16X2_Easy.c: 65:     if(filas == ROW_1)
+   450   000920  5007               	movf	FM_Lcd_Set_Cursor@filas^0,w,c
+   451   000922  A4D8               	btfss	status,2,c
+   452   000924  EF96  F004         	goto	u61
+   453   000928  EF98  F004         	goto	u60
+   454   00092C                     u61:
+   455   00092C  EF9C  F004         	goto	l858
+   456   000930                     u60:
+   457   000930                     
+   458                           ;FM_LCD16X2_Easy.c: 66:     {;FM_LCD16X2_Easy.c: 67:         base_pos = 0x80;
+   459   000930  0E80               	movlw	128
+   460   000932  6E08               	movwf	FM_Lcd_Set_Cursor@base_pos^0,c
+   461                           
+   462                           ;FM_LCD16X2_Easy.c: 68:     }
+   463   000934  EFA9  F004         	goto	l862
+   464   000938                     l858:
+   465   000938  0407               	decf	FM_Lcd_Set_Cursor@filas^0,w,c
+   466   00093A  A4D8               	btfss	status,2,c
+   467   00093C  EFA2  F004         	goto	u71
+   468   000940  EFA4  F004         	goto	u70
+   469   000944                     u71:
+   470   000944  EFA8  F004         	goto	l31
+   471   000948                     u70:
+   472   000948                     
+   473                           ;FM_LCD16X2_Easy.c: 70:     {;FM_LCD16X2_Easy.c: 71:         base_pos = 0xC0;
+   474   000948  0EC0               	movlw	192
+   475   00094A  6E08               	movwf	FM_Lcd_Set_Cursor@base_pos^0,c
+   476                           
+   477                           ;FM_LCD16X2_Easy.c: 72:     }
+   478   00094C  EFA9  F004         	goto	l862
+   479   000950                     l31:
+   480                           
+   481                           ;FM_LCD16X2_Easy.c: 74:     {;FM_LCD16X2_Easy.c: 75:         __nop();
+   482   000950  F000               	nop	
+   483   000952                     l862:
+   484                           
+   485                           ;FM_LCD16X2_Easy.c: 79:     base_pos += columna;
+   486   000952  5006               	movf	FM_Lcd_Set_Cursor@columna^0,w,c
+   487   000954  2608               	addwf	FM_Lcd_Set_Cursor@base_pos^0,f,c
+   488   000956                     
+   489                           ;FM_LCD16X2_Easy.c: 80:     FM_Lcd_Send_Command(base_pos);
+   490   000956  5008               	movf	FM_Lcd_Set_Cursor@base_pos^0,w,c
+   491   000958  ECF4  F004         	call	_FM_Lcd_Send_Command
+   492   00095C  0012               	return		;funcret
+   493   00095E                     __end_of_FM_Lcd_Set_Cursor:
+   494                           	callstack 0
+   495                           
+   496 ;; *************** function _FM_Lcd_Send_String *****************
+   497 ;; Defined at:
+   498 ;;		line 52 in file "FM_LCD16X2_Easy.c"
+   499 ;; Parameters:    Size  Location     Type
+   500 ;;  cadena          2    5[COMRAM] PTR unsigned char 
+   501 ;;		 -> STR_1(15), 
+   502 ;; Auto vars:     Size  Location     Type
+   503 ;;  index           1    9[COMRAM] unsigned char 
+   504 ;; Return value:  Size  Location     Type
+   505 ;;                  1    wreg      void 
+   506 ;; Registers used:
+   507 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   508 ;; Tracked objects:
+   509 ;;		On entry : 0/0
+   510 ;;		On exit  : 0/0
+   511 ;;		Unchanged: 0/0
+   512 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   513 ;;      Params:         2       0       0       0       0       0       0       0       0
+   514 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   515 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   516 ;;      Totals:         5       0       0       0       0       0       0       0       0
+   517 ;;Total ram usage:        5 bytes
+   518 ;; Hardware stack levels used: 1
+   519 ;; Hardware stack levels required when called: 3
+   520 ;; This function calls:
+   521 ;;		_FM_Lcd_Send_Character
+   522 ;; This function is called by:
+   523 ;;		_main
+   524 ;; This function uses a non-reentrant model
+   525 ;;
+   526                           
+   527                           	psect	text4
+   528   00087E                     __ptext4:
+   529                           	callstack 0
+   530   00087E                     _FM_Lcd_Send_String:
+   531                           	callstack 27
+   532   00087E                     
+   533                           ;FM_LCD16X2_Easy.c: 52: void FM_Lcd_Send_String (char *cadena);FM_LCD16X2_Easy.c: 53: {;
+      +                          FM_LCD16X2_Easy.c: 54:     uint8_t index = 0;
+   534   00087E  0E00               	movlw	0
+   535   000880  6E0A               	movwf	FM_Lcd_Send_String@index^0,c
+   536                           
+   537                           ;FM_LCD16X2_Easy.c: 55:     while(cadena[index] != '\0')
+   538   000882  EF52  F004         	goto	l850
+   539   000886                     l846:
+   540                           
+   541                           ;FM_LCD16X2_Easy.c: 56:     {;FM_LCD16X2_Easy.c: 57:         FM_Lcd_Send_Character(caden
+      +                          a[index]);
+   542   000886  500A               	movf	FM_Lcd_Send_String@index^0,w,c
+   543   000888  2406               	addwf	FM_Lcd_Send_String@cadena^0,w,c
+   544   00088A  6E08               	movwf	??_FM_Lcd_Send_String^0,c
+   545   00088C  0E00               	movlw	0
+   546   00088E  2007               	addwfc	(FM_Lcd_Send_String@cadena+1)^0,w,c
+   547   000890  6E09               	movwf	(??_FM_Lcd_Send_String+1)^0,c
+   548   000892  C008  FFF6         	movff	??_FM_Lcd_Send_String,tblptrl
+   549   000896  C009  FFF7         	movff	??_FM_Lcd_Send_String+1,tblptrh
+   550   00089A                     	if	0	;tblptru may be non-zero
+   551   00089A                     	endif
+   552   00089A                     	if	0	;tblptru may be non-zero
+   553   00089A                     	endif
+   554   00089A  0008               	tblrd		*
+   555   00089C  50F5               	movf	tablat,w,c
+   556   00089E  ECEE  F004         	call	_FM_Lcd_Send_Character
+   557   0008A2                     
+   558                           ;FM_LCD16X2_Easy.c: 58:         index++;
+   559   0008A2  2A0A               	incf	FM_Lcd_Send_String@index^0,f,c
+   560   0008A4                     l850:
+   561                           
+   562                           ;FM_LCD16X2_Easy.c: 55:     while(cadena[index] != '\0')
+   563   0008A4  500A               	movf	FM_Lcd_Send_String@index^0,w,c
+   564   0008A6  2406               	addwf	FM_Lcd_Send_String@cadena^0,w,c
+   565   0008A8  6E08               	movwf	??_FM_Lcd_Send_String^0,c
+   566   0008AA  0E00               	movlw	0
+   567   0008AC  2007               	addwfc	(FM_Lcd_Send_String@cadena+1)^0,w,c
+   568   0008AE  6E09               	movwf	(??_FM_Lcd_Send_String+1)^0,c
+   569   0008B0  C008  FFF6         	movff	??_FM_Lcd_Send_String,tblptrl
+   570   0008B4  C009  FFF7         	movff	??_FM_Lcd_Send_String+1,tblptrh
+   571   0008B8                     	if	0	;tblptru may be non-zero
+   572   0008B8                     	endif
+   573   0008B8                     	if	0	;tblptru may be non-zero
+   574   0008B8                     	endif
+   575   0008B8  0008               	tblrd		*
+   576   0008BA  50F5               	movf	tablat,w,c
+   577   0008BC  0900               	iorlw	0
+   578   0008BE  A4D8               	btfss	status,2,c
+   579   0008C0  EF64  F004         	goto	u51
+   580   0008C4  EF66  F004         	goto	u50
+   581   0008C8                     u51:
+   582   0008C8  EF43  F004         	goto	l846
+   583   0008CC                     u50:
+   584   0008CC  0012               	return		;funcret
+   585   0008CE                     __end_of_FM_Lcd_Send_String:
+   586                           	callstack 0
+   587                           
+   588 ;; *************** function _FM_Lcd_Send_Character *****************
+   589 ;; Defined at:
+   590 ;;		line 45 in file "FM_LCD16X2_Easy.c"
+   591 ;; Parameters:    Size  Location     Type
+   592 ;;  character_to    1    wreg     unsigned char 
+   593 ;; Auto vars:     Size  Location     Type
+   594 ;;  character_to    1    4[COMRAM] unsigned char 
+   595 ;; Return value:  Size  Location     Type
+   596 ;;                  1    wreg      void 
+   597 ;; Registers used:
+   598 ;;		wreg, status,2, status,0, cstack
+   599 ;; Tracked objects:
+   600 ;;		On entry : 0/0
+   601 ;;		On exit  : 0/0
+   602 ;;		Unchanged: 0/0
+   603 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   604 ;;      Params:         0       0       0       0       0       0       0       0       0
+   605 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   606 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   607 ;;      Totals:         1       0       0       0       0       0       0       0       0
+   608 ;;Total ram usage:        1 bytes
+   609 ;; Hardware stack levels used: 1
+   610 ;; Hardware stack levels required when called: 2
+   611 ;; This function calls:
+   612 ;;		_FM_Lcd_Send_Nibble
+   613 ;; This function is called by:
+   614 ;;		_FM_Lcd_Send_String
+   615 ;; This function uses a non-reentrant model
+   616 ;;
+   617                           
+   618                           	psect	text5
+   619   0009DC                     __ptext5:
+   620                           	callstack 0
+   621   0009DC                     _FM_Lcd_Send_Character:
+   622                           	callstack 27
+   623                           
+   624                           ;incstack = 0
+   625                           ;FM_Lcd_Send_Character@character_to_send stored from wreg
+   626   0009DC  6E05               	movwf	FM_Lcd_Send_Character@character_to_send^0,c
+   627   0009DE                     
+   628                           ;FM_LCD16X2_Easy.c: 45: void FM_Lcd_Send_Character (char character_to_send);FM_LCD16X2_E
+      +                          asy.c: 46: {;FM_LCD16X2_Easy.c: 47:     LATD |= (1 << 1);;
+   629   0009DE  828C               	bsf	140,1,c	;volatile
+   630   0009E0                     
+   631                           ;FM_LCD16X2_Easy.c: 48:     FM_Lcd_Send_Nibble(character_to_send);
+   632   0009E0  5005               	movf	FM_Lcd_Send_Character@character_to_send^0,w,c
+   633   0009E2  EC09  F004         	call	_FM_Lcd_Send_Nibble
+   634   0009E6  0012               	return		;funcret
+   635   0009E8                     __end_of_FM_Lcd_Send_Character:
+   636                           	callstack 0
+   637                           
+   638 ;; *************** function _FM_Lcd_Easy_Init *****************
+   639 ;; Defined at:
+   640 ;;		line 84 in file "FM_LCD16X2_Easy.c"
+   641 ;; Parameters:    Size  Location     Type
+   642 ;;		None
+   643 ;; Auto vars:     Size  Location     Type
+   644 ;;		None
+   645 ;; Return value:  Size  Location     Type
+   646 ;;                  1    wreg      void 
+   647 ;; Registers used:
+   648 ;;		wreg, status,2, status,0, cstack
+   649 ;; Tracked objects:
+   650 ;;		On entry : 0/0
+   651 ;;		On exit  : 0/0
+   652 ;;		Unchanged: 0/0
+   653 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   654 ;;      Params:         0       0       0       0       0       0       0       0       0
+   655 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   656 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   657 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   658 ;;Total ram usage:        0 bytes
+   659 ;; Hardware stack levels used: 1
+   660 ;; Hardware stack levels required when called: 3
+   661 ;; This function calls:
+   662 ;;		_FM_Lcd_Easy_Gpio_Init
+   663 ;;		_FM_Lcd_Send_Command
+   664 ;; This function is called by:
+   665 ;;		_main
+   666 ;; This function uses a non-reentrant model
+   667 ;;
+   668                           
+   669                           	psect	text6
+   670   000992                     __ptext6:
+   671                           	callstack 0
+   672   000992                     _FM_Lcd_Easy_Init:
+   673                           	callstack 27
+   674   000992                     
+   675                           ;FM_LCD16X2_Easy.c: 86:     FM_Lcd_Easy_Gpio_Init();
+   676   000992  ECFA  F004         	call	_FM_Lcd_Easy_Gpio_Init	;wreg free
+   677                           
+   678                           ;FM_LCD16X2_Easy.c: 88:     FM_Lcd_Send_Command(0x01);
+   679   000996  0E01               	movlw	1
+   680   000998  ECF4  F004         	call	_FM_Lcd_Send_Command
+   681                           
+   682                           ;FM_LCD16X2_Easy.c: 89:     FM_Lcd_Send_Command(0x02);
+   683   00099C  0E02               	movlw	2
+   684   00099E  ECF4  F004         	call	_FM_Lcd_Send_Command
+   685                           
+   686                           ;FM_LCD16X2_Easy.c: 90:     FM_Lcd_Send_Command(0x06);
+   687   0009A2  0E06               	movlw	6
+   688   0009A4  ECF4  F004         	call	_FM_Lcd_Send_Command
+   689                           
+   690                           ;FM_LCD16X2_Easy.c: 91:     FM_Lcd_Send_Command(0x0C);
+   691   0009A8  0E0C               	movlw	12
+   692   0009AA  ECF4  F004         	call	_FM_Lcd_Send_Command
+   693                           
+   694                           ;FM_LCD16X2_Easy.c: 92:     FM_Lcd_Send_Command(0x10);
+   695   0009AE  0E10               	movlw	16
+   696   0009B0  ECF4  F004         	call	_FM_Lcd_Send_Command
+   697                           
+   698                           ;FM_LCD16X2_Easy.c: 93:     FM_Lcd_Send_Command(0x2C);
+   699   0009B4  0E2C               	movlw	44
+   700   0009B6  ECF4  F004         	call	_FM_Lcd_Send_Command
+   701   0009BA  0012               	return		;funcret
+   702   0009BC                     __end_of_FM_Lcd_Easy_Init:
+   703                           	callstack 0
+   704                           
+   705 ;; *************** function _FM_Lcd_Send_Command *****************
+   706 ;; Defined at:
+   707 ;;		line 39 in file "FM_LCD16X2_Easy.c"
+   708 ;; Parameters:    Size  Location     Type
+   709 ;;  command_to_s    1    wreg     unsigned char 
+   710 ;; Auto vars:     Size  Location     Type
+   711 ;;  command_to_s    1    4[COMRAM] unsigned char 
+   712 ;; Return value:  Size  Location     Type
+   713 ;;                  1    wreg      void 
+   714 ;; Registers used:
+   715 ;;		wreg, status,2, status,0, cstack
+   716 ;; Tracked objects:
+   717 ;;		On entry : 0/0
+   718 ;;		On exit  : 0/0
+   719 ;;		Unchanged: 0/0
+   720 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   721 ;;      Params:         0       0       0       0       0       0       0       0       0
+   722 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   723 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   724 ;;      Totals:         1       0       0       0       0       0       0       0       0
+   725 ;;Total ram usage:        1 bytes
+   726 ;; Hardware stack levels used: 1
+   727 ;; Hardware stack levels required when called: 2
+   728 ;; This function calls:
+   729 ;;		_FM_Lcd_Send_Nibble
+   730 ;; This function is called by:
+   731 ;;		_FM_Lcd_Set_Cursor
+   732 ;;		_FM_Lcd_Easy_Init
+   733 ;; This function uses a non-reentrant model
+   734 ;;
+   735                           
+   736                           	psect	text7
+   737   0009E8                     __ptext7:
+   738                           	callstack 0
+   739   0009E8                     _FM_Lcd_Send_Command:
+   740                           	callstack 27
+   741                           
+   742                           ;incstack = 0
+   743                           ;FM_Lcd_Send_Command@command_to_send stored from wreg
+   744   0009E8  6E05               	movwf	FM_Lcd_Send_Command@command_to_send^0,c
+   745   0009EA                     
+   746                           ;FM_LCD16X2_Easy.c: 39: void FM_Lcd_Send_Command (char command_to_send);FM_LCD16X2_Easy.
+      +                          c: 40: {;FM_LCD16X2_Easy.c: 41:     LATD &= ~(1 << 1);;
+   747   0009EA  928C               	bcf	140,1,c	;volatile
+   748   0009EC                     
+   749                           ;FM_LCD16X2_Easy.c: 42:     FM_Lcd_Send_Nibble(command_to_send);
+   750   0009EC  5005               	movf	FM_Lcd_Send_Command@command_to_send^0,w,c
+   751   0009EE  EC09  F004         	call	_FM_Lcd_Send_Nibble
+   752   0009F2  0012               	return		;funcret
+   753   0009F4                     __end_of_FM_Lcd_Send_Command:
+   754                           	callstack 0
+   755                           
+   756 ;; *************** function _FM_Lcd_Send_Nibble *****************
+   757 ;; Defined at:
+   758 ;;		line 19 in file "FM_LCD16X2_Easy.c"
+   759 ;; Parameters:    Size  Location     Type
+   760 ;;  byte_to_send    1    wreg     unsigned char 
+   761 ;; Auto vars:     Size  Location     Type
+   762 ;;  byte_to_send    1    1[COMRAM] unsigned char 
+   763 ;;  lower_bits      1    3[COMRAM] unsigned char 
+   764 ;;  upper_bits      1    2[COMRAM] unsigned char 
+   765 ;; Return value:  Size  Location     Type
+   766 ;;                  1    wreg      void 
+   767 ;; Registers used:
+   768 ;;		wreg, status,2, status,0
+   769 ;; Tracked objects:
+   770 ;;		On entry : 0/0
+   771 ;;		On exit  : 0/0
+   772 ;;		Unchanged: 0/0
+   773 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   774 ;;      Params:         0       0       0       0       0       0       0       0       0
+   775 ;;      Locals:         3       0       0       0       0       0       0       0       0
+   776 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   777 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   778 ;;Total ram usage:        4 bytes
+   779 ;; Hardware stack levels used: 1
+   780 ;; Hardware stack levels required when called: 1
+   781 ;; This function calls:
+   782 ;;		Nothing
+   783 ;; This function is called by:
+   784 ;;		_FM_Lcd_Send_Command
+   785 ;;		_FM_Lcd_Send_Character
+   786 ;; This function uses a non-reentrant model
+   787 ;;
+   788                           
+   789                           	psect	text8
+   790   000812                     __ptext8:
+   791                           	callstack 0
+   792   000812                     _FM_Lcd_Send_Nibble:
+   793                           	callstack 27
+   794                           
+   795                           ;incstack = 0
+   796                           ;FM_Lcd_Send_Nibble@byte_to_send stored from wreg
+   797   000812  6E02               	movwf	FM_Lcd_Send_Nibble@byte_to_send^0,c
+   798   000814                     
+   799                           ;FM_LCD16X2_Easy.c: 19: void FM_Lcd_Send_Nibble (char byte_to_send);FM_LCD16X2_Easy.c: 2
+      +                          0: {;FM_LCD16X2_Easy.c: 21:     char upper_bits, lower_bits;;FM_LCD16X2_Easy.c: 23:     
+      +                          upper_bits = (byte_to_send & 0xF0);
+   800   000814  5002               	movf	FM_Lcd_Send_Nibble@byte_to_send^0,w,c
+   801   000816  0BF0               	andlw	240
+   802   000818  6E03               	movwf	FM_Lcd_Send_Nibble@upper_bits^0,c
+   803                           
+   804                           ;FM_LCD16X2_Easy.c: 24:     lower_bits = (byte_to_send & 0x0F) << 4;
+   805   00081A  C002  F001         	movff	FM_Lcd_Send_Nibble@byte_to_send,??_FM_Lcd_Send_Nibble
+   806   00081E  0E0F               	movlw	15
+   807   000820  1601               	andwf	??_FM_Lcd_Send_Nibble^0,f,c
+   808   000822  3801               	swapf	??_FM_Lcd_Send_Nibble^0,w,c
+   809   000824  0BF0               	andlw	240
+   810   000826  6E04               	movwf	FM_Lcd_Send_Nibble@lower_bits^0,c
+   811                           
+   812                           ;FM_LCD16X2_Easy.c: 30:     LATD |= upper_bits;
+   813   000828  5003               	movf	FM_Lcd_Send_Nibble@upper_bits^0,w,c	;volatile
+   814   00082A  128C               	iorwf	140,f,c	;volatile
+   815   00082C                     
+   816                           ;FM_LCD16X2_Easy.c: 31:     LATD |= (1 << 3);; _delay((unsigned long)((1)*(8000000UL/400
+      +                          0.0))); LATD &= ~(1 << 3);; _delay((unsigned long)((1)*(8000000UL/4000.0)));;
+   817   00082C  868C               	bsf	140,3,c	;volatile
+   818   00082E  0E03               	movlw	3
+   819   000830  6E01               	movwf	??_FM_Lcd_Send_Nibble^0,c
+   820   000832  0E98               	movlw	152
+   821   000834                     u107:
+   822   000834  2EE8               	decfsz	wreg,f,c
+   823   000836  D7FE               	bra	u107
+   824   000838  2E01               	decfsz	??_FM_Lcd_Send_Nibble^0,f,c
+   825   00083A  D7FC               	bra	u107
+   826   00083C  968C               	bcf	140,3,c	;volatile
+   827   00083E  0E03               	movlw	3
+   828   000840  6E01               	movwf	??_FM_Lcd_Send_Nibble^0,c
+   829   000842  0E98               	movlw	152
+   830   000844                     u117:
+   831   000844  2EE8               	decfsz	wreg,f,c
+   832   000846  D7FE               	bra	u117
+   833   000848  2E01               	decfsz	??_FM_Lcd_Send_Nibble^0,f,c
+   834   00084A  D7FC               	bra	u117
+   835   00084C                     
+   836                           ;FM_LCD16X2_Easy.c: 32:     LATD &= ~upper_bits;
+   837   00084C  5003               	movf	FM_Lcd_Send_Nibble@upper_bits^0,w,c	;volatile
+   838   00084E  0AFF               	xorlw	255
+   839   000850  168C               	andwf	140,f,c	;volatile
+   840   000852                     
+   841                           ;FM_LCD16X2_Easy.c: 33:     LATD |= lower_bits;
+   842   000852  5004               	movf	FM_Lcd_Send_Nibble@lower_bits^0,w,c	;volatile
+   843   000854  128C               	iorwf	140,f,c	;volatile
+   844                           
+   845                           ;FM_LCD16X2_Easy.c: 34:     LATD |= (1 << 3);; _delay((unsigned long)((1)*(8000000UL/400
+      +                          0.0))); LATD &= ~(1 << 3);; _delay((unsigned long)((1)*(8000000UL/4000.0)));;
+   846   000856  868C               	bsf	140,3,c	;volatile
+   847   000858  0E03               	movlw	3
+   848   00085A  6E01               	movwf	??_FM_Lcd_Send_Nibble^0,c
+   849   00085C  0E98               	movlw	152
+   850   00085E                     u127:
+   851   00085E  2EE8               	decfsz	wreg,f,c
+   852   000860  D7FE               	bra	u127
+   853   000862  2E01               	decfsz	??_FM_Lcd_Send_Nibble^0,f,c
+   854   000864  D7FC               	bra	u127
+   855   000866  968C               	bcf	140,3,c	;volatile
+   856   000868  0E03               	movlw	3
+   857   00086A  6E01               	movwf	??_FM_Lcd_Send_Nibble^0,c
+   858   00086C  0E98               	movlw	152
+   859   00086E                     u137:
+   860   00086E  2EE8               	decfsz	wreg,f,c
+   861   000870  D7FE               	bra	u137
+   862   000872  2E01               	decfsz	??_FM_Lcd_Send_Nibble^0,f,c
+   863   000874  D7FC               	bra	u137
+   864   000876                     
+   865                           ;FM_LCD16X2_Easy.c: 35:     LATD &= ~lower_bits;
+   866   000876  5004               	movf	FM_Lcd_Send_Nibble@lower_bits^0,w,c	;volatile
+   867   000878  0AFF               	xorlw	255
+   868   00087A  168C               	andwf	140,f,c	;volatile
+   869   00087C  0012               	return		;funcret
+   870   00087E                     __end_of_FM_Lcd_Send_Nibble:
+   871                           	callstack 0
+   872                           
+   873 ;; *************** function _FM_Lcd_Easy_Gpio_Init *****************
+   874 ;; Defined at:
+   875 ;;		line 7 in file "FM_LCD16X2_Easy.c"
+   876 ;; Parameters:    Size  Location     Type
+   877 ;;		None
+   878 ;; Auto vars:     Size  Location     Type
+   879 ;;  bits_data       1    0        unsigned char 
+   880 ;; Return value:  Size  Location     Type
+   881 ;;                  1    wreg      void 
+   882 ;; Registers used:
+   883 ;;		wreg, status,2, status,0
+   884 ;; Tracked objects:
+   885 ;;		On entry : 0/0
+   886 ;;		On exit  : 0/0
+   887 ;;		Unchanged: 0/0
+   888 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   889 ;;      Params:         0       0       0       0       0       0       0       0       0
+   890 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   891 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   892 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   893 ;;Total ram usage:        0 bytes
+   894 ;; Hardware stack levels used: 1
+   895 ;; Hardware stack levels required when called: 1
+   896 ;; This function calls:
+   897 ;;		Nothing
+   898 ;; This function is called by:
+   899 ;;		_FM_Lcd_Easy_Init
+   900 ;; This function uses a non-reentrant model
+   901 ;;
+   902                           
+   903                           	psect	text9
+   904   0009F4                     __ptext9:
+   905                           	callstack 0
+   906   0009F4                     _FM_Lcd_Easy_Gpio_Init:
+   907                           	callstack 28
+   908   0009F4                     
+   909                           ;FM_LCD16X2_Easy.c: 15:     TRISD = 0x00;
+   910   0009F4  0E00               	movlw	0
+   911   0009F6  6E95               	movwf	149,c	;volatile
+   912   0009F8                     
+   913                           ;FM_LCD16X2_Easy.c: 16:     LATD &= ~(1 << 2);
+   914   0009F8  948C               	bcf	140,2,c	;volatile
+   915   0009FA  0012               	return		;funcret
+   916   0009FC                     __end_of_FM_Lcd_Easy_Gpio_Init:
+   917                           	callstack 0
+   918                           
+   919 ;; *************** function _ISR *****************
+   920 ;; Defined at:
+   921 ;;		line 22 in file "main.c"
+   922 ;; Parameters:    Size  Location     Type
+   923 ;;		None
+   924 ;; Auto vars:     Size  Location     Type
+   925 ;;		None
+   926 ;; Return value:  Size  Location     Type
+   927 ;;                  1    wreg      void 
+   928 ;; Registers used:
+   929 ;;		None
+   930 ;; Tracked objects:
+   931 ;;		On entry : 0/0
+   932 ;;		On exit  : 0/0
+   933 ;;		Unchanged: 0/0
+   934 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   935 ;;      Params:         0       0       0       0       0       0       0       0       0
+   936 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   937 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   938 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   939 ;;Total ram usage:        0 bytes
+   940 ;; Hardware stack levels used: 1
+   941 ;; This function calls:
+   942 ;;		Nothing
+   943 ;; This function is called by:
+   944 ;;		Interrupt level 2
+   945 ;; This function uses a non-reentrant model
+   946 ;;
+   947                           
+   948                           	psect	intcode
+   949   000008                     __pintcode:
+   950                           	callstack 0
+   951   000008                     _ISR:
+   952                           	callstack 27
+   953                           
+   954                           ;incstack = 0
+   955   000008  820C               	bsf	int$flags,1,c	;set compiler interrupt flag (level 2)
+   956   00000A  EDFE  F004         	call	int_func,f	;refresh shadow registers
+   957                           
+   958                           	psect	intcode_body
+   959   0009FC                     __pintcode_body:
+   960                           	callstack 27
+   961   0009FC                     int_func:
+   962                           	callstack 27
+   963   0009FC  0006               	pop		; remove dummy address from shadow register refresh
+   964   0009FE  920C               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   965   000A00  0011               	retfie		f
+   966   000A02                     __end_of_ISR:
+   967                           	callstack 0
+   968                           
+   969                           	psect	rparam
+   970   000000                     
+   971                           	psect	temp
+   972   00000C                     btemp:
+   973                           	callstack 0
+   974   00000C                     	ds	1
+   975   000000                     int$flags	set	btemp
+   976   000000                     wtemp8	set	btemp+1
+   977   000000                     ttemp5	set	btemp+1
+   978   000000                     ttemp6	set	btemp+4
+   979   000000                     ttemp7	set	btemp+8
+   980                           
+   981                           	psect	idloc
+   982                           
+   983                           ;Config register IDLOC0 @ 0x200000
+   984                           ;	unspecified, using default values
+   985   200000                     	org	2097152
+   986   200000  FF                 	db	255
+   987                           
+   988                           ;Config register IDLOC1 @ 0x200001
+   989                           ;	unspecified, using default values
+   990   200001                     	org	2097153
+   991   200001  FF                 	db	255
+   992                           
+   993                           ;Config register IDLOC2 @ 0x200002
+   994                           ;	unspecified, using default values
+   995   200002                     	org	2097154
+   996   200002  FF                 	db	255
+   997                           
+   998                           ;Config register IDLOC3 @ 0x200003
+   999                           ;	unspecified, using default values
+  1000   200003                     	org	2097155
+  1001   200003  FF                 	db	255
+  1002                           
+  1003                           ;Config register IDLOC4 @ 0x200004
+  1004                           ;	unspecified, using default values
+  1005   200004                     	org	2097156
+  1006   200004  FF                 	db	255
+  1007                           
+  1008                           ;Config register IDLOC5 @ 0x200005
+  1009                           ;	unspecified, using default values
+  1010   200005                     	org	2097157
+  1011   200005  FF                 	db	255
+  1012                           
+  1013                           ;Config register IDLOC6 @ 0x200006
+  1014                           ;	unspecified, using default values
+  1015   200006                     	org	2097158
+  1016   200006  FF                 	db	255
+  1017                           
+  1018                           ;Config register IDLOC7 @ 0x200007
+  1019                           ;	unspecified, using default values
+  1020   200007                     	org	2097159
+  1021   200007  FF                 	db	255
+  1022                           
+  1023                           	psect	config
+  1024                           
+  1025                           ;Config register CONFIG1L @ 0x300000
+  1026                           ;	PLL Prescaler Selection bits
+  1027                           ;	PLLDIV = 1, No prescale (4 MHz oscillator input drives PLL directly)
+  1028                           ;	System Clock Postscaler Selection bits
+  1029                           ;	CPUDIV = OSC1_PLL2, [Primary Oscillator Src: /1][96 MHz PLL Src: /2]
+  1030                           ;	USB Clock Selection bit (used in Full-Speed USB mode only; UCFG:FSEN = 1)
+  1031                           ;	USBDIV = 1, USB clock source comes directly from the primary oscillator block with no 
+      +                          postscale
+  1032   300000                     	org	3145728
+  1033   300000  00                 	db	0
+  1034                           
+  1035                           ;Config register CONFIG1H @ 0x300001
+  1036                           ;	Oscillator Selection bits
+  1037                           ;	FOSC = INTOSC_HS, Internal oscillator, HS oscillator used by USB (INTHS)
+  1038                           ;	Fail-Safe Clock Monitor Enable bit
+  1039                           ;	FCMEN = OFF, Fail-Safe Clock Monitor disabled
+  1040                           ;	Internal/External Oscillator Switchover bit
+  1041                           ;	IESO = OFF, Oscillator Switchover mode disabled
+  1042   300001                     	org	3145729
+  1043   300001  0B                 	db	11
+  1044                           
+  1045                           ;Config register CONFIG2L @ 0x300002
+  1046                           ;	Power-up Timer Enable bit
+  1047                           ;	PWRT = OFF, PWRT disabled
+  1048                           ;	Brown-out Reset Enable bits
+  1049                           ;	BOR = OFF, Brown-out Reset disabled in hardware and software
+  1050                           ;	Brown-out Reset Voltage bits
+  1051                           ;	BORV = 3, Minimum setting 2.05V
+  1052                           ;	USB Voltage Regulator Enable bit
+  1053                           ;	VREGEN = OFF, USB voltage regulator disabled
+  1054   300002                     	org	3145730
+  1055   300002  19                 	db	25
+  1056                           
+  1057                           ;Config register CONFIG2H @ 0x300003
+  1058                           ;	Watchdog Timer Enable bit
+  1059                           ;	WDT = OFF, WDT disabled (control is placed on the SWDTEN bit)
+  1060                           ;	Watchdog Timer Postscale Select bits
+  1061                           ;	WDTPS = 32768, 1:32768
+  1062   300003                     	org	3145731
+  1063   300003  1E                 	db	30
+  1064                           
+  1065                           ; Padding undefined space
+  1066   300004                     	org	3145732
+  1067   300004  FF                 	db	255
+  1068                           
+  1069                           ;Config register CONFIG3H @ 0x300005
+  1070                           ;	CCP2 MUX bit
+  1071                           ;	CCP2MX = ON, CCP2 input/output is multiplexed with RC1
+  1072                           ;	PORTB A/D Enable bit
+  1073                           ;	PBADEN = OFF, PORTB<4:0> pins are configured as digital I/O on Reset
+  1074                           ;	Low-Power Timer 1 Oscillator Enable bit
+  1075                           ;	LPT1OSC = OFF, Timer1 configured for higher power operation
+  1076                           ;	MCLR Pin Enable bit
+  1077                           ;	MCLRE = ON, MCLR pin enabled; RE3 input pin disabled
+  1078   300005                     	org	3145733
+  1079   300005  81                 	db	129
+  1080                           
+  1081                           ;Config register CONFIG4L @ 0x300006
+  1082                           ;	Stack Full/Underflow Reset Enable bit
+  1083                           ;	STVREN = OFF, Stack full/underflow will not cause Reset
+  1084                           ;	Single-Supply ICSP Enable bit
+  1085                           ;	LVP = OFF, Single-Supply ICSP disabled
+  1086                           ;	Dedicated In-Circuit Debug/Programming Port (ICPORT) Enable bit
+  1087                           ;	ICPRT = OFF, ICPORT disabled
+  1088                           ;	Extended Instruction Set Enable bit
+  1089                           ;	XINST = OFF, Instruction set extension and Indexed Addressing mode disabled (Legacy mo
+      +                          de)
+  1090                           ;	Background Debugger Enable bit
+  1091                           ;	DEBUG = 0x1, unprogrammed default
+  1092   300006                     	org	3145734
+  1093   300006  80                 	db	128
+  1094                           
+  1095                           ; Padding undefined space
+  1096   300007                     	org	3145735
+  1097   300007  FF                 	db	255
+  1098                           
+  1099                           ;Config register CONFIG5L @ 0x300008
+  1100                           ;	Code Protection bit
+  1101                           ;	CP0 = OFF, Block 0 (000800-001FFFh) is not code-protected
+  1102                           ;	Code Protection bit
+  1103                           ;	CP1 = OFF, Block 1 (002000-003FFFh) is not code-protected
+  1104                           ;	Code Protection bit
+  1105                           ;	CP2 = OFF, Block 2 (004000-005FFFh) is not code-protected
+  1106                           ;	Code Protection bit
+  1107                           ;	CP3 = OFF, Block 3 (006000-007FFFh) is not code-protected
+  1108   300008                     	org	3145736
+  1109   300008  0F                 	db	15
+  1110                           
+  1111                           ;Config register CONFIG5H @ 0x300009
+  1112                           ;	Boot Block Code Protection bit
+  1113                           ;	CPB = OFF, Boot block (000000-0007FFh) is not code-protected
+  1114                           ;	Data EEPROM Code Protection bit
+  1115                           ;	CPD = OFF, Data EEPROM is not code-protected
+  1116   300009                     	org	3145737
+  1117   300009  C0                 	db	192
+  1118                           
+  1119                           ;Config register CONFIG6L @ 0x30000A
+  1120                           ;	Write Protection bit
+  1121                           ;	WRT0 = OFF, Block 0 (000800-001FFFh) is not write-protected
+  1122                           ;	Write Protection bit
+  1123                           ;	WRT1 = OFF, Block 1 (002000-003FFFh) is not write-protected
+  1124                           ;	Write Protection bit
+  1125                           ;	WRT2 = OFF, Block 2 (004000-005FFFh) is not write-protected
+  1126                           ;	Write Protection bit
+  1127                           ;	WRT3 = OFF, Block 3 (006000-007FFFh) is not write-protected
+  1128   30000A                     	org	3145738
+  1129   30000A  0F                 	db	15
+  1130                           
+  1131                           ;Config register CONFIG6H @ 0x30000B
+  1132                           ;	Configuration Register Write Protection bit
+  1133                           ;	WRTC = OFF, Configuration registers (300000-3000FFh) are not write-protected
+  1134                           ;	Boot Block Write Protection bit
+  1135                           ;	WRTB = OFF, Boot block (000000-0007FFh) is not write-protected
+  1136                           ;	Data EEPROM Write Protection bit
+  1137                           ;	WRTD = OFF, Data EEPROM is not write-protected
+  1138   30000B                     	org	3145739
+  1139   30000B  E0                 	db	224
+  1140                           
+  1141                           ;Config register CONFIG7L @ 0x30000C
+  1142                           ;	Table Read Protection bit
+  1143                           ;	EBTR0 = OFF, Block 0 (000800-001FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1144                           ;	Table Read Protection bit
+  1145                           ;	EBTR1 = OFF, Block 1 (002000-003FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1146                           ;	Table Read Protection bit
+  1147                           ;	EBTR2 = OFF, Block 2 (004000-005FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1148                           ;	Table Read Protection bit
+  1149                           ;	EBTR3 = OFF, Block 3 (006000-007FFFh) is not protected from table reads executed in ot
+      +                          her blocks
+  1150   30000C                     	org	3145740
+  1151   30000C  0F                 	db	15
+  1152                           
+  1153                           ;Config register CONFIG7H @ 0x30000D
+  1154                           ;	Boot Block Table Read Protection bit
+  1155                           ;	EBTRB = OFF, Boot block (000000-0007FFh) is not protected from table reads executed in
+      +                           other blocks
+  1156   30000D                     	org	3145741
+  1157   30000D  40                 	db	64
+  1158                           tosu	equ	0xFFF
+  1159                           tosh	equ	0xFFE
+  1160                           tosl	equ	0xFFD
+  1161                           stkptr	equ	0xFFC
+  1162                           pclatu	equ	0xFFB
+  1163                           pclath	equ	0xFFA
+  1164                           pcl	equ	0xFF9
+  1165                           tblptru	equ	0xFF8
+  1166                           tblptrh	equ	0xFF7
+  1167                           tblptrl	equ	0xFF6
+  1168                           tablat	equ	0xFF5
+  1169                           prodh	equ	0xFF4
+  1170                           prodl	equ	0xFF3
+  1171                           indf0	equ	0xFEF
+  1172                           postinc0	equ	0xFEE
+  1173                           postdec0	equ	0xFED
+  1174                           preinc0	equ	0xFEC
+  1175                           plusw0	equ	0xFEB
+  1176                           fsr0h	equ	0xFEA
+  1177                           fsr0l	equ	0xFE9
+  1178                           wreg	equ	0xFE8
+  1179                           indf1	equ	0xFE7
+  1180                           postinc1	equ	0xFE6
+  1181                           postdec1	equ	0xFE5
+  1182                           preinc1	equ	0xFE4
+  1183                           plusw1	equ	0xFE3
+  1184                           fsr1h	equ	0xFE2
+  1185                           fsr1l	equ	0xFE1
+  1186                           bsr	equ	0xFE0
+  1187                           indf2	equ	0xFDF
+  1188                           postinc2	equ	0xFDE
+  1189                           postdec2	equ	0xFDD
+  1190                           preinc2	equ	0xFDC
+  1191                           plusw2	equ	0xFDB
+  1192                           fsr2h	equ	0xFDA
+  1193                           fsr2l	equ	0xFD9
+  1194                           status	equ	0xFD8
+
+Data Sizes:
+    Strings     15
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           94     11      11
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    FM_Lcd_Send_String@cadena	PTR unsigned char  size(2) Largest target is 15
+		 -> STR_1(CODE[15]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_FM_Lcd_Send_String
+    _FM_Lcd_Set_Cursor->_FM_Lcd_Send_Command
+    _FM_Lcd_Send_String->_FM_Lcd_Send_Character
+    _FM_Lcd_Send_Character->_FM_Lcd_Send_Nibble
+    _FM_Lcd_Easy_Init->_FM_Lcd_Send_Command
+    _FM_Lcd_Send_Command->_FM_Lcd_Send_Nibble
+
+Critical Paths under _ISR in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _ISR in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _ISR in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _ISR in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _ISR in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _ISR in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0     650
+                                             10 COMRAM     1     1      0
+                   _FM_Lcd_Easy_Init
+                 _FM_Lcd_Send_String
+                  _FM_Lcd_Set_Cursor
+                    _Init_ADC_Module
+           _Init_Internal_Oscillator
+ ---------------------------------------------------------------------------------
+ (1) _Init_Internal_Oscillator                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _Init_ADC_Module                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _FM_Lcd_Set_Cursor                                    3     2      1     274
+                                              5 COMRAM     3     2      1
+                _FM_Lcd_Send_Command
+ ---------------------------------------------------------------------------------
+ (1) _FM_Lcd_Send_String                                   5     3      2     271
+                                              5 COMRAM     5     3      2
+              _FM_Lcd_Send_Character
+ ---------------------------------------------------------------------------------
+ (2) _FM_Lcd_Send_Character                                1     1      0     105
+                                              4 COMRAM     1     1      0
+                 _FM_Lcd_Send_Nibble
+ ---------------------------------------------------------------------------------
+ (1) _FM_Lcd_Easy_Init                                     0     0      0     105
+              _FM_Lcd_Easy_Gpio_Init
+                _FM_Lcd_Send_Command
+ ---------------------------------------------------------------------------------
+ (2) _FM_Lcd_Send_Command                                  1     1      0     105
+                                              4 COMRAM     1     1      0
+                 _FM_Lcd_Send_Nibble
+ ---------------------------------------------------------------------------------
+ (3) _FM_Lcd_Send_Nibble                                   4     4      0      90
+                                              0 COMRAM     4     4      0
+ ---------------------------------------------------------------------------------
+ (2) _FM_Lcd_Easy_Gpio_Init                                1     1      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (4) _ISR                                                  0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _FM_Lcd_Easy_Init
+     _FM_Lcd_Easy_Gpio_Init
+     _FM_Lcd_Send_Command
+       _FM_Lcd_Send_Nibble
+   _FM_Lcd_Send_String
+     _FM_Lcd_Send_Character
+       _FM_Lcd_Send_Nibble
+   _FM_Lcd_Set_Cursor
+     _FM_Lcd_Send_Command
+   _Init_ADC_Module
+   _Init_Internal_Oscillator
+
+ _ISR (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5E      B       B       1       11.7%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+DATA                 0      0       0       4        0.0%
+BITBANK0            A0      0       0       5        0.0%
+BANK0               A0      0       0       6        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       8        0.0%
+BITBANK2           100      0       0       9        0.0%
+BANK2              100      0       0      10        0.0%
+BITBANK3           100      0       0      11        0.0%
+BANK3              100      0       0      12        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0      14        0.0%
+BITBANK5           100      0       0      15        0.0%
+BANK5              100      0       0      16        0.0%
+BITBANK6           100      0       0      17        0.0%
+BANK6              100      0       0      18        0.0%
+BITBANK7           100      0       0      19        0.0%
+BANK7              100      0       0      20        0.0%
+BITBIGSFRhhhh       2C      0       0      21        0.0%
+BITBIGSFRhhhl        E      0       0      22        0.0%
+BITBIGSFRhhl         1      0       0      23        0.0%
+BITBIGSFRhl         2A      0       0      24        0.0%
+BITBIGSFRlh          8      0       0      25        0.0%
+BITBIGSFRll         2C      0       0      26        0.0%
+BIGRAM             7FF      0       0      27        0.0%
+BIGSFR               0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.41 build 20230208172133 
+Symbol Table                                                                                   Mon Jun 26 15:02:14 2023
+
+                                    l11 09FA                                      l20 09E6  
+                                    l14 087C                                      l31 0950  
+                                    l17 09F2                                      l33 095C  
+                                    l26 08CC                                      l36 09BA  
+                                    l81 0900                                      l90 09DA  
+                                    l87 0990                                      l79 08F2  
+                                    u50 08CC                                      u51 08C8  
+                                    u60 0930                                      u61 092C  
+                                    u70 0948                                      u71 0944  
+                                    u80 0900                                      u81 08FC  
+                                    u97 090A                                     l820 0992  
+                                   l830 098E                                     l822 09CE  
+                                   l824 095E                                     l770 083C  
+                                   l850 08A4                                     l826 096A  
+                                   l780 0866                                     l772 083E  
+                                   l844 087E                                     l860 0948  
+                                   l852 091C                                     l828 097C  
+                                   l782 0876                                     l774 084C  
+                                   l766 0814                                     l790 09EC  
+                                   l846 0886                                     l862 0952  
+                                   l854 0920                                     l870 08D2  
+                                   l784 09F4                                     l776 0852  
+                                   l768 082C                                     l792 09DE  
+                                   l848 08A2                                     l864 0956  
+                                   l856 0930                                     l872 08D6  
+                                   l786 09F8                                     l778 0858  
+                                   l794 09E0                                     l866 095C  
+                                   l858 0938                                     l874 08E4  
+                                   l788 09EA                                     l876 08F0  
+                                   l868 08CE                                     l878 0904  
+                                   u107 0834                                     u117 0844  
+                                   u127 085E                                     u137 086E  
+                                   _ISR 0008                                     wreg 0FE8  
+                                  ?_ISR 0001                                    STR_1 0801  
+                                  _LATD 0F8C                                    i2l73 09FE  
+            __end_of_FM_Lcd_Send_Nibble 087E                                    _main 08CE  
+          FM_Lcd_Send_Nibble@upper_bits 0003              __end_of_FM_Lcd_Send_String 08CE  
+                                  btemp 000C                 ??_FM_Lcd_Send_Character 0005  
+                                  start 000E  FM_Lcd_Send_Character@character_to_send 0005  
+                 _FM_Lcd_Easy_Gpio_Init 09F4                 __end_of_Init_ADC_Module 0992  
+                          ___param_bank 0000                                   ??_ISR 0001  
+                                 ?_main 0001             __end_of_FM_Lcd_Send_Command 09F4  
+                                 _TRISD 0F95                                   tablat 0FF5  
+                                 ttemp5 000D                                   ttemp6 0010  
+                                 ttemp7 0014                                   status 0FD8  
+                                 wtemp8 000D                         __initialization 09BC  
+                          __end_of_main 091A                                  ??_main 000B  
+                         __activetblptr 0001                                  _ADCON0 0FC2  
+                                _ADCON1 0FC1                                  _ADCON2 0FC0  
+                                _ADRESH 0FC4                                  _OSCCON 0FD3  
+                ?_FM_Lcd_Easy_Gpio_Init 0001                        ?_Init_ADC_Module 0001  
+                                isa$std 0001                            __mediumconst 0000  
+                                tblptrh 0FF7                                  tblptrl 0FF6  
+                                tblptru 0FF8                              __accesstop 0060  
+               __end_of__initialization 09BC                           ___rparam_used 0001  
+                        __pcstackCOMRAM 0001                        _FM_Lcd_Easy_Init 0992  
+         __end_of_FM_Lcd_Send_Character 09E8                      _FM_Lcd_Send_Nibble 0812  
+                    _FM_Lcd_Send_String 087E               ?_Init_Internal_Oscillator 0001  
+                   ?_FM_Lcd_Send_Nibble 0001                     ?_FM_Lcd_Send_String 0006  
+                  ??_FM_Lcd_Send_Nibble 0001                    ??_FM_Lcd_Send_String 0008  
+                               __Hparam 0000                                 __Lparam 0000  
+                          __psmallconst 0800                                 __pcinit 09BC  
+                               __ramtop 0800                                 __ptext0 08CE  
+                               __ptext1 09CE                                 __ptext2 095E  
+                               __ptext3 091A                                 __ptext4 087E  
+                               __ptext5 09DC                                 __ptext6 0992  
+                               __ptext7 09E8                                 __ptext8 0812  
+                               __ptext9 09F4                          __pintcode_body 09FC  
+                  end_of_initialization 09BC                 ??_FM_Lcd_Easy_Gpio_Init 0001  
+                               int_func 09FC                  FM_Lcd_Set_Cursor@filas 0007  
+              __end_of_FM_Lcd_Easy_Init 09BC               FM_Lcd_Set_Cursor@base_pos 0008  
+                   start_initialization 09BC                             __end_of_ISR 0A02  
+              FM_Lcd_Send_String@cadena 0006        __end_of_Init_Internal_Oscillator 09DC  
+                             __pintcode 0008                   _FM_Lcd_Send_Character 09DC  
+                   _FM_Lcd_Send_Command 09E8                       _FM_Lcd_Set_Cursor 091A  
+                    ?_FM_Lcd_Set_Cursor 0006      FM_Lcd_Send_Command@command_to_send 0005  
+                           __smallconst 0800                     ??_FM_Lcd_Set_Cursor 0007  
+                  ?_FM_Lcd_Send_Command 0001                       ??_Init_ADC_Module 0001  
+         __end_of_FM_Lcd_Easy_Gpio_Init 09FC               __end_of_FM_Lcd_Set_Cursor 095E  
+              _Init_Internal_Oscillator 09CE                              _ADCON0bits 0FC2  
+                            _ADCON1bits 0FC1                              _ADCON2bits 0FC0  
+                 ??_FM_Lcd_Send_Command 0005                       ?_FM_Lcd_Easy_Init 0001  
+                    ??_FM_Lcd_Easy_Init 0006                 FM_Lcd_Send_String@index 000A  
+                              __Hrparam 0000                  ?_FM_Lcd_Send_Character 0001  
+                              __Lrparam 0000                            __Lsmallconst 0800  
+                              isa$xinst 0000                                int$flags 000C  
+                              intlevel2 0000          FM_Lcd_Send_Nibble@byte_to_send 0002  
+                            _OSCCONbits 0FD3                         _Init_ADC_Module 095E  
+              FM_Lcd_Set_Cursor@columna 0006              ??_Init_Internal_Oscillator 0001  
+          FM_Lcd_Send_Nibble@lower_bits 0004  
