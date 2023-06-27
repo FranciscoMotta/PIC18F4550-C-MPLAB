@@ -60,7 +60,6 @@ int main(void)
          * 1024 = 5v
          *  0   = 0v 
          */
-        
         float volts = ((5.0 * adc_val) / 1024.0) * 100.0;
         sprintf(data_vol, "temp = %.2f C", volts);
         FM_Lcd_Set_Cursor(ROW_2, COL_3);
